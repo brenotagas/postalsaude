@@ -1,0 +1,44 @@
+<div class="col s12 m2">
+    <h1 class="home-title">Rotina de Atualização</h1>
+</div>
+<hr>
+<div class="container">
+    <div class="row">
+        <table class="highlight centered">
+            <thead>
+                <tr>
+                    <th>Data Início</th>
+                    <th>Horário</th>
+                    <th>Quantidade Inseridos</th>
+                    <th>Quantidade Alterados</th>
+                    <th>Executou</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let rotina of rotinasAtualizacao">
+                    <td>{{ rotina.DataInicio | date: 'dd/MM/yyyy' }}</td>
+                    <td>{{ rotina.DataInicio | date: 'HH:mm:ss' }}</td>
+                    <td>{{ rotina.QuantidadeInseridos }}</td>
+                    <td>{{ rotina.QuantidadeAlterados }}</td>
+                    <td><label *ngIf="rotina.Executou" class="success">
+                            <input type="checkbox" checked="checked" disabled="disabled" />
+                            <span>Executou</span>
+                        </label>
+                        <label *ngIf="!rotina.Executou" class="fail">
+                            <i class="material-icons" disabled="disabled">close</i>
+                            <span>Não Executou</span>
+                        </label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="input-field col s3">
+            <select>
+                <option value="" disabled selected>Selecione uma data</option>
+                <option value="{{ rotina.Codigo }}" *ngFor="let rotina of rotinasAtualizacao">{{ rotina.DataInicio | date: 'dd/MM/yyyy' }}</option>
+            </select>
+            <label>Data Início</label>
+        </div>
+    </div>
+</div>

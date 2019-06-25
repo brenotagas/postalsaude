@@ -1,0 +1,11 @@
+.home-title {
+  text-align: center; }
+
+p {
+  font-weight: bold; }
+
+.success {
+  color: #4db6ac; }
+
+.fail {
+  color: #e57373; }
