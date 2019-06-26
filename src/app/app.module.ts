@@ -12,13 +12,17 @@ import localeBr from '@angular/common/locales/pt';
 import { DrillComponent } from './components/drill/drill.component';
 import { RegrasComponent } from './components/regras/regras.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MensalidadeAposentadoComponent } from './components/mensalidade-aposentado/mensalidade-aposentado.component';
+import { FichaFinanCopar1Component } from './components/ficha-finan-copar1/ficha-finan-copar1.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DrillComponent,
-    RegrasComponent
+    RegrasComponent,
+    MensalidadeAposentadoComponent,
+    FichaFinanCopar1Component
   ],
   imports: [
     BrowserModule,
