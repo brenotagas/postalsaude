@@ -14,15 +14,27 @@ import { RegrasComponent } from './components/regras/regras.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MensalidadeAposentadoComponent } from './components/mensalidade-aposentado/mensalidade-aposentado.component';
 import { FichaFinanCopar1Component } from './components/ficha-finan-copar1/ficha-finan-copar1.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CorreiosIAtivosComponent } from './components/correios-i-ativos/correios-i-ativos.component';
+import { CorreiosIIAtivosComponent } from './components/correios-ii-ativos/correios-ii-ativos.component';
+import { DrillAtivosComponent } from './components/drill-ativos/drill-ativos.component';
+import { MensalidadeAtivosComponent } from './components/mensalidade-ativos/mensalidade-ativos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DrillComponent,
+    HeaderComponent,
+    FooterComponent,
     RegrasComponent,
     MensalidadeAposentadoComponent,
-    FichaFinanCopar1Component
+    FichaFinanCopar1Component,
+    CorreiosIAtivosComponent,
+    CorreiosIIAtivosComponent,
+    DrillAtivosComponent,
+    MensalidadeAtivosComponent
   ],
   imports: [
     BrowserModule,
