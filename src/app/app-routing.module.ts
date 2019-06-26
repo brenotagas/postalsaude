@@ -13,6 +13,7 @@ import { CorreiosIIAtivosComponent } from './components/correios-ii-ativos/corre
 import { CorreiosIAfastadosComponent } from './components/correios-i-afastados/correios-i-afastados.component';
 import { CorreiosIiAfastadosComponent } from './components/correios-ii-afastados/correios-ii-afastados.component';
 import { MensalidadeAtivosComponent } from './components/mensalidade-ativos/mensalidade-ativos.component';
+import { FichaFinanCopar2Component } from './components/ficha-finan-copar2/ficha-finan-copar2.component';
 import { MensalidadeAfastadosComponent } from './components/mensalidade-afastados/mensalidade-afastados.component';
 import { ParcelamentoAfastadosComponent } from './components/parcelamento-afastados/parcelamento-afastados.component';
 
@@ -23,7 +24,7 @@ const routes: Routes = [
   { path: 'regras', component: RegrasComponent },
   { path: 'mensalidade-aposentados', component: MensalidadeAposentadoComponent },
   { path: 'ffcs-aposentados', component: FichaFinanCopar1Component },
-  { path: 'ffcsii-aposentados', component: MensalidadeAposentadoComponent },
+  { path: 'ffcsii-aposentados', component: FichaFinanCopar2Component },
   { path: 'parcelamento-aposentados', component: MensalidadeAposentadoComponent },
   { path: 'drill-ativos', component: DrillAtivosComponent },
   { path: 'ffcs-ativos', component: CorreiosIAtivosComponent },

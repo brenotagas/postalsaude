@@ -20,6 +20,7 @@ import { CorreiosIAtivosComponent } from './components/correios-i-ativos/correio
 import { CorreiosIIAtivosComponent } from './components/correios-ii-ativos/correios-ii-ativos.component';
 import { DrillAtivosComponent } from './components/drill-ativos/drill-ativos.component';
 import { MensalidadeAtivosComponent } from './components/mensalidade-ativos/mensalidade-ativos.component';
+import { FichaFinanCopar2Component } from './components/ficha-finan-copar2/ficha-finan-copar2.component';
 import { DrillAfastadosComponent } from './components/drill-afastados/drill-afastados.component';
 import { MensalidadeAfastadosComponent } from './components/mensalidade-afastados/mensalidade-afastados.component';
 import { CorreiosIAfastadosComponent } from './components/correios-i-afastados/correios-i-afastados.component';
@@ -40,6 +41,7 @@ import { ParcelamentoAfastadosComponent } from './components/parcelamento-afasta
     CorreiosIIAtivosComponent,
     DrillAtivosComponent,
     MensalidadeAtivosComponent,
+    FichaFinanCopar2Component,
     DrillAfastadosComponent,
     MensalidadeAfastadosComponent,
     CorreiosIAfastadosComponent,
