@@ -10,6 +10,7 @@ import { DrillAtivosComponent } from './components/drill-ativos/drill-ativos.com
 import { CorreiosIAtivosComponent } from './components/correios-i-ativos/correios-i-ativos.component';
 import { CorreiosIIAtivosComponent } from './components/correios-ii-ativos/correios-ii-ativos.component';
 import { MensalidadeAtivosComponent } from './components/mensalidade-ativos/mensalidade-ativos.component';
+import { FichaFinanCopar2Component } from './components/ficha-finan-copar2/ficha-finan-copar2.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: 'regras', component: RegrasComponent },
   { path: 'mensalidade-aposentados', component: MensalidadeAposentadoComponent },
   { path: 'ffcs-aposentados', component: FichaFinanCopar1Component },
-  { path: 'ffcsii-aposentados', component: MensalidadeAposentadoComponent },
+  { path: 'ffcsii-aposentados', component: FichaFinanCopar2Component },
   { path: 'parcelamento-aposentados', component: MensalidadeAposentadoComponent },
   { path: 'drill-ativos', component: DrillAtivosComponent },
   { path: 'ffcs-ativos', component: CorreiosIAtivosComponent },

@@ -20,6 +20,7 @@ import { CorreiosIAtivosComponent } from './components/correios-i-ativos/correio
 import { CorreiosIIAtivosComponent } from './components/correios-ii-ativos/correios-ii-ativos.component';
 import { DrillAtivosComponent } from './components/drill-ativos/drill-ativos.component';
 import { MensalidadeAtivosComponent } from './components/mensalidade-ativos/mensalidade-ativos.component';
+import { FichaFinanCopar2Component } from './components/ficha-finan-copar2/ficha-finan-copar2.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MensalidadeAtivosComponent } from './components/mensalidade-ativos/mens
     CorreiosIAtivosComponent,
     CorreiosIIAtivosComponent,
     DrillAtivosComponent,
-    MensalidadeAtivosComponent
+    MensalidadeAtivosComponent,
+    FichaFinanCopar2Component
   ],
   imports: [
     BrowserModule,
