@@ -21,6 +21,11 @@ import { CorreiosIIAtivosComponent } from './components/correios-ii-ativos/corre
 import { DrillAtivosComponent } from './components/drill-ativos/drill-ativos.component';
 import { MensalidadeAtivosComponent } from './components/mensalidade-ativos/mensalidade-ativos.component';
 import { FichaFinanCopar2Component } from './components/ficha-finan-copar2/ficha-finan-copar2.component';
+import { DrillAfastadosComponent } from './components/drill-afastados/drill-afastados.component';
+import { MensalidadeAfastadosComponent } from './components/mensalidade-afastados/mensalidade-afastados.component';
+import { CorreiosIAfastadosComponent } from './components/correios-i-afastados/correios-i-afastados.component';
+import { CorreiosIiAfastadosComponent } from './components/correios-ii-afastados/correios-ii-afastados.component';
+import { ParcelamentoAfastadosComponent } from './components/parcelamento-afastados/parcelamento-afastados.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,12 @@ import { FichaFinanCopar2Component } from './components/ficha-finan-copar2/ficha
     CorreiosIIAtivosComponent,
     DrillAtivosComponent,
     MensalidadeAtivosComponent,
-    FichaFinanCopar2Component
+    FichaFinanCopar2Component,
+    DrillAfastadosComponent,
+    MensalidadeAfastadosComponent,
+    CorreiosIAfastadosComponent,
+    CorreiosIiAfastadosComponent,
+    ParcelamentoAfastadosComponent
   ],
   imports: [
     BrowserModule,
