@@ -61,93 +61,138 @@
   <br />
   <div class="container text-center" style="padding: 1%">
     <div class="card-columns row align-items-center justify-content-center" style="padding: 5px;">
+   
       <div class="col">
+      <a routerLink="/mensalidade-afastados"> 
         <div class="card-body" style="background-color:#004d71; color: white; height: 7rem;">
           <h5 class="card-title">Mensalidade</h5>
         </div>
-      </div>
-
-      <div class="col">
+      </a>
+    </div>
+    <div class="col">
+      <a routerLink="/parcelamento-afastados">
         <div class="card-body" style="background-color:#004d71; color: white; height: 7rem;">
           <h5 class="card-title">Parcelamento</h5>
         </div>
-      </div>
-
-      <div class="col">
-        <div class="card-body bg-danger" style="color: white; height: 7rem;">
-          <h5 class="card-title">Boleto em aberto</h5>
-          <p>R$ 00,00</p>
-        </div>
-      </div>
-
+      </a>
     </div>
-    <div class="card-columns row align-items-center justify-content-center" style="padding: 5px;">
 
-      <div class="col">
-        <div class="card-body" style="background-color:#004d71; color: white; height: 7rem;">
-          <h5 class="card-title">Ficha Financeira</h5>
-          <p>Plano Correios Saúde</p>
-        </div>
+    <div class="col">
+      <div class="card-body bg-danger" style="color: white; height: 7rem;">
+        <h5 class="card-title">Boleto em aberto</h5>
+        <p>R$ 00,00</p>
       </div>
-
-      <div class="col">
-        <div class="card-body" style="background-color:#004d71; color: white; height: 7rem;">
-          <h5 class="card-title">Ficha Financeira</h5>
-          <p>Plano Correios Saúde II</p>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card-body bg-danger" style="color: white; height: 7rem;">
-          <h5 class="card-title">Inadimplência</h5>
-          <p>R$ 00,00</p>
-        </div>
-      </div>
-
     </div>
+
   </div>
+  <div class="card-columns row align-items-center justify-content-center" style="padding: 5px;">
 
-<!-- -------------------------------------------------------------REGRAS -->
+    <div class="col">
+        <a routerLink="/ffcs-afastados">
+      <div class="card-body" style="background-color:#004d71; color: white; height: 7rem;">
+        <h5 class="card-title">Ficha Financeira</h5>
+        <p>Plano Correios Saúde</p>
+      </div>
+      </a>
+    </div>
 
-  <br />
-  <div class="card shadow">
-    <div class="card-body">
-      <div class="row">
+    <div class="col">
+        <a routerLink="/ffcsii-afastados">
+      <div class="card-body" style="background-color:#004d71; color: white; height: 7rem;">
+        <h5 class="card-title">Ficha Financeira</h5>
+        <p>Plano Correios Saúde II</p>
+      </div>
+    </a>
+    </div>
+
+    <div class="col">
+      <div class="card-body bg-danger" style="color: white; height: 7rem;">
+        <h5 class="card-title">Inadimplência</h5>
+        <p>R$ 00,00</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- --------------------------------------REGRAS -->
+
+<br />
+<div class="card shadow">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12">
+        <h2><strong>Regras de Cobrança</strong></h2>
+        <br>
+        <h6><strong>Mensalidade</strong></h6>
+        <label>O cálculo da mensalidade observa as seguintes variáveis: faixa de remuneração/rendimentos e os
+          limites de
+          variação de mensalidade por faixa etária do beneficiário titular e grupo familiar, caso exista.</label>
+      </div>
+      <div class="col-12">
+        <p></p>
+      </div>
+      <div class="col-12">
+        <h4><strong>Coparticipação dos Planos</strong></h4>
+        <br>
+        <h6><strong>Plano Correios Saúde</strong></h6>
+        <label>a) Para despesa relativa à consulta, exame, procedimentos, tratamento ambulatorial, internação em
+          acomodação coletiva e/ou UTI, Home Care, Tratamento Fora de Domicílio (TFD) e tratamento odontológico,
+          exceto
+          prótese odontológica:</label>
         <div class="col-12">
-          <h2><strong>Regras de Cobrança</strong></h2>
-          <br>
-          <h6><strong>Mensalidade</strong></h6>
-          <label>O cálculo da mensalidade observa as seguintes variáveis: faixa de remuneração/rendimentos e os
-            limites de
-            variação de mensalidade por faixa etária do beneficiário titular e grupo familiar, caso exista.</label>
+          <table class="table-bordered">
+            <thead style="background-color:#004d71; color: white">
+              <tr class="text-center">
+                <th scope="col">Percentual</th>
+                <th style="width: 20%" scope="col">Referência Salarial</th>
+                <th scope="col">Teto Limite para desconto de empregado ativo</th>
+                <th scope="col">Teto limite para desconto de Aposentados/Aposentados por Invalidez </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">10%</td>
+                <td>NM 01 a NM 16</td>
+                <td class="text-center" rowspan="4">2 (duas vezes o salário base)</td>
+                <td class="text-center" rowspan="4">3 (três) vezes o salário (somatório Postalis, INSS)</td>
+              </tr>
+              <tr>
+                <td class="text-center">15%</td>
+                <td>NM 17 a NM 48</td>
+              </tr>
+              <tr>
+                <td class="text-center">20%</td>
+                <td>MN 49 a MN 90</td>
+              </tr>
+              <tr>
+                <td class="text-center">20%</td>
+                <td>NS 01 a NS 60</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <br>
+        <label>b) Para despesa relativa à prótese odontológica e opção do beneficiário em apartamento (quando
+          permitida):</label>
         <div class="col-12">
-          <p></p>
-        </div>
-        <div class="col-12">
-          <h4><strong>Coparticipação dos Planos</strong></h4>
-          <br>
-          <h6><strong>Plano Correios Saúde</strong></h6>
-          <label>a) Para despesa relativa à consulta, exame, procedimentos, tratamento ambulatorial, internação em
-            acomodação coletiva e/ou UTI, Home Care, Tratamento Fora de Domicílio (TFD) e tratamento odontológico,
-            exceto
-            prótese odontológica:</label>
           <div class="col-12">
-            <table class="table-bordered" >
+            <table class="table-bordered">
               <thead style="background-color:#004d71; color: white">
                 <tr class="text-center">
                   <th scope="col">Percentual</th>
                   <th style="width: 20%" scope="col">Referência Salarial</th>
-                  <th scope="col">Teto Limite para desconto de empregado ativo</th>
-                  <th scope="col">Teto limite para desconto de Aposentados/Aposentados por Invalidez </th>
+                  <th scope="col">Teto Limite para desconto de todos os titulares</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td class="text-center">10%</td>
-                  <td >NM 01 a NM 16</td>
-                  <td class="text-center" rowspan="4">2 (duas vezes o salário base)</td>
-                  <td class="text-center" rowspan="4">3 (três) vezes o salário (somatório Postalis, INSS)</td>
+                  <td>NM 01 a NM 16</td>
+                  <td class="text-center" rowspan="4">4 (quarto) vezes salário base para ativos e salário de
+                    enquadramento para
+                    aposentados.
+                  </td>
                 </tr>
                 <tr>
                   <td class="text-center">15%</td>
@@ -164,58 +209,22 @@
               </tbody>
             </table>
           </div>
-          <br>
-          <label>b) Para despesa relativa à prótese odontológica e opção do beneficiário em apartamento (quando
-            permitida):</label>
-          <div class="col-12">
-            <div class="col-12">
-              <table class="table-bordered">
-                <thead style="background-color:#004d71; color: white">
-                  <tr class="text-center">
-                    <th scope="col">Percentual</th>
-                    <th style="width: 20%" scope="col">Referência Salarial</th>
-                    <th scope="col">Teto Limite para desconto de todos os titulares</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-center">10%</td>
-                    <td>NM 01 a NM 16</td>
-                    <td class="text-center" rowspan="4">4 (quarto) vezes salário base para ativos e salário de enquadramento para
-                      aposentados.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">15%</td>
-                    <td>NM 17 a NM 48</td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">20%</td>
-                    <td>MN 49 a MN 90</td>
-                  </tr>
-                  <tr>
-                    <td class="text-center">20%</td>
-                    <td>NS 01 a NS 60</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <br>
-          <h6><strong>Plano Correios Saúde II</strong></h6>
-          <label>Para os beneficiários deste plano, titulares e seus dependentes, os atendimentos realizados a partir
-            de 18
-            de abril de 2018 são coparticipados conforme as regras já vigentes do CorreiosSaúde II, ou seja, haverá
-            coparticipação de 30% sobre os procedimentos realizados, exceto internação, tendo como teto máximo para
-            compartilhamento duas vezes o valor da remuneração recebida antes do fato gerador da licença. O desconto
-            mensal
-            decorrente desta despesa será limitado a até 5% da remuneração líquida do titular, fora margem consignável
-            (Lei
-            nº 10.820/2003, regulamentada pelo Decreto nº 4.840/2003, conforme decisão do TST, sendo a cobrança em
-            sucessivas parcelas até a sua liquidação.</label>
         </div>
+        <br>
+        <h6><strong>Plano Correios Saúde II</strong></h6>
+        <label>Para os beneficiários deste plano, titulares e seus dependentes, os atendimentos realizados a partir
+          de 18
+          de abril de 2018 são coparticipados conforme as regras já vigentes do CorreiosSaúde II, ou seja, haverá
+          coparticipação de 30% sobre os procedimentos realizados, exceto internação, tendo como teto máximo para
+          compartilhamento duas vezes o valor da remuneração recebida antes do fato gerador da licença. O desconto
+          mensal
+          decorrente desta despesa será limitado a até 5% da remuneração líquida do titular, fora margem consignável
+          (Lei
+          nº 10.820/2003, regulamentada pelo Decreto nº 4.840/2003, conforme decisão do TST, sendo a cobrança em
+          sucessivas parcelas até a sua liquidação.</label>
       </div>
     </div>
   </div>
+</div>
 </div>
 <app-footer></app-footer>
