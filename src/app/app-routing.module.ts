@@ -16,6 +16,7 @@ import { MensalidadeAtivosComponent } from './components/mensalidade-ativos/mens
 import { FichaFinanCopar2Component } from './components/ficha-finan-copar2/ficha-finan-copar2.component';
 import { MensalidadeAfastadosComponent } from './components/mensalidade-afastados/mensalidade-afastados.component';
 import { ParcelamentoAfastadosComponent } from './components/parcelamento-afastados/parcelamento-afastados.component';
+import { ParcelamentoAposentadosComponent } from './components/parcelamento-aposentados/parcelamento-aposentados.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'mensalidade-aposentados', component: MensalidadeAposentadoComponent },
   { path: 'ffcs-aposentados', component: FichaFinanCopar1Component },
   { path: 'ffcsii-aposentados', component: FichaFinanCopar2Component },
-  { path: 'parcelamento-aposentados', component: MensalidadeAposentadoComponent },
+  { path: 'parcelamento-aposentados', component: ParcelamentoAposentadosComponent },
   { path: 'drill-ativos', component: DrillAtivosComponent },
   { path: 'ffcs-ativos', component: CorreiosIAtivosComponent },
   { path: 'ffcsii-ativos', component: CorreiosIIAtivosComponent },
