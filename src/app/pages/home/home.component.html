@@ -1,4 +1,51 @@
 <app-header></app-header>
-<app-drill></app-drill>
-<app-regras></app-regras>
+<br />
+<br />
+<br />
+<br />
+<div class="container d-flex justify-content-center">
+    <div class="row ">
+        <div class="card shadow col s6" style="background-color: white; padding: 2.5px">
+            <div class="card-body text-center" style="background-color: white">
+                <div>
+                    <h2 class="card-title" style="line-height: 2">Compartilhamento Correios</h2>
+                    <h5 style="line-height: 2">Consultar beneficiário</h5>
+                </div>
+                <br />                    
+                <div style="line-height: 3">
+                    <p style="font-weight: 400">Digite a Matrícula Funcional do Beneficiário a ser consultado</p>
+                </div>
+                <div class="card-body" >
+                    <div class="form-inline align-items-center">
+                        <div class="col-auto">
+                            <input class="js-matricula" type="text" maxlength="8" style="width: 15rem"
+                                placeholder="Informar a Matrícula">
+                        </div>
+                        <div class="col-auto">
+                            <a style="background-color:#004d71; color: aliceblue; width: 7rem;" href="#"
+                                class="btn btn-lg active" role="button" aria-pressed="true">Entrar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.js-matricula').mask("99999999");
+        });
+    </script>
+</div>
+<!-- /.container -->
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 <app-footer></app-footer>
