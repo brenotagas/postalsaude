@@ -1,29 +1,12 @@
 <app-header></app-header>
 <div class="" style="font-size: 14px; width: 100%;  margin: 0 auto;  padding: 0 30px;">
-  <div class="card shadow">
-    <div class="card-header text-center" style="font-weight: bold">
-      FICHA FINANCEIRA CORREIOS SAÚDE II
-    </div>
-    <div class="card-body">
-      <table class="table table-striped">
-        <tbody>
-          <tr>
-            <td style="width: 5%; font-weight: bold;">BENEFICIÁRIO:</td>
-            <td style="width: 30%">REINALDO RODRIGUES MIRANDA</td>
-            <td style="width: 5%; font-weight: bold;">MATRÍCULA:</td>
-            <td style="width: 30%">85626210</td>
-            <td style="width: 30%"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <app-cabecalho></app-cabecalho>
   <br />
   <!-- COPAR II  -->
   <div class="card text-center shadow">
     <div class="card-body">
-      <table class="table table-striped table-hover table-sm">
-        <thead style="background-color:#004d71; color: white">
+      <table class="table table-bordered table-sm text-center cabecalhoDeTabelas">
+        <thead >
           <tr>
             <th style="width: 13px" scope="col" rowspan="2">Competência</th>
             <th scope="col" rowspan="2">Remuneração Bruta</th>
@@ -41,7 +24,7 @@
             <th scope="col" rowspan="2">Residuo Posterior</th>
           </tr>
           <tr>
-            <th scope="col">Desconto em folha</th>
+            <th scope="col">Folha de Pagamento</th>
             <th scope="col">Boleto</th>
             <th scope="col">Parcelamento</th>
           </tr>
@@ -49,236 +32,249 @@
         <tbody>
           <tr>
             <td>OUT/18</td>
-            <td>R$2.632,07</td>
-            <td>R$2.368,86</td>
-            <td>R$2.368,81</td>
-            <td>R$118,44</td>
+            <td>2.632,07</td>
+            <td>2.368,86</td>
+            <td>2.368,81</td>
+            <td>118,44</td>
             <td>7034</td>
-            <td>DESPESA MÉDICA AUTOMÁTICA CORREIOS SAÚDE - TST</td>
-            <td>R$209,15</td>
-            <td>R$62,75</td>
-            <td>R$ - </td>
-            <td>R$62,75</td>
+            <td>Despesa Médica Automática Correios Saúde - TST</td>
+            <td>209,15</td>
+            <td>62,75</td>
+            <td> - </td>
+            <td>62,75</td>
             <td></td>
-            <td>R$62,74</td>
+            <td>62,74</td>
             <td></td>
             <td> Quitado </td>
-            <td>R$ - </td>
+            <td> - </td>
           </tr>
           <tr>
             <td>NOV/18</td>
-            <td>R$2.632,07</td>
-            <td>R$2.368,86</td>
-            <td>R$2.368,81</td>
-            <td>R$118,44</td>
+            <td>2.632,07</td>
+            <td>2.368,86</td>
+            <td>2.368,81</td>
+            <td>118,44</td>
             <td>7034</td>
-            <td>DESPESA MÉDICA AUTOMÁTICA CORREIOS SAÚDE - TST</td>
-            <td>R$31,90</td>
-            <td>R$9,57</td>
-            <td>R$ - </td>
-            <td>R$9,57</td>
+            <td>Despesa Médica Automática Correios Saúde - TST</td>
+            <td>31,90</td>
+            <td>9,57</td>
+            <td> - </td>
+            <td>9,57</td>
             <td></td>
             <td></td>
-            <td>R$9,57</td>
+            <td>9,57</td>
             <td> Quitado </td>
-            <td>R$ - </td>
+            <td> - </td>
           </tr>
           <tr>
             <td>DEZ/18</td>
-            <td>R$2.632,07</td>
-            <td>R$2.368,86</td>
-            <td>R$2.368,81</td>
-            <td>R$118,44</td>
+            <td>2.632,07</td>
+            <td>2.368,86</td>
+            <td>2.368,81</td>
+            <td>118,44</td>
             <td>7034</td>
-            <td>DESPESA MÉDICA AUTOMÁTICA CORREIOS SAÚDE - TST</td>
-            <td>R$264,62</td>
-            <td>R$79,38</td>
-            <td>R$ - </td>
-            <td>R$79,38</td>
+            <td>Despesa Médica Automática Correios Saúde - TST</td>
+            <td>264,62</td>
+            <td>79,38</td>
+            <td> - </td>
+            <td>79,38</td>
             <td></td>
             <td></td>
-            <td>R$79,38</td>
+            <td>79,38</td>
             <td> Quitado </td>
-            <td>R$ - </td>
+            <td> - </td>
           </tr>
           <tr>
             <td>FEV/19</td>
-            <td>R$2.632,07</td>
-            <td>R$2.368,86</td>
-            <td>R$2.368,81</td>
-            <td>R$118,44</td>
+            <td>2.632,07</td>
+            <td>2.368,86</td>
+            <td>2.368,81</td>
+            <td>118,44</td>
             <td>7034</td>
-            <td>DESPESA MÉDICA AUTOMÁTICA CORREIOS SAÚDE - TST</td>
-            <td>R$1.695,98</td>
-            <td>R$508,79</td>
-            <td>R$ - </td>
-            <td>R$508,79</td>
+            <td>Despesa Médica Automática Correios Saúde - TST</td>
+            <td>1.695,98</td>
+            <td>508,79</td>
+            <td> - </td>
+            <td>508,79</td>
             <td></td>
             <td></td>
-            <td>R$118,07</td>
+            <td>118,07</td>
             <td> Quitado </td>
-            <td>R$390,72</td>
+            <td>390,72</td>
           </tr>
           <tr>
             <td>MAR/19</td>
-            <td>R$2.632,07</td>
-            <td>R$2.368,86</td>
-            <td>R$2.368,81</td>
-            <td>R$118,44</td>
+            <td>2.632,07</td>
+            <td>2.368,86</td>
+            <td>2.368,81</td>
+            <td>118,44</td>
             <td>7034</td>
-            <td>DESPESA MÉDICA AUTOMÁTICA CORREIOS SAÚDE - TST</td>
-            <td>R$ - </td>
-            <td>R$ - </td>
-            <td>R$390,72</td>
-            <td>R$390,72</td>
+            <td>Despesa Médica Automática Correios Saúde - TST</td>
+            <td> - </td>
+            <td> - </td>
+            <td>390,72</td>
+            <td>390,72</td>
             <td></td>
-            <td>R$118,07</td>
+            <td>118,07</td>
             <td></td>
             <td> Em aberto </td>
-            <td>R$272,65</td>
+            <td>272,65</td>
           </tr>
           <tr>
             <td>ABR/19</td>
-            <td>R$2.632,07</td>
-            <td>R$2.368,86</td>
-            <td>R$2.368,81</td>
-            <td>R$118,44</td>
+            <td>2.632,07</td>
+            <td>2.368,86</td>
+            <td>2.368,81</td>
+            <td>118,44</td>
             <td>7034</td>
-            <td>DESPESA MÉDICA AUTOMÁTICA CORREIOS SAÚDE - TST</td>
-            <td>R$ - </td>
-            <td>R$ - </td>
-            <td>R$272,65</td>
-            <td>R$272,65</td>
+            <td>Despesa Médica Automática Correios Saúde - TST</td>
+            <td> - </td>
+            <td> - </td>
+            <td>272,65</td>
+            <td>272,65</td>
             <td></td>
-            <td>R$118,07</td>
+            <td>118,07</td>
             <td></td>
             <td> Em aberto </td>
-            <td>R$154,58</td>
+            <td>154,58</td>
           </tr>
           <tr>
             <td>MAI/19</td>
-            <td>R$2.632,07</td>
-            <td>R$2.368,86</td>
-            <td>R$2.368,81</td>
-            <td>R$118,44</td>
+            <td>2.632,07</td>
+            <td>2.368,86</td>
+            <td>2.368,81</td>
+            <td>118,44</td>
             <td>7034</td>
-            <td>DESPESA MÉDICA AUTOMÁTICA CORREIOS SAÚDE - TST</td>
-            <td>R$ - </td>
-            <td>R$ - </td>
-            <td>R$154,58</td>
-            <td>R$154,58</td>
+            <td>Despesa Médica Automática Correios Saúde - TST</td>
+            <td> - </td>
+            <td> - </td>
+            <td>154,58</td>
+            <td>154,58</td>
             <td></td>
-            <td>R$118,07</td>
+            <td>118,07</td>
             <td></td>
             <td> Em aberto </td>
-            <td>R$36,51</td>
+            <td>36,51</td>
           </tr>
           <tr>
             <td>JUN/19</td>
-            <td>R$2.632,07</td>
-            <td>R$2.368,86</td>
-            <td>R$2.368,81</td>
-            <td>R$118,44</td>
+            <td>2.632,07</td>
+            <td>2.368,86</td>
+            <td>2.368,81</td>
+            <td>118,44</td>
             <td>7034</td>
-            <td>DESPESA MÉDICA AUTOMÁTICA CORREIOS SAÚDE - TST</td>
-            <td>R$ - </td>
-            <td>R$ - </td>
-            <td>R$36,51</td>
-            <td>R$36,51</td>
+            <td>Despesa Médica Automática Correios Saúde - TST</td>
+            <td> - </td>
+            <td> - </td>
+            <td>36,51</td>
+            <td>36,51</td>
             <td></td>
-            <td>R$36,51</td>
+            <td>36,51</td>
             <td></td>
             <td> Em aberto </td>
-            <td>R$ - </td>
+            <td> - </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
   <br />
-  <div class="card shadow">
-    <div class="card-body">
-
-      <p>Informamos que os detalhamentos da cobrança estão nos extratos de utilização disponíveis no site da
-        Postal Saúde, sendo necessário realizar o cadastro, registrar login e senha, através do
-        link: <a href="http://portal.postalsaudeservicos.com.br/portalpostal/Home/" target="_blank"
+  <p class="text-center">Informamos que os detalhamentos da cobrança estão nos extratos de utilização disponíveis no site da
+      Postal Saúde, sendo necessário realizar o cadastro, registrar login e senha, através do
+      link: <a href="http://portal.postalsaudeservicos.com.br/portalpostal/Home/" target="_blank"
           rel="noopener noreferrer">http://portal.postalsaudeservicos.com.br/portalpostal/Home/</a>
-      </p>
-      <p><strong>LEGENDA:</strong>
-      </p>
-      <p><strong>Competência:</strong> corresponde ao mês do compatilhamento das despesas médicas e
-        odontológias
-      </p>
-      <p><strong>Remuneração bruta:</strong>
-      </p>
-      <p><strong>a) Empregado Ativo:</strong> são as rubricas que sofrem a incidência de IRPF não sendo
-        consideradas as rubricas
-        relacionadas ao pagamento de férias e 13º salários
-      </p>
-      <p><strong>b) Empregado Aposentado:</strong> são considerados o benefício recebido do INSS, mais o
-        coplemtno da União, caso
-        tenha, mais a suplementação do Postalis, planos CD e BD
-      </p>
-      <p><strong>c) Empregado Afastado:</strong> é considerado a remuneração atualizada que incide IR, com
-        exceção do 13º salário
-        e férias
-      </p>
-      <p><strong> Teto:</strong> é o valor máximo sobre o qual será calculado o valor da coparticipação nos custos com
-        a utilização
-        da Assistência Médico-Hospitalar ou Odontológica na Rede Credenciada, a ser cobrado do beneficiário
-        sobre a remuneração bruta.
-      </p>
-      <p><strong>a) Beneficiário Ativo:</strong> duas vezes o salário base.
-      </p>
-      <p><strong>b) Beneficiário Aposentado:</strong> três vezes o salário base.
-      </p>
-      <p><strong>c) Beneficiário Afastado:</strong> duas vezes o salário base.
-      </p>
-      <p><strong>Remuneração Liquída:</strong> remuneração bruta após os descontos
-      </p>
-      <p><strong>Margem:</strong> valor máximo de desconto mensal, incidente sobre a remuneração líquida do
-        empregado, em caso de
-        utilização
-      </p>
-      <p><strong>Rubrica:</strong> número descritivo da identificação do desconto da coparticipação do
-        beneficiário
-      </p>
-      <p><strong>Descrição:</strong> especificação da rubrica
-      </p>
-      <p><strong>Valor da Depesa:</strong> somatório do valor total de todos os eventos pago ao prestador por
-        cada guia
-      </p>
-      <p><strong>Valor da Coparticipação:</strong> identifica o valor compartilhado
-      </p>
-      <p><strong>Resíduo Anterior:</strong> valores acumulados a serem descontados
-      </p>
-      <p><strong>Saldo Devedor:</strong> valores acumulados ainda não pagos
-      </p>
-      <p><strong>Forma de Cobrança:</strong> identifica a forma de pagamento
-      </p>
-      <p><strong>a) Folha de Pagamento:</strong> beneficiários ativos
-      </p>
-      <p><strong>b) Boleto:</strong> Beneficiários aposentados e afastados
-      </p>
-      <p><strong>c) Parcelamento:</strong> É a negociação de boletos de mensalidade e despeas
-        médico-hospitalar e /ou odontológica
-        inadimplentes, respeitando as regras vigentes.
-      </p>
-      <p><strong> Situação:</strong> É o status de pagamento
-      </p>
-      <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
-        pagas até a data de
-        vencimento
-      </p>
-      <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas
-      </p>
-      <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
-        pagas, passíveis de
-        parcelamento.
-      </p>
-      <p><strong>d) Devolução:</strong> É o ajuste realizado na ficha financeira
-      </p>
-      <p><strong>Resíduo Posterior:</strong> Valor residual após a realização do pagamento</p>
+  </p>
+  <div class="card shadow">
+    <div class="accordion" id="accordionRegra">
+      <div class="card">
+        <div class="row card-header" id="headingOne">
+          <button class="btn col-12" type="button" data-toggle="collapse" data-target="#collapseRegra"
+            aria-expanded="false" aria-controls="collapseRegra">
+            <div class="col">
+              <h4><strong>Legenda</strong></h4>
+            </div>
+            <div class="col">(Clique aqui para saber mais)</div>
+          </button>
+        </div>
+  
+        <div class="collapse" id="collapseRegra">
+          <div class="card card-body">
+              <p><strong>Competência:</strong> corresponde ao mês do compatilhamento das despesas médicas e
+                odontológias
+            </p>
+            <p><strong>Remuneração bruta:</strong>
+            </p>
+            <p><strong>a) Empregado Ativo:</strong> são as rubricas que sofrem a incidência de IRPF não sendo
+                consideradas as rubricas
+                relacionadas ao pagamento de férias e 13º salários
+            </p>
+            <p><strong>b) Empregado Aposentado:</strong> são considerados o benefício recebido do INSS, mais o
+                coplemtno da União, caso
+                tenha, mais a suplementação do Postalis, planos CD e BD
+            </p>
+            <p><strong>c) Empregado Afastado:</strong> é considerado a remuneração atualizada que incide IR, com
+                exceção do 13º salário
+                e férias
+              </p>
+              <p><strong>  Teto:</strong> é o valor máximo sobre o qual será calculado o valor da coparticipação nos custos com
+                a utilização
+                da Assistência Médico-Hospitalar ou Odontológica na Rede Credenciada, a ser cobrado do beneficiário
+                sobre a remuneração bruta.
+            </p>
+            <p><strong>a) Beneficiário Ativo:</strong> duas vezes o salário base.
+            </p>
+            <p><strong>b) Beneficiário Aposentado:</strong> três vezes o salário base.
+            </p>
+            <p><strong>c) Beneficiário Afastado:</strong> duas vezes o salário base.
+            </p>
+            <p><strong>Remuneração Liquída:</strong> remuneração bruta após os descontos
+            </p>
+            <p><strong>Margem:</strong> valor máximo de desconto mensal, incidente sobre a remuneração líquida do
+                empregado, em caso de
+                utilização
+            </p>
+            <p><strong>Rubrica:</strong> número descritivo da identificação do desconto da coparticipação do
+                beneficiário
+            </p>
+            <p><strong>Descrição:</strong> especificação da rubrica
+            </p>
+            <p><strong>Valor da Depesa:</strong> somatório do valor total de todos os eventos pago ao prestador por
+                cada guia
+            </p>
+            <p><strong>Valor da Coparticipação:</strong> identifica o valor compartilhado
+            </p>
+            <p><strong>Resíduo Anterior:</strong> valores acumulados a serem descontados
+            </p>
+            <p><strong>Saldo Devedor:</strong> valores acumulados ainda não pagos
+            </p>
+            <p><strong>Forma de Cobrança:</strong> identifica a forma de pagamento
+            </p>
+            <p><strong>a) Folha de Pagamento:</strong> beneficiários ativos
+            </p>
+            <p><strong>b) Boleto:</strong> Beneficiários aposentados e afastados
+            </p>
+            <p><strong>c) Parcelamento:</strong> É a negociação de boletos de mensalidade e despeas
+                médico-hospitalar e /ou odontológica
+                inadimplentes, respeitando as regras vigentes.
+              </p>
+              <p><strong> Situação:</strong> É o status de pagamento
+            </p>
+            <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
+                pagas até a data de
+                vencimento
+            </p>
+            <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas
+            </p>
+            <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
+                pagas, passíveis de
+                parcelamento.
+            </p>
+            <p><strong>d) Devolução:</strong> É o ajuste realizado na ficha financeira
+            </p>
+            <p><strong>Resíduo Posterior:</strong> Valor residual após a realização do pagamento</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
