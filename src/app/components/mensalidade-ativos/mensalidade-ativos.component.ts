@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MensalidadeAtivosComponent implements OnInit {
 
-  constructor() { }
+  titulo = 'FICHA FINANCEIRA MENSALIDADE';
+
+  constructor() {
+   
+   }
 
   ngOnInit() {
+  }
+
+  getTitulo(){
+    return this.titulo;
   }
 
 }

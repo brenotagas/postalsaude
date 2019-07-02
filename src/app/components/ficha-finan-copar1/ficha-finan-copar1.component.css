@@ -1,0 +1,29 @@
+.cabecalhoDeTabelas{
+    border: 1px;
+}
+
+.cabecalhoDeTabelas th{
+    vertical-align: middle;
+    background-color: #004d71;
+    color:#FFFFFF;
+}
+
+.cabecalhoDeTabelas tr td{
+    vertical-align: middle;
+}
+
+.inadimplente{
+    color: brown;
+}
+
+.devolucao{
+    color: #004d71;
+}
+
+.campoLeft{
+    text-align: left;
+}
+
+.conteudo{
+    font-size: 14px; margin: 0 auto;  padding: 0 30px;
+}

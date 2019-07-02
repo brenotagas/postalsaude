@@ -27,6 +27,7 @@ import { CorreiosIAfastadosComponent } from './components/correios-i-afastados/c
 import { CorreiosIiAfastadosComponent } from './components/correios-ii-afastados/correios-ii-afastados.component';
 import { ParcelamentoAfastadosComponent } from './components/parcelamento-afastados/parcelamento-afastados.component';
 import { ParcelamentoAposentadosComponent } from './components/parcelamento-aposentados/parcelamento-aposentados.component';
+import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ParcelamentoAposentadosComponent } from './components/parcelamento-apos
     CorreiosIAfastadosComponent,
     CorreiosIiAfastadosComponent,
     ParcelamentoAfastadosComponent,
-    ParcelamentoAposentadosComponent
+    ParcelamentoAposentadosComponent,
+    CabecalhoComponent
   ],
   imports: [
     BrowserModule,
