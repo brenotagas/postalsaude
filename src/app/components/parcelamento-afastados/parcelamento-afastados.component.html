@@ -1,139 +1,134 @@
 <app-header></app-header>
 <div class="" style="font-size: 14px; width: 100%;  margin: 0 auto;  padding: 0 30px;">
-    <div class="card shadow">
-        <div class="card-header text-center" style="font-weight: bold">
-            FICHA FINANCEIRA PARCELAMENTO
-        </div>
-        <div class="card-body">
-            <table class="table table-striped"> 
-                <tbody>
-                    <tr>
-                        <td style="width: 5%; font-weight: bold;">BENEFICIÁRIO:</td>
-                        <td style="width: 30%">VALERIA MOREIRA DO FORTE JATOB</td>
-                        <td style="width: 5%; font-weight: bold;">MATRÍCULA:</td>
-                        <td style="width: 30%">80860290</td>
-                        <td style="width: 30%"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <app-cabecalho></app-cabecalho>
     <br />
-    <div class="card text-center shadow">
-        <div class="card-body">
-            <!-- COPAR I   -->
-            <table class="table-hover table-sm" border="1px">
-                <thead style="background-color:#004d71; color: white">
+    <div class="card shadow">
+        <div class="card-body text-center align-items-center">
+            <table class="table table-bordered table-sm text-center cabecalhoDeTabelas">
+                <thead>
                     <tr>
                         <th style="width: 13px" scope="col" rowspan="2">Data da Solicitação</th>
-                        <th style="width: 13px" scope="col" rowspan="2">Valor da Dívida</th>
+                        <th scope="col" rowspan="2">Valor da Dívida</th>
                         <th scope="col" rowspan="2">Valor Corrigidoo</th>
                         <th style="width: 13px" scope="col" rowspan="2">Quantidade de parcelas</th>
                         <th scope="col" rowspan="2">Data do vencimento</th>
                         <th scope="col" rowspan="2">Valor da parcela</th>
                         <th scope="col" rowspan="2">Data do pagamento</th>
-                        <th scope="col" rowspan="2">Situação</th>                       
-                    </tr>                   
+                        <th scope="col" rowspan="2">Situação</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td rowspan="6" >03/06/2015</td>
-                        <td  rowspan="6">R$5260,00</td>
-                        <td  rowspan="6">R$5280,00</td>
+                        <td rowspan="6">03/06/2015</td>
+                        <td rowspan="6">5.260,00</td>
+                        <td rowspan="6">5.280,00</td>
                         <td>1 de 6</td>
                         <td>03/07/2015</td>
-                        <td>R$880,85 </td>
+                        <td>880,85 </td>
                         <td>03/07/2015</td>
-                        <td>Quitado</td>                       
+                        <td>Quitado</td>
                     </tr>
                     <tr>
-                        
+
                         <td>2 de 6</td>
                         <td>03/08/2015</td>
-                        <td>R$880,85 </td>
+                        <td>880,85 </td>
                         <td>03/08/2015</td>
-                        <td>Quitado</td>                       
+                        <td>Quitado</td>
                     </tr>
                     <tr>
-                        
+
                         <td>3 de 6</td>
                         <td>03/09/2015</td>
-                        <td>R$880,85 </td>
+                        <td>880,85 </td>
                         <td>03/09/2015</td>
-                        <td>Quitado</td>                       
+                        <td>Quitado</td>
                     </tr>
                     <tr>
-                        
+
                         <td>4 de 6</td>
                         <td>03/10/2015</td>
-                        <td>R$880,85 </td>
+                        <td>880,85 </td>
                         <td>03/10/2015</td>
-                        <td>Quitado</td>                       
+                        <td>Quitado</td>
                     </tr>
                     <tr>
-                        
+
                         <td>5 de 6</td>
                         <td>03/11/2015</td>
-                        <td>R$880,85 </td>
+                        <td>880,85 </td>
                         <td>03/11/2015</td>
-                        <td>Quitado</td>                       
+                        <td>Quitado</td>
                     </tr>
                     <tr>
-                       
+
                         <td>6 de 6</td>
                         <td>03/12/2015</td>
-                        <td>R$880,85 </td>
+                        <td>880,85 </td>
                         <td>03/12/2015</td>
-                        <td>Quitado</td>                       
+                        <td>Quitado</td>
                     </tr>
-                   
+
                 </tbody>
             </table>
         </div>
     </div>
     <br />
     <div class="card shadow">
-        <div class="card-body">
-           
-            <p><strong>LEGENDA:</strong></p>
-            <p><strong> Data da solicitação:</strong> data a execusão do parcelamento
-
-            </p>
-            <p><strong>Valor da dívida: </strong> valor das boletos inadimplentes sem encargos financeiros
-
-            </p>
-            <p><strong>Valor corrigido: </strong>valor das boletos inadimplentes com encargos financeiros
-
-            </p>
-            <p><strong>Quantidade de parcelas: </strong> parcelas a serem pagas conforme o termo de Confisão de Dívida
-
-            </p>
-            <p><strong>Data do vencimento:</strong>  Data em que a parcela deverá ser paga
-
-            </p>
-            <p><strong>Valor da parcela:</strong>  Divisão do valor da dívida conforma quantidade de parcelas
-
-            </p>
-            <p><strong>Data do pagamento: </strong> Data do pagamento da parcela
-
-            </p>
-    
-            <p><strong>Situação:</strong> É o status de pagamento
-            </p>
-            <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
-                pagas até a data de
-                vencimento
-            </p>
-            <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas
-            </p>
-            <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
-                pagas, passíveis
-                de parcelamento.
-            </p>
-            <p><strong>d) Devolução:</strong> É o ajuste realizado na ficha financeira
-            </p>
+            <div class="accordion" id="accordionRegra">
+              <div class="card">
+                <div class="row card-header" id="headingOne">
+                  <button class="btn col-12" type="button" data-toggle="collapse" data-target="#collapseRegra"
+                    aria-expanded="false" aria-controls="collapseRegra">
+                    <div class="col">
+                      <h4><strong>Legenda</strong></h4>
+                    </div>
+                    <div class="col">(Clique aqui para saber mais)</div>
+                  </button>
+                </div>
           
-        </div>
-    </div>
-  </div>
-  <app-footer></app-footer>
+                <div class="collapse" id="collapseRegra">
+                  <div class="card card-body">
+                    <p><strong> Data da solicitação:</strong> data a execusão do parcelamento
+          
+                    </p>
+                    <p><strong>Valor da dívida: </strong> valor das boletos inadimplentes sem encargos financeiros
+          
+                    </p>
+                    <p><strong>Valor corrigido: </strong>valor das boletos inadimplentes com encargos financeiros
+          
+                    </p>
+                    <p><strong>Quantidade de parcelas: </strong> parcelas a serem pagas conforme o termo de Confisão de Dívida
+          
+                    </p>
+                    <p><strong>Data do vencimento:</strong> Data em que a parcela deverá ser paga
+          
+                    </p>
+                    <p><strong>Valor da parcela:</strong> Divisão do valor da dívida conforma quantidade de parcelas
+          
+                    </p>
+                    <p><strong>Data do pagamento: </strong> Data do pagamento da parcela
+          
+                    </p>
+          
+                    <p><strong>Situação:</strong> É o status de pagamento
+                    </p>
+                    <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
+                      pagas até a data de
+                      vencimento
+                    </p>
+                    <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas
+                    </p>
+                    <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
+                      pagas, passíveis
+                      de parcelamento.
+                    </p>
+                    <p><strong>d) Devolução:</strong> É o ajuste realizado na ficha financeira
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+<app-footer></app-footer>
