@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabecalhoComponent implements OnInit {
 
+  beneficiario = {
+    codigo: 53614,
+    nome: "MARISA LIPPE CAPELLA",
+    matricula: "089089499"
+  }
+
   constructor() { }
 
   ngOnInit() {

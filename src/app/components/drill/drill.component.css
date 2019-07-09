@@ -1,17 +1,31 @@
-/* Table */
-.thead-blue {
-  background-color: #004D77;
-  color: white; }
+.conteudo{
+  width: 50%;  margin: 0 auto;  padding: 0 30px;
+}
 
-/* Buttom */
-.btn-medium {
-  width: 200px;
-  height: 100px;
-  margin: 15px; }
+.espacamento-1{
+  padding-bottom: 1px
+}
 
-.btn-blue {
-  background-color: #004D77;
-  border-color: #004D77 !important; }
+.td-tamanho-curto{
+  width: 15%;
+  font-weight: bold;
+}
 
-.btn-options {
-  text-align: center; }
+.td-tamanho-medio{
+  width: 35%
+}
+.negrito{
+  font-weight: bold;
+}
+
+.sem-espacamento{
+  padding-bottom: 0px
+}
+
+.sub-titulo{
+  font-size: 15px;
+}
+
+.td-tamanho-20{
+  width: 20%
+}

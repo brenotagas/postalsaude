@@ -8,3 +8,12 @@
     color: #004d71;
     border-color: #004d71;
 }
+
+.btn-outline i{
+    vertical-align: bottom;
+}
+
+.td-titulo{
+    width: 5%; 
+    font-weight: bold;
+}
