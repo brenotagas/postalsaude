@@ -11,21 +11,22 @@
                     <h2 class="card-title" style="line-height: 2">Compartilhamento Correios</h2>
                     <h5 style="line-height: 2">Consultar beneficiário</h5>
                 </div>
-                <br />                    
+                <br />
                 <div style="line-height: 3">
                     <p style="font-weight: 400">Digite a Matrícula Funcional do Beneficiário a ser consultado</p>
                 </div>
-                <div class="card-body" >
-                    <div class="form-inline align-items-center">
+                <div class="card-body">
+                    <form class="form-inline align-items-center" [formGroup]="formMatricula">
                         <div class="col-auto">
                             <input class="js-matricula" type="text" maxlength="8" style="width: 15rem"
-                                placeholder="Informar a Matrícula">
+                                placeholder="Informar a Matrícula" formControlName="matricula">
                         </div>
                         <div class="col-auto">
-                            <a style="background-color:#004d71; color: aliceblue; width: 7rem;" href="#"
-                                class="btn btn-lg active" role="button" aria-pressed="true">Entrar</a>
+                            <button style="background-color:#004d71; color: aliceblue; width: 8rem;" href="#"
+                                class="btn btn-lg active" role="button" aria-pressed="true"
+                                (click)="BuscarInformacoesPorMatricula(formMatricula.value.matricula)">Consultar</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RotinaAtualizacaoService {
 
-  rotinaAtualizacaoUrl = 'http://localhost:62689/api/RotinaAtualizacao';
+  rotinaAtualizacaoUrl = 'http://homapp.postalsaude.com.br:8080/api_arrecada/api';
 
   constructor(private http: HttpClient) { }
 
@@ -14,7 +14,7 @@ export class RotinaAtualizacaoService {
     return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/GetAll`);
   }
 
-  BuscarRotinaPorId() { 
-    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/GetById?codigo=2`)
+  BuscarInformacoesPorMatricula(matricula) { 
+    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Beneficiarios/${ matricula }/informacoes-basicas`)
   }
 }

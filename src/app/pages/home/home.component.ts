@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RotinaAtualizacaoService } from 'src/app/services/rotina-atualizacao.service';
 
 @Component({
@@ -8,23 +10,29 @@ import { RotinaAtualizacaoService } from 'src/app/services/rotina-atualizacao.se
 })
 export class HomeComponent implements OnInit {
 
-  rotinasAtualizacao: Array<any>;
+  formMatricula = new FormGroup({
+    matricula: new FormControl()
+  });
 
-  constructor(private rotinaservice: RotinaAtualizacaoService) { }
+  dados: any;
+
+  constructor(private rotinaservice: RotinaAtualizacaoService, private router: Router) { }
 
   ngOnInit() {
-
+    //this.BuscarInformacoesPorMatricula("89056086");
   }
 
-  ListarRotinas() {
-    this.rotinaservice.ListarRotinas()
-      .subscribe(dados => this.rotinasAtualizacao = dados);
-    console.log(this.rotinasAtualizacao);
-  }
-
-  BuscarRotinaPorId() {
-    this.rotinaservice.BuscarRotinaPorId()
-      .subscribe(dados => this.rotinasAtualizacao = dados);
-    console.log(this.rotinasAtualizacao);
+  BuscarInformacoesPorMatricula(matricula) {
+    this.rotinaservice.BuscarInformacoesPorMatricula(matricula).subscribe((res: any) => {
+      this.dados = res;
+      //console.log(this.dados);
+      if (this.dados.data.tipoBeneficiario == "Aposentado") {
+        this.router.navigate(['drill-aposentados'], {queryParams: {matricula: matricula}})
+      } else if (this.dados.data.tipoBeneficiario == "Ativo") {
+        this.router.navigate(['drill-ativos'], {queryParams: {matricula: matricula}})
+      } else {
+        this.router.navigate(['drill-afastados'], {queryParams: {matricula: matricula}})
+      }
+    });
   }
 }

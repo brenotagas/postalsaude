@@ -8,13 +8,13 @@
       <table class="table table-striped">
         <tr>
           <td class="td-tamanho-curto">Nome:</td>
-          <td class="td-tamanho-medio">VALERIA MOREIRA DO FORTE JATOB</td>
+          <td class="td-tamanho-medio">{{  dados.data.nome  }}</td>
           <td class="td-tamanho-curto">Matrícula:</td>
-          <td class="td-tamanho-medio">80860290</td>
+          <td class="td-tamanho-medio">{{  dados.data.matricula  }}</td>
         </tr>
         <tr>
           <td class="negrito">Situação RH:</td>
-          <td colspan="3">AFASTADO</td>
+          <td colspan="3">{{  dados.data.tipoBeneficiario  }}</td>
         </tr>
       </table>
     </div>
@@ -24,7 +24,7 @@
           <tr>
             <td>Competência</td>
             <td>
-              <form>
+              <div>
                 <select class="form-control-sm">
                   <option selected>JUNHO 2019</option>
                   <option>MAIO 2019</option>
@@ -33,7 +33,7 @@
                   <option>FEVEREIRO 2019</option>
                   <option>JANEIRO 2019</option>
                 </select>
-              </form>
+              </div>
             </td>
           </tr>
         </thead>
