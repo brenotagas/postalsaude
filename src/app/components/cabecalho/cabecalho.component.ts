@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RotinaAtualizacaoService } from 'src/app/services/rotina-atualizacao.service';
 
@@ -8,6 +8,8 @@ import { RotinaAtualizacaoService } from 'src/app/services/rotina-atualizacao.se
   styleUrls: ['./cabecalho.component.css']
 })
 export class CabecalhoComponent implements OnInit {
+
+  @Input() titulo: string;
 
   matricula: string;
   dados: any;
