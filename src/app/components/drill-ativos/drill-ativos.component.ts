@@ -10,20 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 export class DrillAtivosComponent implements OnInit {
 
   matricula: string;
-  dados: Array<any>;
+  dados: any;
+  competencias: any;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.VerificarQueryString();
     this.BuscarInformacoesPorMatricula(this.matricula);
-  }
-
-  BuscarInformacoesPorMatricula(matricula: any) {
-    this.rotinaservice.BuscarInformacoesPorMatricula(matricula).subscribe((res: any[]) => {
-      this.dados = res;
-      //console.log(this.dados);
-    });
+    this.BuscarCompetenciasComDespesasPorMatricula(this.matricula);
   }
 
   VerificarQueryString(): any {
@@ -32,4 +27,19 @@ export class DrillAtivosComponent implements OnInit {
       this.matricula = params.matricula;
     });
   }
+
+  BuscarInformacoesPorMatricula(matricula: any) {
+    this.rotinaservice.BuscarInformacoesPorMatricula(matricula).subscribe((res: any) => {
+      this.dados = res.data;
+      //console.log(this.dados);
+    });
+  }
+
+  BuscarCompetenciasComDespesasPorMatricula(matricula: any) {
+    this.rotinaservice.BuscarCompetenciasComDespesasPorMatricula(matricula).subscribe((res: any) => {
+      this.competencias = res.data;
+      //console.log(this.competencias);
+    });
+  }
+
 }

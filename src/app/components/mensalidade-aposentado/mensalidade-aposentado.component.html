@@ -4,7 +4,12 @@
   <br />
   <div class="card shadow">
     <div class="card-body align-items-center">
-      <table id="" class="table table-bordered table-sm text-center cabecalhoDeTabelas">
+      <div class="d-flex align-items-center" *ngIf="!mensalidades">
+        <strong>Carregando dados...</strong>
+        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+      </div>
+      <!-- MENSALIDADES  -->
+      <table id="" class="table table-bordered table-sm text-center cabecalhoDeTabelas" *ngIf="mensalidades">
         <thead class="postal">
           <tr>
             <th class="campo-menor" scope="col" rowspan="2">Competência</th>
@@ -26,205 +31,20 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td rowspan="2">ABR/18</td>
-            <td rowspan="2">ABR/18</td>
-            <td rowspan="2">54886</td>
-            <td rowspan="2">MENSALIDADE POSTAL SAÚDE - TST</td>
-            <td rowspan="2">1.725,46</td>
-            <td class="campoLeft">REINALDO RODRIGUES MIRANDA</td>
-            <td class="campoLeft">TITULAR</td>
-            <td>18,69</td>
-            <td rowspan="2">29,90</td>
-            <td rowspan="2"></td>
-            <td rowspan="2"></td>
-            <td rowspan="2">29,90</td>
-            <td rowspan="2">Quitado</td>
-          </tr>
-          <tr>
-            <td class="campoLeft">EUNICE APARECIDA CASTILHO MIRANDA</td>
-            <td class="campoLeft">CONJUGE/COMPANHEIRO(A)</td>
-            <td>11,21</td>
-          </tr>
-          <tr>
-            <td rowspan="2">MAI/18</td>
-            <td rowspan="2">MAI/18</td>
-            <td rowspan="2">54886</td>
-            <td rowspan="2">MENSALIDADE POSTAL SAÚDE - TST</td>
-            <td rowspan="2">2.610,28</td>
-            <td class="campoLeft">REINALDO RODRIGUES MIRANDA</td>
-            <td class="campoLeft">TITULAR</td>
-            <td>75,70</td>
-            <td rowspan="2">121,12</td>
-            <td rowspan="2"></td>
-            <td rowspan="2"></td>
-            <td rowspan="2">121,12</td>
-            <td rowspan="2">Quitado</td>
-          </tr>
-          <tr>
-            <td class="campoLeft">EUNICE APARECIDA CASTILHO MIRANDA</td>
-            <td class="campoLeft">CONJUGE/COMPANHEIRO(A)</td>
-            <td>45,42</td>
-          </tr>
-          <tr>
-            <td rowspan="2">JUN/18</td>
-            <td rowspan="2">JUN/18</td>
-            <td rowspan="2">54886</td>
-            <td rowspan="2">MENSALIDADE POSTAL SAÚDE - TST</td>
-            <td rowspan="2">2.610,28</td>
-            <td class="campoLeft">REINALDO RODRIGUES MIRANDA</td>
-            <td class="campoLeft">TITULAR</td>
-            <td>75,70</td>
-            <td rowspan="2">121,12</td>
-            <td rowspan="2"></td>
-            <td rowspan="2"></td>
-            <td rowspan="2">121,12</td>
-            <td rowspan="2">Quitado</td>
-          </tr>
-          <tr>
-            <td>EUNICE APARECIDA CASTILHO MIRANDA</td>
-            <td>CONJUGE/COMPANHEIRO(A)</td>
-            <td>45,42</td>
-          </tr>
-          <tr>
-            <td rowspan="2">JUL/18</td>
-            <td rowspan="2">JUL/18</td>
-            <td rowspan="2">54886</td>
-            <td rowspan="2">MENSALIDADE POSTAL SAÚDE - TST</td>
-            <td rowspan="2">2.610,28</td>
-            <td class="campoLeft">REINALDO RODRIGUES MIRANDA</td>
-            <td class="campoLeft">TITULAR</td>
-            <td>75,70</td>
-            <td rowspan="2">121,12</td>
-            <td rowspan="2"></td>
-            <td rowspan="2"></td>
-            <td rowspan="2">121,12</td>
-            <td rowspan="2">Quitado</td>
-          </tr>
-          <tr>
-            <td class="campoLeft">EUNICE APARECIDA CASTILHO MIRANDA</td>
-            <td class="campoLeft">CONJUGE/COMPANHEIRO(A)</td>
-            <td>45,42</td>
-          </tr>
-          <tr>
-            <td rowspan="2">AGO/18</td>
-            <td rowspan="2">AGO/18</td>
-            <td rowspan="2">54886</td>
-            <td rowspan="2">MENSALIDADE POSTAL SAÚDE - TST</td>
-            <td rowspan="2">2.618,50</td>
-            <td class="campoLeft">REINALDO RODRIGUES MIRANDA</td>
-            <td class="campoLeft">TITULAR</td>
-            <td>75,94</td>
-            <td rowspan="2">121,50</td>
-            <td rowspan="2"></td>
-            <td rowspan="2"></td>
-            <td rowspan="2">121,50</td>
-            <td rowspan="2">Quitado</td>
-          </tr>
-          <tr>
-            <td class="campoLeft">EUNICE APARECIDA CASTILHO MIRANDA</td>
-            <td class="campoLeft">CONJUGE/COMPANHEIRO(A)</td>
-            <td>45,56</td>
-          </tr>
-          <tr>
-            <td rowspan="2">SET/18</td>
-            <td rowspan="2">SET/18</td>
-            <td rowspan="2">54886</td>
-            <td rowspan="2">MENSALIDADE POSTAL SAÚDE - TST</td>
-            <td rowspan="2">2.632,07</td>
-            <td class="campoLeft">REINALDO RODRIGUES MIRANDA</td>
-            <td class="campoLeft">TITULAR</td>
-            <td>75,94</td>
-            <td rowspan="2">121,50</td>
-            <td rowspan="2"></td>
-            <td rowspan="2"></td>
-            <td rowspan="2">121,50</td>
-            <td rowspan="2">Quitado</td>
-          </tr>
-          <tr>
-            <td class="campoLeft">EUNICE APARECIDA CASTILHO MIRANDA</td>
-            <td class="campoLeft">CONJUGE/COMPANHEIRO(A)</td>
-            <td>45,56</td>
-          </tr>
-          <tr>
-            <td rowspan="2">OUT/18</td>
-            <td rowspan="2">OUT/18</td>
-            <td rowspan="2">54886</td>
-            <td rowspan="2">MENSALIDADE POSTAL SAÚDE - TST</td>
-            <td rowspan="2">2.618,50</td>
-            <td class="campoLeft">REINALDO RODRIGUES MIRANDA</td>
-            <td class="campoLeft">TITULAR</td>
-            <td>76,33</td>
-            <td rowspan="2">122,13</td>
-            <td rowspan="2"></td>
-            <td rowspan="2"></td>
-            <td rowspan="2">122,13</td>
-            <td rowspan="2">Quitado</td>
-          </tr>
-          <tr>
-            <td class="campoLeft">EUNICE APARECIDA CASTILHO MIRANDA</td>
-            <td class="campoLeft">CONJUGE/COMPANHEIRO(A)</td>
-            <td>45,80</td>
-          </tr>
-          <tr>
-            <td rowspan="2">NOV/18</td>
-            <td rowspan="2">NOV/18</td>
-            <td rowspan="2">54886</td>
-            <td rowspan="2">MENSALIDADE POSTAL SAÚDE - TST</td>
-            <td rowspan="2">2.632,07</td>
-            <td class="campoLeft">REINALDO RODRIGUES MIRANDA</td>
-            <td class="campoLeft">TITULAR</td>
-            <td>76,33</td>
-            <td rowspan="2">122,13</td>
-            <td rowspan="2"></td>
-            <td rowspan="2"></td>
-            <td rowspan="2">122,13</td>
-            <td rowspan="2">Quitado</td>
-          </tr>
-          <tr>
-            <td class="campoLeft">EUNICE APARECIDA CASTILHO MIRANDA</td>
-            <td class="campoLeft">CONJUGE/COMPANHEIRO(A)</td>
-            <td>45,80</td>
-          </tr>
-          <tr>
-            <td rowspan="2">DEZ/18</td>
-            <td rowspan="2">DEZ/18</td>
-            <td rowspan="2">54886</td>
-            <td rowspan="2">MENSALIDADE POSTAL SAÚDE - TST</td>
-            <td rowspan="2">2.632,07</td>
-            <td class="campoLeft">REINALDO RODRIGUES MIRANDA</td>
-            <td class="campoLeft">TITULAR</td>
-            <td>76,33</td>
-            <td rowspan="2">122,13</td>
-            <td rowspan="2"></td>
-            <td rowspan="2"></td>
-            <td rowspan="2">122,13</td>
-            <td rowspan="2">Quitado</td>
-          </tr>
-          <tr>
-            <td class="campoLeft">EUNICE APARECIDA CASTILHO MIRANDA</td>
-            <td class="campoLeft">CONJUGE/COMPANHEIRO(A)</td>
-            <td>45,80</td>
-          </tr>
-          <tr>
-            <td rowspan="2">JAN/19</td>
-            <td rowspan="2">JAN/19</td>
-            <td rowspan="2">053900</td>
-            <td rowspan="2">DEVOLUÇÃO MENSALIDADE - TST</td>
-            <td rowspan="2">2.632,07</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-45,80</td>
-            <td rowspan="2">-45,80</td>
-            <td rowspan="2"></td>
-            <td rowspan="2"></td>
-            <td rowspan="2"> - </td>
-            <td rowspan="2">Quitado</td>
-          </tr>
-          <tr>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+          <tr *ngFor="let mensalidade of mensalidades.data; let i = index">
+            <td [attr.rowspan]="mensalidade?.registros.length" *ngIf="i == 0">{{ mensalidade.competencia }}</td>
+            <td [attr.rowspan]="mensalidade?.registros.length" *ngIf="i == 0">{{ mensalidade.registros[i].referencia }}</td>
+            <td [attr.rowspan]="mensalidade?.registros.length" *ngIf="i == 0">{{ mensalidade.registros[i].rubrica.id }}</td>
+            <td [attr.rowspan]="mensalidade?.registros.length" *ngIf="i == 0">{{ mensalidade.registros[i].rubrica.descricao }}</td>
+            <td [attr.rowspan]="mensalidade?.registros.length" *ngIf="i == 0">{{ mensalidade.registros[i].remuneracaoBruta }}</td>
+            <td class="campoLeft">{{mensalidade.registros[i]?.nome}}</td>
+            <td class="campoLeft">{{mensalidade.registros[i]?.tipoBeneficiario.descricao}}</td>
+            <td class="campoLeft">{{mensalidade.registros[i]?.valorCobrado}}</td>
+            <td [attr.rowspan]="mensalidade.registros.length" *ngIf="i == 0">{{ mensalidade.registros[i]?.mensalidadeSomadaTodosBeneficiarios }}</td>
+            <td [attr.rowspan]="mensalidade.registros.length" *ngIf="i == 0">{{ mensalidade.registros[i]?.folhaPagamento }}</td>
+            <td [attr.rowspan]="mensalidade.registros.length" *ngIf="i == 0">{{ mensalidade.registros[i]?.boleto }}</td>
+            <td [attr.rowspan]="mensalidade.registros.length" *ngIf="i == 0">{{ mensalidade.registros[i]?.parcelamento }}</td>
+            <td [attr.rowspan]="mensalidade.registros.length" *ngIf="i == 0">{{ mensalidade.registros[i]?.situacao }}</td>
           </tr>
         </tbody>
       </table>
@@ -232,84 +52,84 @@
   </div>
   <br />
   <div class="card shadow">
-      <div class="accordion" id="accordionRegra">
-        <div class="card">
-          <div class="row card-header" id="headingOne">
-            <button class="btn col-12" type="button" data-toggle="collapse" data-target="#collapseRegra"
-              aria-expanded="false" aria-controls="collapseRegra">
-              <div class="col">
-                <h4><strong>Legenda</strong></h4>
-              </div>
-              <div class="col">(Clique aqui para saber mais)</div>
-            </button>
-          </div>
-    
-          <div class="collapse" id="collapseRegra">
-            <div class="card card-body">              
-                  <p><strong>Competência:</strong> corresponde ao mês da cobrança
-                  </p>
-                  <p><strong>Rubrica:</strong> número descritivo da identificação do desconto da mensalidade do
-                    benficiário ativo
-                    no contracheque
-                  </p>
-                  <p><strong>054900</strong> - Mensalidade do titular
-                  </p>
-                  <p><strong>054902</strong> - Mensalidade do dependente
-                  </p>
-                  <p><strong>054903</strong> - Mensalidade do cônjuge
-                  </p>
-                  <p><strong>053900</strong> - Dev. Mensalidade Postal Saúde - TST
-                  </p>
-                  <p><strong>Descrição:</strong> Especificação da rubrica
-                  </p>
-                  <p><strong>Remuneração Bruta</strong>
-                  </p>
-                  <p><strong>a) Empregado Ativo:</strong> são as rubricas que sofrem a incidência de IRPF não sendo
-                    consideradas as
-                    rubricas relacionadas ao pagamento de férias e 13º salários.
-                  </p>
-                  <p><strong>b) Empregado Aposentado:</strong> são considerados o benefício recebido do INSS, mais o
-                    coplemtno da
-                    União, caso tenha, mais a suplementação do Postalis, planos CD e BD
-                  </p>
-                  <p><strong>c) Empregado Afastado:</strong> é considerado a remuneração atualizada que incide IR, com
-                    exceção do
-                    13º salário e férias
-                  </p>
-                  <p><strong>Valor da mensalidade:</strong> valor cobrado por beneficiciário no plano
-                  </p>
-                  <p><strong>Valor total da mensalidade:</strong> valor das mensalidades cobradas na competência
-                  </p>
-                  <p><strong>Forma de Cobrança:</strong> identifica a forma de pagamento
-                  </p>
-                  <p><strong>a) Folha de Pagamento:</strong> beneficiários ativos
-                  </p>
-                  <p><strong>b) Boleto:</strong> Beneficiários aposentados e afastados
-                  </p>
-                  <p><strong>c) Parcelamento:</strong> É a negociação de boletos de mensalidade e despeas
-                    médico-hospitalar e /ou
-                    odontológica inadimplentes.
-                  </p>
-                  <p><strong>Situação:</strong> É o status de pagamento
-                  </p>
-                  <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
-                    pagas até a
-                    data de vencimento
-                  </p>
-                  <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas
-                  </p>
-                  <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
-                    pagas,
-                    passíveis de parcelamento.
-                  </p>
-                  <p><strong>d) Devolução:</strong> É o ajuste realizado na ficha financeira
-                  </p>
-                  <p><strong>Obs:</strong> A partir de 01/2019 a mensalidade dos empregados ativos é calculado pela
-                    Mantenedora</p>            
+    <div class="accordion" id="accordionRegra">
+      <div class="card">
+        <div class="row card-header" id="headingOne">
+          <button class="btn col-12" type="button" data-toggle="collapse" data-target="#collapseRegra"
+            aria-expanded="false" aria-controls="collapseRegra">
+            <div class="col">
+              <h4><strong>Legenda</strong></h4>
             </div>
+            <div class="col">(Clique aqui para saber mais)</div>
+          </button>
+        </div>
+
+        <div class="collapse" id="collapseRegra">
+          <div class="card card-body">
+            <p><strong>Competência:</strong> corresponde ao mês da cobrança
+            </p>
+            <p><strong>Rubrica:</strong> número descritivo da identificação do desconto da mensalidade do
+              benficiário ativo
+              no contracheque
+            </p>
+            <p><strong>054900</strong> - Mensalidade do titular
+            </p>
+            <p><strong>054902</strong> - Mensalidade do dependente
+            </p>
+            <p><strong>054903</strong> - Mensalidade do cônjuge
+            </p>
+            <p><strong>053900</strong> - Dev. Mensalidade Postal Saúde - TST
+            </p>
+            <p><strong>Descrição:</strong> Especificação da rubrica
+            </p>
+            <p><strong>Remuneração Bruta</strong>
+            </p>
+            <p><strong>a) Empregado Ativo:</strong> são as rubricas que sofrem a incidência de IRPF não sendo
+              consideradas as
+              rubricas relacionadas ao pagamento de férias e 13º salários.
+            </p>
+            <p><strong>b) Empregado Aposentado:</strong> são considerados o benefício recebido do INSS, mais o
+              coplemtno da
+              União, caso tenha, mais a suplementação do Postalis, planos CD e BD
+            </p>
+            <p><strong>c) Empregado Afastado:</strong> é considerado a remuneração atualizada que incide IR, com
+              exceção do
+              13º salário e férias
+            </p>
+            <p><strong>Valor da mensalidade:</strong> valor cobrado por beneficiciário no plano
+            </p>
+            <p><strong>Valor total da mensalidade:</strong> valor das mensalidades cobradas na competência
+            </p>
+            <p><strong>Forma de Cobrança:</strong> identifica a forma de pagamento
+            </p>
+            <p><strong>a) Folha de Pagamento:</strong> beneficiários ativos
+            </p>
+            <p><strong>b) Boleto:</strong> Beneficiários aposentados e afastados
+            </p>
+            <p><strong>c) Parcelamento:</strong> É a negociação de boletos de mensalidade e despeas
+              médico-hospitalar e /ou
+              odontológica inadimplentes.
+            </p>
+            <p><strong>Situação:</strong> É o status de pagamento
+            </p>
+            <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
+              pagas até a
+              data de vencimento
+            </p>
+            <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas
+            </p>
+            <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
+              pagas,
+              passíveis de parcelamento.
+            </p>
+            <p><strong>d) Devolução:</strong> É o ajuste realizado na ficha financeira
+            </p>
+            <p><strong>Obs:</strong> A partir de 01/2019 a mensalidade dos empregados ativos é calculado pela
+              Mantenedora</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </div>
 <app-footer></app-footer>

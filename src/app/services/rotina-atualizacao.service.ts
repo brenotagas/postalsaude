@@ -10,11 +10,28 @@ export class RotinaAtualizacaoService {
 
   constructor(private http: HttpClient) { }
 
-  ListarRotinas() {
-    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/GetAll`);
+  BuscarInformacoesPorMatricula(matricula) {
+    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Beneficiarios/${matricula}/informacoes-basicas`)
   }
 
-  BuscarInformacoesPorMatricula(matricula) { 
-    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Beneficiarios/${ matricula }/informacoes-basicas`)
+  BuscarCompetenciasComDespesasPorMatricula(matricula) {
+    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Beneficiarios/${matricula}/compentencias-com-despesas`)
   }
+
+  BuscarMensalidadesAposentadoPorMatricula(matricula) {
+    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Aposentados/${matricula}/mensalidades`)
+  }
+
+  BuscarParcelamentosAposentadoPorMatricula(matricula) {
+    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Aposentados/${matricula}/parcelamentos`)
+  }
+
+  BuscarFichaFinanceiraAposentadoCopar1PorMatricula(matricula){
+    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Aposentados/${matricula}/ficha-financeira-copar-i`)
+  }
+
+  BuscarFichaFinanceiraAposentadoCopar2PorMatricula(matricula){
+    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Aposentados/${matricula}/ficha-financeira-copar-ii`)
+  }
+
 }
