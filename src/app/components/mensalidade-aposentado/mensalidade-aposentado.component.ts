@@ -11,6 +11,7 @@ export class MensalidadeAposentadoComponent implements OnInit {
 
   matricula: string;
   mensalidades: any;
+  carregando: boolean;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
 
@@ -27,9 +28,11 @@ export class MensalidadeAposentadoComponent implements OnInit {
   }
 
   BuscarMensalidadesAposentadoPorMatricula(matricula) {
+    this.carregando = true;
     this.rotinaservice.BuscarMensalidadesAposentadoPorMatricula(matricula).subscribe((res: any) => {
       this.mensalidades = res;
       console.log(this.mensalidades);
+      this.carregando = false;
     });
   }
 }

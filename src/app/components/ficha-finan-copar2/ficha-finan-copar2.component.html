@@ -8,22 +8,25 @@
         <strong>Carregando dados...</strong>
         <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
       </div>
+      <div class="alert alert-danger" role="alert" *ngIf="(ficha?.registros == null || ficha?.registros.length == 0) && !carregando">
+        <h2>Sem dados para exibição!</h2>
+      </div>
       <!-- COPAR II  -->
       <table class="table table-bordered table-sm text-center cabecalhoDeTabelas" *ngIf="ficha">
         <thead>
           <tr>
             <th class="campo-menor" scope="col" rowspan="2">Competência</th>
-            <th class="campo-menor" scope="col" rowspan="2">Remuneração Bruta</th>
-            <th scope="col" rowspan="2">Teto</th>
-            <th class="campo-menor" scope="col" rowspan="2">Remuneração Liquida</th>
-            <th scope="col" rowspan="2">Margem</th>
+            <th class="campo-menor" scope="col" rowspan="2">Remuneração Bruta (R$)</th>
+            <th scope="col" rowspan="2">Teto (R$)</th>
+            <th class="campo-menor" scope="col" rowspan="2">Remuneração Liquida (R$)</th>
+            <th scope="col" rowspan="2">Margem (R$)</th>
             <th scope="col" rowspan="2">Rubrica</th>
             <th scope="col" rowspan="2">Descrição</th>
-            <th class="campo-menor" scope="col" rowspan="2">Valor da Despesa</th>
-            <th class="campo-menor" scope="col" rowspan="2">Valor da Coparticipação</th>
-            <th scope="col" rowspan="2">Residuo Anterior</th>
+            <th class="campo-menor" scope="col" rowspan="2">Valor da Despesa (R$)</th>
+            <th class="campo-menor" scope="col" rowspan="2">Valor da Coparticipação (R$)</th>
+            <th scope="col" rowspan="2">Residuo Anterior (R$)</th>
             <th scope="col" colspan="3">Forma de cobrança</th>
-            <th scope="col" rowspan="2">Residuo</th>
+            <th scope="col" rowspan="2">Residuo (R$)</th>
           </tr>
           <tr>
             <th scope="col">Folha de Pagamento</th>
@@ -34,19 +37,19 @@
         <tbody>
           <tr *ngFor="let registro of ficha?.registros; let i = index">
             <td>{{ registro.competencia}}</td>
-            <td>{{ 'R$ ' + registro.remuneracaoBruta}}</td>
+            <td>{{ registro.remuneracaoBruta}}</td>
             <td>{{ registro.teto}}</td>
-            <td>{{ 'R$ ' + registro.remuneracaoLiquida}}</td>
-            <td>{{ 'R$ ' + registro.margem}}</td>
+            <td>{{ registro.remuneracaoLiquida}}</td>
+            <td>{{ registro.margem}}</td>
             <td>{{ registro.rubrica.id}}</td>
             <td>{{ registro.rubrica.descricao}}</td>
-            <td>{{ 'R$ ' + registro.valorDespesa}}</td>
-            <td>{{ 'R$ ' + registro.valorCoparticipacao}}</td>
-            <td>{{ 'R$ ' + registro.residuoAnterior}}</td>
-            <td>{{ 'R$ ' + registro.descontoEmFolha}}</td>
-            <td>{{ 'R$ ' + registro.boleto}}</td>
-            <td>{{ 'R$ ' + registro.parcelamento}}</td>
-            <td>{{ 'R$ ' + registro.residuo}}</td>
+            <td>{{ registro.valorDespesa}}</td>
+            <td>{{ registro.valorCoparticipacao}}</td>
+            <td>{{ registro.residuoAnterior}}</td>
+            <td>{{ registro.descontoEmFolha}}</td>
+            <td>{{ registro.boleto}}</td>
+            <td>{{ registro.parcelamento}}</td>
+            <td>{{ registro.residuo}}</td>
           </tr>
         </tbody>
       </table>

@@ -4,23 +4,29 @@
   <br />
   <div class="card shadow">
     <div class="card-body align-items-center">
-      <div class="d-flex align-items-center" *ngIf="!mensalidades">
+      <div class="d-flex align-items-center"
+        *ngIf="(!mensalidades?.data || mensalidades?.data.length == 0) && carregando">
         <strong>Carregando dados...</strong>
         <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
       </div>
+      <div class="alert alert-danger" role="alert"
+        *ngIf="(mensalidades?.data == null || mensalidades?.data.length == 0) && !carregando">
+        <h2>Sem dados para exibição!</h2>
+      </div>
       <!-- MENSALIDADES  -->
-      <table id="" class="table table-bordered table-sm text-center cabecalhoDeTabelas" *ngIf="mensalidades">
+      <table id="" class="table table-bordered table-sm text-center cabecalhoDeTabelas"
+        *ngIf="mensalidades?.data.length != 0 && mensalidades?.data != null">
         <thead class="postal">
           <tr>
             <th class="campo-menor" scope="col" rowspan="2">Competência</th>
-            <th scope="col" rowspan="2">Referência</th>
+            <th scope="col" rowspan="2">Ref.</th>
             <th scope="col" rowspan="2">Rubrica</th>
             <th scope="col" rowspan="2">Descrição</th>
-            <th scope="col" rowspan="2">Remuneração Bruta</th>
+            <th scope="col" rowspan="2">Remuneração Bruta (R$)</th>
             <th scope="col" rowspan="2">Beneficiário</th>
             <th scope="col" rowspan="2">Tipo</th>
-            <th scope="col" rowspan="2">Valor da Mensalidade</th>
-            <th scope="col" rowspan="2">Valor total da Mensalidade</th>
+            <th scope="col" rowspan="2">Valor da Mensalidade (R$)</th>
+            <th scope="col" rowspan="2">Valor total da Mensalidade (R$)</th>
             <th scope="col" colspan="3">Forma de cobrança</th>
             <th scope="col" rowspan="2">Situação</th>
           </tr>
@@ -30,24 +36,27 @@
             <th scope="col">Parcelamento</th>
           </tr>
         </thead>
-        <tbody>           
-            <ng-container *ngFor="let mensalidade of mensalidades.data; let i = index">
-              <tr *ngFor="let reg of mensalidades.data[i].registros; let j = index; first as isFirst">
-                <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ mensalidade.competencia }}</td>
-                <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.referencia }}</td>
-                <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.rubrica.id }}</td>
-                <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.rubrica.descricao }}</td>
-                <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.remuneracaoBruta }}</td>
-                <td class="campoLeft">{{reg?.nome}}</td>
-                <td class="campoLeft">{{reg?.tipoBeneficiario.descricao}}</td>
-                <td class="campoLeft">{{reg?.valorCobrado}}</td>
-                <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.mensalidadeSomadaTodosBeneficiarios }}</td>
-                <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.folhaPagamento }}</td>
-                <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.boleto }}</td>
-                <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.parcelamento }}</td>
-                <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.situacao }}</td>
-              </tr>
-            </ng-container>          
+        <tbody>
+          <ng-container *ngFor="let mensalidade of mensalidades.data; let i = index">
+            <tr *ngFor="let reg of mensalidades.data[i].registros; let j = index; first as isFirst">
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ mensalidade.competencia }}
+              </td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.referencia }}</td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.rubrica.id }}</td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.rubrica.descricao }}
+              </td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.remuneracaoBruta }}</td>
+              <td class="campoLeft">{{reg?.nome}}</td>
+              <td class="campoLeft">{{reg?.tipoBeneficiario.descricao}}</td>
+              <td class="campoLeft">{{reg?.valorCobrado}}</td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">
+                {{ reg?.mensalidadeSomadaTodosBeneficiarios }}</td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.folhaPagamento }}</td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.boleto }}</td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.parcelamento }}</td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.situacao }}</td>
+            </tr>
+          </ng-container>
         </tbody>
       </table>
     </div>

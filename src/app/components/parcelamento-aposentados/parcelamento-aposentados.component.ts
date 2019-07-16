@@ -11,6 +11,7 @@ export class ParcelamentoAposentadosComponent implements OnInit {
 
   matricula: string;
   parcelamento: any;
+  carregando: boolean;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
 
@@ -27,9 +28,11 @@ export class ParcelamentoAposentadosComponent implements OnInit {
   }
 
   BuscarParcelamentosAposentadoPorMatricula(matricula) {
+    this.carregando = true;
     this.rotinaservice.BuscarParcelamentosAposentadoPorMatricula(matricula).subscribe((res: any) => {
       this.parcelamento = res;
       console.log(this.parcelamento);
+      this.carregando = false;
     });
   }
 }

@@ -4,11 +4,14 @@
   <br />
   <div class="card shadow">
     <div class="card-body text-center align-items-center">
-      <div class="d-flex align-items-center" *ngIf="!parcelamento">
+      <div class="d-flex align-items-center" *ngIf="carregando">
         <strong>Carregando dados...</strong>
         <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
       </div>
-      <table class="table table-bordered table-sm text-center cabecalhoDeTabelas" *ngIf="parcelamento">
+      <div class="alert alert-danger" role="alert" *ngIf="(parcelamento?.data == null || parcelamento?.data.length == 0) && !carregando">
+        <h2>Sem dados para exibição!</h2>
+      </div>
+      <table class="table table-bordered table-sm text-center cabecalhoDeTabelas" *ngIf="parcelamento?.data.length != 0 && !carregando">
         <thead>
           <tr>
             <th class="campo-menor" scope="col" rowspan="2">Data da Solicitação</th>

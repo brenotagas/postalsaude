@@ -11,6 +11,7 @@ export class FichaFinanCopar1Component implements OnInit {
 
   matricula: string;
   ficha: any;
+  carregando: boolean;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
 
@@ -27,9 +28,11 @@ export class FichaFinanCopar1Component implements OnInit {
   }
 
   BuscarFichaFinanceiraAposentadoCopar1PorMatricula(matricula) {
+    this.carregando = true;
     this.rotinaservice.BuscarFichaFinanceiraAposentadoCopar1PorMatricula(matricula).subscribe((res: any) => {
       this.ficha = res.data;
       console.log(this.ficha);
+      this.carregando = false;
     });
   }
 }
