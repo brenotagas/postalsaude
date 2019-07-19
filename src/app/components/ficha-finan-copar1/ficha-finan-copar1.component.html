@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="conteudo">
-  <app-cabecalho titulo="Ficha Financeira COPAR I"></app-cabecalho>
+  <app-cabecalho titulo="Ficha Financeira Plano CorreiosSaúde"></app-cabecalho>
   <br />
   <div class="card text-center shadow">
     <div class="card-body">
@@ -8,52 +8,62 @@
         <strong>Carregando dados...</strong>
         <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
       </div>
-      <div class="alert alert-danger" role="alert" *ngIf="(ficha?.registros == null || ficha?.registros.length == 0) && !carregando">
+      <div class="alert alert-danger" role="alert"
+        *ngIf="(ficha?.registros == null || ficha?.registros.length == 0) && !carregando">
         <h2>Sem dados para exibição!</h2>
       </div>
       <!-- COPAR I   -->
       <table class="table table-bordered table-sm text-center cabecalhoDeTabelas" *ngIf="ficha?.registros != null">
         <thead>
           <tr>
-            <th class="campo-menor" scope="col" rowspan="2">Referência do Extrato de Utilização</th>
-            <th class="campo-menor" scope="col" rowspan="2">Competência da Coparticipação</th>
+            <th class="campo-menor" scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
+              title="Referência do Extrato de Utilização" class="ps-tooltip">Ref. do Extrato de Utilização</th>
+            <th class="campo-menor" scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
+              title="Competência da Coparticipação" class="ps-tooltip">Competência da Copar.</th>
             <th scope="col" rowspan="2">Remuneração (R$)</th>
-            <th class="campo-menor" scope="col" rowspan="2">Referência Salarial</th>
+            <th class="campo-menor" scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
+              title="Referência Salarial" class="ps-tooltip">Ref. Salarial</th>
             <th scope="col" rowspan="2">Teto (R$)</th>
             <th scope="col" rowspan="2">Margem (R$)</th>
-            <th scope="col" rowspan="2">Rubrica</th>
+            <!-- <th scope="col" rowspan="2">Rubrica</th> -->
             <th scope="col" rowspan="2">Descrição</th>
-            <th class="campo-menor" scope="col" rowspan="2">Valor da Despesa (R$)</th>
-            <th class="campo-menor" scope="col" rowspan="2">Valor da Coparticipação (R$)</th>
-            <th scope="col" rowspan="2">Resíduo Anterior (R$)</th>
+            <th scope="col" rowspan="2">Valor da Despesa (R$)</th>
+            <th scope="col" rowspan="2" data-toggle="tooltip" data-placement="top" title="Valor da Coparticipação (R$)"
+              class="ps-tooltip">Valor da Copar. (R$)</th>
+            <th scope="col" rowspan="2">Saldo Devedor (R$)</th>
+            <th scope="col" rowspan="2">Resíduo (R$)</th>
             <th scope="col" colspan="3">Forma de pagamento</th>
             <th scope="col" rowspan="2">Situação</th>
-            <th scope="col" rowspan="2">Resíduo (R$)</th>
           </tr>
-          <tr>
+          <!-- <tr>
             <th scope="col">Folha de Pagamento</th>
             <th scope="col">Boleto</th>
             <th scope="col">Parcelamento</th>
-          </tr>
+          </tr> -->
         </thead>
         <tbody>
           <tr *ngFor="let registro of ficha?.registros; let i = index">
-            <td>{{ registro.competencia}}</td>
-            <td>{{ registro.competencia }}</td>
-            <td>{{ registro.remuneracao }}</td>
+            <td>{{ registro.competencia.mes }}/{{ registro.competencia.ano }}</td>
+            <td>{{ registro.competencia.mes }}/{{ registro.competencia.ano }}</td>
+            <td>{{ registro.remuneracao  | number:'1.2-2':'pt' }}</td>
             <td>{{ registro.referenciaSalarial }}</td>
-            <td>{{ registro.teto }}</td>
-            <td>{{ registro.margem }}</td>
-            <td>{{ registro.rubrica }}</td>
+            <td>{{ registro.teto  | number:'1.2-2':'pt' }}</td>
+            <td>{{ registro.margem  | number:'1.2-2':'pt' }}</td>
+            <!-- <td>{{ registro.rubrica }}</td> -->
             <td>{{ registro.descricaoRubrica }}</td>
-            <td>{{ registro.valorDespesa }}</td>
-            <td>{{ registro.valorCoparticipacao }}</td>
-            <td>{{ registro.residuoAnterior }}</td>
-            <td>{{ registro.descontoEmFolha }}</td>
-            <td>{{ registro.descontoEmBoleto }}</td>
-            <td>{{ registro.parcelamento }}</td>
+            <td>{{ registro.valorDespesa  | number:'1.2-2':'pt' }}</td>
+            <td>{{ registro.valorCoparticipacao  | number:'1.2-2':'pt' }}</td>
+            <td>{{ registro.residuoAnterior  | number:'1.2-2':'pt' }}</td>
+            <td>{{ registro.residuo  | number:'1.2-2':'pt' }}</td>
+            <td colspan="3">
+              <span>{{ registro.tipoPagamento.valor | number:'1.2-2':'pt' }}</span>
+              <span class="badge badge-pill badge-primary badge-right {{ registro.tipoPagamento.descricao }}"
+                data-toggle="tooltip" data-placement="top"
+                title="{{ registro.tipoPagamento.descricao }}">{{ registro.tipoPagamento.sigla }}</span>
+              <span class="badge badge-pill badge-invisivel badge-right"
+                *ngIf="registro.tipoPagamento.sigla == ''">&nbsp;</span>
+            </td>
             <td>{{ registro.situacaoDespesa }}</td>
-            <td>{{ registro.residuo }}</td>
           </tr>
         </tbody>
       </table>

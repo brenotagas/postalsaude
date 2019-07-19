@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TextMaskModule } from 'angular2-text-mask';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -29,6 +30,7 @@ import { CorreiosIiAfastadosComponent } from './components/correios-ii-afastados
 import { ParcelamentoAfastadosComponent } from './components/parcelamento-afastados/parcelamento-afastados.component';
 import { ParcelamentoAposentadosComponent } from './components/parcelamento-aposentados/parcelamento-aposentados.component';
 import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
+import { NomePipe } from './pipes/nome.pipe';
 
 @NgModule({
   declarations: [
@@ -51,13 +53,15 @@ import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
     CorreiosIiAfastadosComponent,
     ParcelamentoAfastadosComponent,
     ParcelamentoAposentadosComponent,
-    CabecalhoComponent
+    CabecalhoComponent,
+    NomePipe
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TextMaskModule
   ],
   providers: [RotinaAtualizacaoService],
   bootstrap: [AppComponent]

@@ -17,3 +17,11 @@
     width: 5%; 
     font-weight: bold;
 }
+
+.btn-left{
+    float: left;
+}
+
+.text-center{
+    text-align: center;
+}

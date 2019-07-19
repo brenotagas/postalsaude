@@ -30,3 +30,8 @@
 .campo-menor{
     width: 13px
 }
+
+th.ps-tooltip{
+    cursor: help;
+    text-decoration: underline;
+}

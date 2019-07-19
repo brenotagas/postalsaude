@@ -40,7 +40,7 @@
         </thead>
         <tbody>
           <tr>
-            <td class="negrito" colspan="2">Plano Correios Saúde</td>
+            <td class="negrito" colspan="2">Plano CorreiosSaúde</td>
           </tr>
           <tr>
             <td>Saldo Devedor</td>
@@ -51,7 +51,7 @@
             <td>R$ 1.187,00</td>
           </tr>
           <tr>
-            <td class="negrito" colspan="2">Plano Correios Saúde II</td>
+            <td class="negrito" colspan="2">Plano CorreiosSaúde II</td>
           </tr>
           <tr>
             <td>Mensalidade</td>
@@ -79,23 +79,22 @@
   <div class="container col-12">
     <div class="row">
       <div class="col-4">
-        <button [routerLink]="['/mensalidade-aposentados']" [queryParams]="{matricula: dados?.matricula}" class="btn btn-block btn-lg botao postal">Mensalidade</button>
+        <button routerLink="/mensalidade-aposentados" [queryParams]="{matricula: dados?.matricula}" class="btn btn-block btn-lg botao postal">Mensalidade</button>
       </div>
       <div class="col-4">
-        <button [routerLink]="['/ffcs-aposentados']" [queryParams]="{matricula: dados?.matricula}" class="btn btn-block btn-lg botao postal">Ficha Financeira<p
-            class="sub-titulo">Plano Correios
-            Saúde</p></button>
+        <button routerLink="/ffcs-aposentados" [queryParams]="{matricula: dados?.matricula}" class="btn btn-block btn-lg botao postal">Ficha Financeira<p
+            class="sub-titulo">Plano CorreiosSaúde</p></button>
       </div>
       <div class="col-4">
-        <button [routerLink]="['/ffcsii-aposentados']" [queryParams]="{matricula: dados?.matricula}" class="btn btn-block btn-lg botao postal">Ficha Financeira<br>
-          <p class="sub-titulo">Plano Correios Saúde II</p>
+        <button routerLink="/ffcsii-aposentados" [queryParams]="{matricula: dados?.matricula}" class="btn btn-block btn-lg botao postal">Ficha Financeira<br>
+          <p class="sub-titulo">Plano CorreiosSaúde II</p>
         </button>
       </div>
     </div>
     <div class="row col-12"><br></div>
     <div class="row">
       <div class="col-4">
-        <button [routerLink]="['/parcelamento-aposentados']" [queryParams]="{matricula: dados?.matricula}" class="btn btn-block btn-lg botao postal">Parcelamento</button>
+        <button routerLink="/parcelamento-aposentados" [queryParams]="{matricula: dados?.matricula}" class="btn btn-block btn-lg botao postal">Parcelamento</button>
       </div>
       <div class="col-4">
         <button class="btn btn-block btn-lg botao postal">Boleto em aberto<br>
