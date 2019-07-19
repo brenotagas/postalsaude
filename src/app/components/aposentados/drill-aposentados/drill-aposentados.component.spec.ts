@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DrillComponent } from './drill.component';
+import { DrillComponent } from './drill-aposentados.component';
 
 describe('DrillComponent', () => {
   let component: DrillComponent;

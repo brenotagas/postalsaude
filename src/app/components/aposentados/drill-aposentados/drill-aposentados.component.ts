@@ -4,8 +4,8 @@ import { RotinaAtualizacaoService } from 'src/app/services/rotina-atualizacao.se
 
 @Component({
   selector: 'app-drill',
-  templateUrl: './drill.component.html',
-  styleUrls: ['./drill.component.css']
+  templateUrl: './drill-aposentados.component.html',
+  styleUrls: ['./drill-aposentados.component.css']
 })
 export class DrillComponent implements OnInit {
 

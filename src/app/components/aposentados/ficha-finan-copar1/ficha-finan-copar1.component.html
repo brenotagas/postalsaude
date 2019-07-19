@@ -25,7 +25,6 @@
               title="Referência Salarial" class="ps-tooltip">Ref. Salarial</th>
             <th scope="col" rowspan="2">Teto (R$)</th>
             <th scope="col" rowspan="2">Margem (R$)</th>
-            <!-- <th scope="col" rowspan="2">Rubrica</th> -->
             <th scope="col" rowspan="2">Descrição</th>
             <th scope="col" rowspan="2">Valor da Despesa (R$)</th>
             <th scope="col" rowspan="2" data-toggle="tooltip" data-placement="top" title="Valor da Coparticipação (R$)"
@@ -35,11 +34,6 @@
             <th scope="col" colspan="3">Forma de pagamento</th>
             <th scope="col" rowspan="2">Situação</th>
           </tr>
-          <!-- <tr>
-            <th scope="col">Folha de Pagamento</th>
-            <th scope="col">Boleto</th>
-            <th scope="col">Parcelamento</th>
-          </tr> -->
         </thead>
         <tbody>
           <tr *ngFor="let registro of ficha?.registros; let i = index">
@@ -49,7 +43,6 @@
             <td>{{ registro.referenciaSalarial }}</td>
             <td>{{ registro.teto  | number:'1.2-2':'pt' }}</td>
             <td>{{ registro.margem  | number:'1.2-2':'pt' }}</td>
-            <!-- <td>{{ registro.rubrica }}</td> -->
             <td>{{ registro.descricaoRubrica }}</td>
             <td>{{ registro.valorDespesa  | number:'1.2-2':'pt' }}</td>
             <td>{{ registro.valorCoparticipacao  | number:'1.2-2':'pt' }}</td>

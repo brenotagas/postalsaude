@@ -2,21 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './pages/home/home.component';
 import { Routes, RouterModule } from '@angular/router';
-import { DrillComponent } from './components/drill/drill.component';
-import { RegrasComponent } from './components/regras/regras.component';
-import { MensalidadeAposentadoComponent } from './components/mensalidade-aposentado/mensalidade-aposentado.component';
-import { FichaFinanCopar1Component } from './components/ficha-finan-copar1/ficha-finan-copar1.component';
-import { DrillAtivosComponent } from './components/drill-ativos/drill-ativos.component';
-import { DrillAfastadosComponent } from './components/drill-afastados/drill-afastados.component';
-import { CorreiosIAtivosComponent } from './components/correios-i-ativos/correios-i-ativos.component';
-import { CorreiosIIAtivosComponent } from './components/correios-ii-ativos/correios-ii-ativos.component';
-import { CorreiosIAfastadosComponent } from './components/correios-i-afastados/correios-i-afastados.component';
-import { CorreiosIiAfastadosComponent } from './components/correios-ii-afastados/correios-ii-afastados.component';
-import { MensalidadeAtivosComponent } from './components/mensalidade-ativos/mensalidade-ativos.component';
-import { FichaFinanCopar2Component } from './components/ficha-finan-copar2/ficha-finan-copar2.component';
-import { MensalidadeAfastadosComponent } from './components/mensalidade-afastados/mensalidade-afastados.component';
-import { ParcelamentoAfastadosComponent } from './components/parcelamento-afastados/parcelamento-afastados.component';
-import { ParcelamentoAposentadosComponent } from './components/parcelamento-aposentados/parcelamento-aposentados.component';
+import { DrillComponent } from './components/aposentados/drill-aposentados/drill-aposentados.component';
+import { RegrasComponent } from './components/shared/regras/regras.component';
+import { MensalidadeAposentadoComponent } from './components/aposentados/mensalidade-aposentado/mensalidade-aposentado.component';
+import { FichaFinanCopar1Component } from './components/aposentados/ficha-finan-copar1/ficha-finan-copar1.component';
+import { DrillAtivosComponent } from './components/ativos/drill-ativos/drill-ativos.component';
+import { DrillAfastadosComponent } from './components/afastados/drill-afastados/drill-afastados.component';
+import { CorreiosIAtivosComponent } from './components/ativos/correios-i-ativos/correios-i-ativos.component';
+import { CorreiosIIAtivosComponent } from './components/ativos/correios-ii-ativos/correios-ii-ativos.component';
+import { CorreiosIAfastadosComponent } from './components/afastados/correios-i-afastados/correios-i-afastados.component';
+import { CorreiosIiAfastadosComponent } from './components/afastados/correios-ii-afastados/correios-ii-afastados.component';
+import { MensalidadeAtivosComponent } from './components/ativos/mensalidade-ativos/mensalidade-ativos.component';
+import { FichaFinanCopar2Component } from './components/aposentados/ficha-finan-copar2/ficha-finan-copar2.component';
+import { MensalidadeAfastadosComponent } from './components/afastados/mensalidade-afastados/mensalidade-afastados.component';
+import { ParcelamentoAfastadosComponent } from './components/afastados/parcelamento-afastados/parcelamento-afastados.component';
+import { ParcelamentoAposentadosComponent } from './components/aposentados/parcelamento-aposentados/parcelamento-aposentados.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },

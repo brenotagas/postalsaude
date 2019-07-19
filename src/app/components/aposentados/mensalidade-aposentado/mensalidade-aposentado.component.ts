@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RotinaAtualizacaoService } from 'src/app/services/rotina-atualizacao.service';
 import { ActivatedRoute } from '@angular/router';
+import { error } from 'util';
 
 @Component({
   selector: 'app-mensalidade-aposentado',
@@ -22,7 +23,6 @@ export class MensalidadeAposentadoComponent implements OnInit {
 
   VerificarQueryString(): any {
     this.route.queryParams.subscribe(params => {
-      //console.log(params.matricula)
       this.matricula = params.matricula;
     });
   }
