@@ -41,9 +41,11 @@
               <td class="campoLeft">{{reg?.tipoBeneficiario.descricao | lowercase | titlecase }}</td>
               <td>{{reg?.valorCobrado  | number:'1.2-2':'pt' }}</td>
               <td [attr.rowspan]="mensalidades.data[i].beneficiarios.length" *ngIf="isFirst">{{ mensalidade?.mensalidadeSomadaTodosBeneficiarios  | number:'1.2-2':'pt' }}</td>
-              <td [attr.rowspan]="mensalidades.data[i].beneficiarios.length" *ngIf="isFirst">{{ reg?.folhaPagamento }}</td>
-              <td [attr.rowspan]="mensalidades.data[i].beneficiarios.length" *ngIf="isFirst">{{ reg?.boleto }}</td>
-              <td [attr.rowspan]="mensalidades.data[i].beneficiarios.length" *ngIf="isFirst">{{ reg?.parcelamento }}</td>
+              <td [attr.rowspan]="mensalidades.data[i].beneficiarios.length" *ngIf="isFirst" colspan="3">
+                <span>{{ mensalidade?.tipoPagamento.valor  | number:'1.2-2':'pt' }}</span>
+                <span class="badge badge-pill badge-primary badge-right {{ mensalidade.tipoPagamento.descricao }}">{{ mensalidade?.tipoPagamento.sigla }}</span>
+                <span class="badge badge-pill badge-invisivel badge-right" *ngIf="mensalidade.tipoPagamento.sigla == ''">&nbsp;</span>
+              </td>
               <td [attr.rowspan]="mensalidades.data[i].beneficiarios.length" *ngIf="isFirst">{{ mensalidade?.situacao }}</td>
             </tr>
           </ng-container>

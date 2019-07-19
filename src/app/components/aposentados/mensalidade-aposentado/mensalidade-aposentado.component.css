@@ -38,3 +38,31 @@ th.ps-tooltip{
     cursor: help;
     text-decoration: underline;
 }
+
+/* BADGES */
+
+.badge-right{
+    float: right;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+.badge-invisivel{
+    color: white;
+}
+
+.Folha{
+    background-color: #E6A31E;
+}
+
+.Boleto{
+    background-color: #004D71;
+}
+
+.Parcelamento{
+    background-color: #07913A;
+}
+
+.valor{
+    margin-right: -20px;
+}
