@@ -17,7 +17,7 @@ export class NomePipe implements PipeTransform {
         const elementPrep = prep[j];
         const elementArray = array[i];
         if (elementArray == elementPrep) {
-          var nome = value.replace(/ Da | Das | De | Do | Dos /gi, function (x) {
+          let nome = value.replace(/ Da | Das | De | Do | Dos | E /gi, function (x) {
             return x.toLowerCase();
           });
           return nome;

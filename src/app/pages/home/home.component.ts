@@ -27,12 +27,15 @@ export class HomeComponent implements OnInit {
       this.dados = res;
       //console.log(this.dados);
       if (this.dados.data.tipoBeneficiario == "Aposentado") {
-        this.router.navigate(['drill-aposentados'], {queryParams: {matricula: matricula}})
+        this.router.navigate(['drill-aposentados'], { queryParams: { matricula: matricula } })
       } else if (this.dados.data.tipoBeneficiario == "Ativo") {
-        this.router.navigate(['drill-ativos'], {queryParams: {matricula: matricula}})
+        this.router.navigate(['drill-ativos'], { queryParams: { matricula: matricula } })
       } else {
-        this.router.navigate(['drill-afastados'], {queryParams: {matricula: matricula}})
+        this.router.navigate(['drill-afastados'], { queryParams: { matricula: matricula } })
       }
-    });
+    },
+      error => {
+        console.log("Error", error);
+      });
   }
 }
