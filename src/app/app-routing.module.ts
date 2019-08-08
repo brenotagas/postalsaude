@@ -20,21 +20,21 @@ import { ParcelamentoAposentadosComponent } from './components/aposentados/parce
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'drill-ativos', component: DrillAtivosComponent },
   { path: 'drill-aposentados', component: DrillComponent },
   { path: 'drill-afastados', component: DrillAfastadosComponent },
-  { path: 'regras', component: RegrasComponent },
-  { path: 'mensalidade-aposentados', component: MensalidadeAposentadoComponent },
-  { path: 'ffcs-aposentados', component: FichaFinanCopar1Component },
-  { path: 'ffcsii-aposentados', component: FichaFinanCopar2Component },
-  { path: 'parcelamento-aposentados', component: ParcelamentoAposentadosComponent },
-  { path: 'drill-ativos', component: DrillAtivosComponent },
-  { path: 'ffcs-ativos', component: CorreiosIAtivosComponent },
-  { path: 'ffcsii-ativos', component: CorreiosIIAtivosComponent },
-  { path: 'ffcs-afastados', component: CorreiosIAfastadosComponent },
-  { path: 'ffcsii-afastados', component: CorreiosIiAfastadosComponent },
   { path: 'mensalidade-ativos', component: MensalidadeAtivosComponent },
+  { path: 'mensalidade-aposentados', component: MensalidadeAposentadoComponent },
   { path: 'mensalidade-afastados', component: MensalidadeAfastadosComponent },
+  { path: 'ffcs-aposentados', component: FichaFinanCopar1Component },
+  { path: 'ffcs-ativos', component: CorreiosIAtivosComponent },
+  { path: 'ffcs-afastados', component: CorreiosIAfastadosComponent },
+  { path: 'ffcsii-aposentados', component: FichaFinanCopar2Component },
+  { path: 'ffcsii-ativos', component: CorreiosIIAtivosComponent },
+  { path: 'ffcsii-afastados', component: CorreiosIiAfastadosComponent },
+  { path: 'parcelamento-aposentados', component: ParcelamentoAposentadosComponent },
   { path: 'parcelamento-afastados', component: ParcelamentoAfastadosComponent },
+  { path: 'regras', component: RegrasComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' }
 ]
 

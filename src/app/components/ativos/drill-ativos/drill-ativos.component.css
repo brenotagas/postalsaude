@@ -29,4 +29,10 @@
   .td-tamanho-20{
     width: 20%
   }
+
+  .Ativo{
+    background-color: grey;
+    cursor: no-drop;
+    border-color: grey !important;
+  }
   

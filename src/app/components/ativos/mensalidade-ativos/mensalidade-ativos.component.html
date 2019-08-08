@@ -19,8 +19,7 @@
         <thead class="postal">
           <tr>
             <th class="campo-menor" scope="col" rowspan="2">Competência</th>
-            <th scope="col" rowspan="2">Ref.</th>
-            <th scope="col" rowspan="2">Rubrica</th>
+            <th scope="col" rowspan="2" data-toggle="tooltip" data-placement="top" title="Referência"class="ps-tooltip">Ref.</th>
             <th scope="col" rowspan="2">Descrição</th>
             <th scope="col" rowspan="2">Remuneração Bruta (R$)</th>
             <th scope="col" rowspan="2">Beneficiário</th>
@@ -30,30 +29,25 @@
             <th scope="col" colspan="3">Forma de cobrança</th>
             <th scope="col" rowspan="2">Situação</th>
           </tr>
-          <tr>
-            <th scope="col">Folha de Pagamento</th>
-            <th scope="col">Boleto</th>
-            <th scope="col">Parcelamento</th>
-          </tr>
         </thead>
         <tbody>
           <ng-container *ngFor="let mensalidade of mensalidades.data; let i = index">
             <tr *ngFor="let reg of mensalidades.data[i].registros; let j = index; first as isFirst">
-              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ mensalidade.competencia }}
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ mensalidade.competencia.mes }}/{{ mensalidade.competencia.ano }}</td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.referencia.mes }}/{{ reg.referencia.ano }}</td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.rubrica.descricao }}</td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.remuneracaoBruta | number:'1.2-2':'pt' }}</td>
+              <td class="campoLeft">{{reg?.beneficiarios[j].nome | titlecase | nome }}</td>
+              <td>{{reg?.beneficiarios[j].tipoBeneficiario.descricao | titlecase }}</td>
+              <td>{{reg?.beneficiarios[j].valorCobrado | number:'1.2-2':'pt' }}</td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.mensalidadeSomadaTodosBeneficiarios | number:'1.2-2':'pt' }}</td>
+              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst" colspan="3"><span>{{ reg?.tipoPagamento.valor | number:'1.2-2':'pt' }}</span>
+                <span class="badge badge-pill badge-primary badge-right {{ reg?.tipoPagamento.descricao }}"
+                  data-toggle="tooltip" data-placement="top"
+                  title="{{ reg?.tipoPagamento.descricao }}">{{ reg?.tipoPagamento.sigla }}</span>
+                  <span class="badge badge-pill badge-invisivel badge-right"
+                  *ngIf="reg?.tipoPagamento.sigla == ''">&nbsp;</span>
               </td>
-              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.referencia }}</td>
-              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.rubrica.id }}</td>
-              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.rubrica.descricao }}
-              </td>
-              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg.remuneracaoBruta }}</td>
-              <td class="campoLeft">{{reg?.nome}}</td>
-              <td class="campoLeft">{{reg?.tipoBeneficiario.descricao}}</td>
-              <td class="campoLeft">{{reg?.valorCobrado}}</td>
-              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">
-                {{ reg?.mensalidadeSomadaTodosBeneficiarios }}</td>
-              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.folhaPagamento }}</td>
-              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.boleto }}</td>
-              <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.parcelamento }}</td>
               <td [attr.rowspan]="mensalidades.data[i].registros.length" *ngIf="isFirst">{{ reg?.situacao }}</td>
             </tr>
           </ng-container>

@@ -31,14 +31,14 @@ export class DrillAtivosComponent implements OnInit {
   BuscarInformacoesPorMatricula(matricula: any) {
     this.rotinaservice.BuscarInformacoesPorMatricula(matricula).subscribe((res: any) => {
       this.dados = res.data;
-      //console.log(this.dados);
+      console.log(this.dados);
     });
   }
 
   BuscarCompetenciasComDespesasPorMatricula(matricula: any) {
     this.rotinaservice.BuscarCompetenciasComDespesasPorMatricula(matricula).subscribe((res: any) => {
       this.competencias = res.data;
-      //console.log(this.competencias);
+      console.log(this.competencias);
     });
   }
 

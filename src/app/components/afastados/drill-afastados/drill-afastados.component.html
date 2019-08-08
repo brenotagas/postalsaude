@@ -79,15 +79,15 @@
   <div class="container col-12">
     <div class="row">
       <div class="col-4">
-        <button routerLink="/mensalidade-aposentados" class="btn btn-block btn-lg botao postal">Mensalidade</button>
+        <button routerLink="/mensalidade-afastados" [queryParams]="{matricula: dados?.matricula}" class="btn btn-block btn-lg botao postal">Mensalidade</button>
       </div>
       <div class="col-4">
-        <button routerLink="/ffcs-aposentados" class="btn btn-block btn-lg botao postal">Ficha Financeira<p
+        <button routerLink="/ffcs-afastados" [queryParams]="{matricula: dados?.matricula}" class="btn btn-block btn-lg botao postal">Ficha Financeira<p
             class="sub-titulo">Plano Correios
             Saúde</p></button>
       </div>
       <div class="col-4">
-        <button routerLink="/ffcsii-aposentados" class="btn btn-block btn-lg botao postal">Ficha Financeira<br>
+        <button routerLink="/ffcsii-afastados" [queryParams]="{matricula: dados?.matricula}" class="btn btn-block btn-lg botao postal">Ficha Financeira<br>
           <p class="sub-titulo">Plano Correios Saúde II</p>
         </button>
       </div>
@@ -95,7 +95,7 @@
     <div class="row col-12"><br></div>
     <div class="row">
       <div class="col-4">
-        <button routerLink="/parcelamento-aposentados" class="btn btn-block btn-lg botao postal">Parcelamento</button>
+        <button routerLink="/parcelamento-afastados" [queryParams]="{matricula: dados?.matricula}" class="btn btn-block btn-lg botao postal">Parcelamento</button>
       </div>
       <div class="col-4">
         <button class="btn btn-block btn-lg botao postal">Boleto em aberto<br>

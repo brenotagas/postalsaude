@@ -13,8 +13,7 @@
         <h2>Sem dados para exibição!</h2>
       </div>
       <!-- COPAR I   -->
-      <table class="table table-bordered table-sm text-center cabecalhoDeTabelas table-striped"
-        *ngIf="ficha?.registros != null">
+      <table class="table table-bordered table-sm text-center cabecalhoDeTabelas table-striped" *ngIf="ficha?.registros != null">
         <thead>
           <tr>
             <th class="campo-menor" scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
@@ -31,8 +30,8 @@
             <th scope="col" rowspan="2" data-toggle="tooltip" data-placement="top" title="Valor da Coparticipação (R$)"
               class="ps-tooltip">Valor da Copar. (R$)</th>
             <th scope="col" rowspan="2">Saldo Devedor (R$)</th>
-            <th scope="col" rowspan="2">Resíduo (R$)</th>
             <th scope="col" colspan="3">Forma de pagamento</th>
+            <th scope="col" rowspan="2">Resíduo (R$)</th>
             <th scope="col" rowspan="2">Situação</th>
           </tr>
         </thead>
@@ -47,8 +46,7 @@
             <td>{{ registro.descricaoRubrica }}</td>
             <td>{{ registro.valorDespesa  | number:'1.2-2':'pt' }}</td>
             <td>{{ registro.valorCoparticipacao  | number:'1.2-2':'pt' }}</td>
-            <td>{{ registro.residuoAnterior  | number:'1.2-2':'pt' }}</td>
-            <td>{{ registro.residuo  | number:'1.2-2':'pt' }}</td>
+            <td>{{ registro.saldoDevedor  | number:'1.2-2':'pt' }}</td>
             <td colspan="3">
               <span>{{ registro.tipoPagamento.valor | number:'1.2-2':'pt' }}</span>
               <span class="badge badge-pill badge-primary badge-right {{ registro.tipoPagamento.descricao }}"
@@ -57,6 +55,7 @@
               <span class="badge badge-pill badge-invisivel badge-right"
                 *ngIf="registro.tipoPagamento.sigla == ''">&nbsp;</span>
             </td>
+            <td>{{ registro.residuo  | number:'1.2-2':'pt' }}</td>
             <td>{{ registro.situacaoDespesa }}</td>
           </tr>
         </tbody>

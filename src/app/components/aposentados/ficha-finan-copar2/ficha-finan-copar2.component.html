@@ -13,7 +13,7 @@
         <h2>Sem dados para exibição!</h2>
       </div>
       <!-- COPAR II  -->
-      <table class="table table-bordered table-sm text-center cabecalhoDeTabelas" *ngIf="ficha?.registros.length != 0">
+      <table class="table table-bordered table-sm text-center cabecalhoDeTabelas" *ngIf="ficha?.registros">
         <thead>
           <tr>
             <th class="campo-menor" scope="col" rowspan="2">Competência</th>
@@ -28,6 +28,7 @@
             <th scope="col" rowspan="2">Resíduo Anterior (R$)</th>
             <th scope="col" colspan="3">Forma de cobrança</th>
             <th scope="col" rowspan="2">Resíduo (R$)</th>
+            <th scope="col" rowspan="2">Situação</th>
           </tr>
         </thead>
         <tbody>
@@ -50,6 +51,7 @@
                 *ngIf="registro.tipoPagamento.sigla == ''">&nbsp;</span>
             </td>
             <td>{{ registro.residuo  | number:'1.2-2':'pt' }}</td>
+            <td>{{ registro.situacao }}</td>
           </tr>
         </tbody>
       </table>

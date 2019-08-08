@@ -1,10 +1,16 @@
 <app-header></app-header>
+<div id="alertMatricula" class="alert alert-danger hide" role="alert">
+    Matrícula Inválida ou Beneficiário não encontrado!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 <br />
 <br />
 <br />
 <br />
 <div class="container d-flex justify-content-center">
-    <div class="row ">
+    <div class="row">
         <div class="card shadow col s6" style="background-color: white; padding: 2.5px">
             <div class="card-body text-center" style="background-color: white">
                 <div>
@@ -18,8 +24,8 @@
                 <div class="card-body">
                     <form class="form-inline align-items-center" [formGroup]="formMatricula">
                         <div class="col-auto">
-                            <input class="js-matricula" type="text" maxlength="8" style="width: 15rem"
-                                placeholder="Informar a Matrícula" formControlName="matricula" autofocus >
+                            <input class="js-matricula" type="text" maxlength="9" style="width: 15rem"
+                                placeholder="Informar a Matrícula" formControlName="matricula" autofocus>
                         </div>
                         <div class="col-auto">
                             <button style="background-color:#004d71; color: aliceblue; width: 8rem;" href="#"
@@ -33,7 +39,7 @@
     </div>
     <script>
         $(document).ready(function () {
-            $('.js-matricula').mask("99999999");
+            $('.js-matricula').mask("999999999");
         });
     </script>
 </div>

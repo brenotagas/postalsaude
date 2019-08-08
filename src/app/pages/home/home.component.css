@@ -42,3 +42,11 @@ input:focus {
     background-color: #fcfcfc;
     box-shadow: 0px 0px 0px, 0 0 15px #dddbdb, 0 0 0px #004d71;           
 }
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: inline-flex;
+}
