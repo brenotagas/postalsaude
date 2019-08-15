@@ -40,4 +40,8 @@ export class RotinaAtualizacaoService {
     return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Ativos/${matricula}/mensalidades`)
   }
 
+  BuscarFichaFinanceiraAtivoCopar2PorMatricula(matricula){
+    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Ativos/${matricula}/ficha-financeira-copar-ii`)
+  }
+
 }
