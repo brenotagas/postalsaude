@@ -30,7 +30,8 @@ export class HomeComponent implements OnInit {
       matriculaTratada = matricula.substring(1);
     } else {
       matriculaTratada = matricula
-    }    
+    }
+    matriculaTratada = matriculaTratada.trim();
     this.rotinaservice.BuscarInformacoesPorMatricula(matriculaTratada).subscribe((res: any) => {
       this.dados = res;
       //console.log(this.dados);
