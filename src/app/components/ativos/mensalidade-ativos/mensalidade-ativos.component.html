@@ -20,7 +20,8 @@
         <thead class="postal">
           <tr>
             <th class="campo-menor" scope="col" rowspan="2">Competência</th>
-            <th scope="col" rowspan="2" data-toggle="tooltip" data-placement="top" title="Referência"class="ps-tooltip">Ref.</th>
+            <th scope="col" rowspan="2" data-toggle="tooltip" data-placement="top" title="Referência"
+              class="ps-tooltip">Ref.</th>
             <th scope="col" rowspan="2">Descrição</th>
             <th scope="col" rowspan="2">Remuneração Bruta (R$)</th>
             <th scope="col" rowspan="2">Beneficiário</th>
@@ -32,46 +33,30 @@
           </tr>
         </thead>
         <tbody>
-          <!-- <ng-container *ngFor="let mensalidade of mensalidades.data; let i = index">
-              <tr *ngFor="let reg of mensalidades.data[i].beneficiarios; let j = index; first as isFirst">
-                  <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst">{{ mensalidade.competencia.mes }}/{{ mensalidade.competencia.ano }}</td>
-                  <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst">{{ mensalidade.referencia.mes }}/{{ mensalidade.referencia.ano }}</td>
-                  <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst">{{ mensalidade.registros[0].rubrica.descricao }}</td>
-                  <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst">{{ mensalidade.registros[0].remuneracaoBruta | number:'1.2-2':'pt' }}</td>
-                  <td class="campoLeft">{{ mensalidade?.beneficiarios[j].nome | titlecase | nome }}</td>
-                  <td>{{mensalidade?.beneficiarios[j].tipoBeneficiario.descricao | titlecase }}</td>
-                  <td>{{mensalidade?.beneficiarios[j].valorCobrado | number:'1.2-2':'pt' }}</td>
-                  <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst">{{ mensalidade.registros[0].mensalidadeSomadaTodosBeneficiarios | number:'1.2-2':'pt' }}</td>
-                  <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst" colspan="3"><span>{{ mensalidade.registros[0].tipoPagamento.valor | number:'1.2-2':'pt' }}</span>
-                    <span class="badge badge-pill badge-primary badge-right {{ mensalidade.registros[0].tipoPagamento.descricao }}"
-                      data-toggle="tooltip" data-placement="top"
-                      title="{{ mensalidade.registros[0].tipoPagamento.descricao }}">{{ mensalidade.registros[0].tipoPagamento.sigla }}</span>
-                      <span class="badge badge-pill badge-invisivel badge-right"
-                      *ngIf="mensalidade.registros[0].tipoPagamento.sigla == ''">&nbsp;</span>
-                  </td>
-                  <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst">{{ mensalidade.registros[0].situacao }}</td>
-              </tr>
-          </ng-container> -->
           <ng-container *ngFor="let mensalidade of mensalidades.data; let i = index">
-            <tr *ngFor="let reg of mensalidades.data[i].beneficiarios; let j = index; first as isFirst">
-                <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst">{{ mensalidade.competencia.mes }}/{{ mensalidade.competencia.ano }}</td>
-                <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst">{{ mensalidade.referencia.mes }}/{{ mensalidade.referencia.ano }}</td>
-                <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst">{{ mensalidade.registros[0].rubrica.descricao }}</td>
-                <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst">{{ mensalidade.registros[0].remuneracaoBruta | number:'1.2-2':'pt' }}</td>
-                <td class="campoLeft">{{ mensalidade?.beneficiarios[j].nome | titlecase | nome }}</td>
-                <td>{{mensalidade?.beneficiarios[j].tipoBeneficiario.descricao | titlecase }}</td>
-                <td>{{mensalidade?.registros[0].beneficiarios[j].valorCobrado | number:'1.2-2':'pt' }}</td>
-                <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst">{{ mensalidade.registros[0].mensalidadeSomadaTodosBeneficiarios | number:'1.2-2':'pt' }}</td>
-                <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst" colspan="3"><span>{{ mensalidade.registros[0].tipoPagamento.valor | number:'1.2-2':'pt' }}</span>
-                  <span class="badge badge-pill badge-primary badge-right {{ mensalidade.registros[0].tipoPagamento.descricao }}"
-                    data-toggle="tooltip" data-placement="top"
-                    title="{{ mensalidade.registros[0].tipoPagamento.descricao }}">{{ mensalidade.registros[0].tipoPagamento.sigla }}</span>
-                    <span class="badge badge-pill badge-invisivel badge-right"
-                    *ngIf="mensalidade.registros[0].tipoPagamento.sigla == ''">&nbsp;</span>
-                </td>
-                <td [attr.rowspan]="mensalidade.beneficiarios.length" *ngIf="isFirst">{{ mensalidade.registros[0].situacao }}</td>
+            <tr *ngFor="let reg of mensalidade?.registros[0].beneficiarios; let j = index; first as isFirst">
+              <td [attr.rowspan]="mensalidade?.registros[0].beneficiarios.length" *ngIf="isFirst">{{ mensalidade?.competencia.mes }}/{{ mensalidade?.competencia.ano }}</td>
+              <td [attr.rowspan]="mensalidade?.registros[0].beneficiarios.length" *ngIf="isFirst">{{ mensalidade?.referencia.mes }}/{{ mensalidade?.referencia.ano }}</td>
+              <td [attr.rowspan]="mensalidade?.registros[0].beneficiarios.length" *ngIf="isFirst">{{ mensalidade?.registros[0].rubrica.descricao }}</td>
+              <td [attr.rowspan]="mensalidade?.registros[0].beneficiarios.length" *ngIf="isFirst">{{ mensalidade?.registros[0].remuneracaoBruta | number:'1.2-2':'pt' }}</td>
+              <td class="campoLeft">{{ mensalidade?.registros[0].beneficiarios[j].nome | titlecase | nome }}</td>
+              <td>{{mensalidade?.registros[0].beneficiarios[j].tipoBeneficiario.descricao | titlecase }}</td>
+              <td>{{mensalidade?.registros[0].beneficiarios[j].valorCobrado | number:'1.2-2':'pt' }}</td>
+              <td [attr.rowspan]="mensalidade?.registros[0].beneficiarios.length" *ngIf="isFirst">{{ mensalidade?.registros[0].mensalidadeSomadaTodosBeneficiarios | number:'1.2-2':'pt' }}</td>
+              <td [attr.rowspan]="mensalidade?.registros[0].beneficiarios.length" *ngIf="isFirst" colspan="3">
+                <span>{{ mensalidade?.registros[0].tipoPagamento.valor | number:'1.2-2':'pt' }}</span>
+                <span
+                  class="badge badge-pill badge-primary badge-right {{ mensalidade?.registros[0].tipoPagamento.descricao }}"
+                  data-toggle="tooltip" data-placement="top"
+                  title="{{ mensalidade?.registros[0].tipoPagamento.descricao }}">{{ mensalidade?.registros[0].tipoPagamento.sigla }}
+                </span>
+                <span class="badge badge-pill badge-invisivel badge-right"
+                  *ngIf="mensalidade?.registros[0].tipoPagamento.sigla == ''">&nbsp;
+                </span>
+              </td>
+              <td [attr.rowspan]="mensalidade?.registros[0].beneficiarios.length" *ngIf="isFirst">{{ mensalidade?.registros[0].situacao }}</td>
             </tr>
-        </ng-container>
+          </ng-container>
         </tbody>
       </table>
     </div>

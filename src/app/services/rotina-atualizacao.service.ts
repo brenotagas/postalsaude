@@ -18,6 +18,8 @@ export class RotinaAtualizacaoService {
     return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Beneficiarios/${matricula}/compentencias-com-despesas`)
   }
 
+  // Aposentados
+
   BuscarMensalidadesAposentadoPorMatricula(matricula) {
     return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Aposentados/${matricula}/mensalidades`)
   }
@@ -40,8 +42,26 @@ export class RotinaAtualizacaoService {
     return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Ativos/${matricula}/mensalidades`)
   }
 
+  BuscarFichaFinanceiraAtivoCopar1PorMatricula(matricula){
+    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Ativos/${matricula}/ficha-financeira-copar-i`)
+  }
+
   BuscarFichaFinanceiraAtivoCopar2PorMatricula(matricula){
     return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Ativos/${matricula}/ficha-financeira-copar-ii`)
+  }
+
+  // Afastados
+
+  BuscarMensalidadesAfastadosPorMatricula(matricula) {
+    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Afastados/${matricula}/mensalidades`)
+  }
+
+  BuscarFichaFinanceiraAfastadosCopar1PorMatricula(matricula){
+    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Afastados/${matricula}/ficha-financeira-copar-i`)
+  }
+
+  BuscarFichaFinanceiraAfastadosCopar2PorMatricula(matricula){
+    return this.http.get<any[]>(`${this.rotinaAtualizacaoUrl}/Afastados/${matricula}/ficha-financeira-copar-ii`)
   }
 
 }

@@ -5,7 +5,7 @@
   <!-- LOADING  -->
   <div class="card text-center shadow">
     <div class="card-body">
-        <div class="d-flex align-items-center"
+      <div class="d-flex align-items-center"
         *ngIf="(!fichas?.registros || fichas?.registros.length == 0) && carregando">
         <strong>Carregando dados...</strong>
         <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
@@ -16,7 +16,7 @@
       </div>
       <!-- COPAR II -->
       <table class="table table-bordered table-sm text-center cabecalhoDeTabelas"
-      *ngIf="fichas?.registros.length != 0 && fichas?.registros != null">
+        *ngIf="fichas?.registros.length != 0 && fichas?.registros != null">
         <thead>
           <tr>
             <th class="campo-menor" scope="col" rowspan="2">Competência</th>
@@ -30,7 +30,6 @@
               class="ps-tooltip">Valor da Copar. (R$)</th>
             <th scope="col" rowspan="2">Saldo Devedor (R$)</th>
             <th scope="col" colspan="3">Forma de cobrança</th>
-            <!-- <th scope="col" rowspan="2">Situação</th> -->
             <th scope="col" rowspan="2">Resíduo (R$)</th>
             <th scope="col" rowspan="2">Situação</th>
           </tr>
@@ -49,9 +48,10 @@
               <td>{{ ficha.saldoDevedor | number:'1.2-2':'pt' }}</td>
               <td colspan="3">
                 <span>{{ ficha.valorBaixa | number:'1.2-2':'pt' }}</span>
-                <span class="badge badge-pill badge-primary badge-right {{ ficha?.tipoPagamento.descricao}}" data-toggle="tooltip"
-                  data-placement="top" title="Folha">{{ ficha?.tipoPagamento.sigla }}</span>
-                <span class="badge badge-pill badge-invisivel badge-right" *ngIf="ficha?.tipoPagamento.sigla == ''">&nbsp;</span>
+                <span class="badge badge-pill badge-primary badge-right {{ ficha?.tipoPagamento.descricao}}"
+                  data-toggle="tooltip" data-placement="top" title="Folha">{{ ficha?.tipoPagamento.sigla }}</span>
+                <span class="badge badge-pill badge-invisivel badge-right"
+                  *ngIf="ficha?.tipoPagamento.sigla == ''">&nbsp;</span>
               </td>
               <td>{{ ficha.residuo | number:'1.2-2':'pt'}} </td>
               <td>{{ ficha.situacao }}</td>

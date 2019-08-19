@@ -4,52 +4,60 @@
     <br />
     <div class="card text-center shadow">
         <div class="card-body">
+            <div class="d-flex align-items-center"
+                *ngIf="(!fichas?.registros || fichas?.registros.length == 0) && carregando">
+                <strong>Carregando dados...</strong>
+                <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+            </div>
+            <div class="alert alert-danger" role="alert"
+                *ngIf="(fichas?.registros == null || fichas?.registros.length == 0) && !carregando">
+                <h2>Sem dados para exibição!</h2>
+            </div>
             <!-- COPAR I   -->
-            <table class="table table-bordered table-sm text-center cabecalhoDeTabelas">
+            <table class="table table-bordered table-sm text-center cabecalhoDeTabelas"
+            *ngIf="fichas?.registros.length != 0 && fichas?.registros != null">
                 <thead>
                     <tr>
-                        <th class="campo-menor" scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
-                            title="Referência do Extrato de Utilização" class="ps-tooltip">Ref. do Extrato de Utilização
-                        </th>
-                        <th class="campo-menor" scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
-                            title="Competência da Coparticipação" class="ps-tooltip">Competência da Copar.</th>
-                        <th scope="col" rowspan="2">Remuneração (R$)</th>
-                        <th class="campo-menor" scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
-                            title="Referência Salarial" class="ps-tooltip">Ref. Salarial</th>
+                        <th class="campo-menor" scope="col" rowspan="2">Competência</th>
+                        <th class="campo-menor" scope="col" rowspan="2">Remuneração Bruta (R$)</th>
                         <th scope="col" rowspan="2">Teto (R$)</th>
+                        <th class="campo-menor" scope="col" rowspan="2">Remuneração Líquida (R$)</th>
                         <th scope="col" rowspan="2">Margem (R$)</th>
                         <th scope="col" rowspan="2">Descrição</th>
                         <th scope="col" rowspan="2">Valor da Despesa (R$)</th>
                         <th scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
                             title="Valor da Coparticipação (R$)" class="ps-tooltip">Valor da Copar. (R$)</th>
                         <th scope="col" rowspan="2">Saldo Devedor (R$)</th>
-                        <th scope="col" colspan="3">Forma de pagamento</th>
+                        <th scope="col" colspan="3">Forma de cobrança</th>
                         <th scope="col" rowspan="2">Resíduo (R$)</th>
                         <th scope="col" rowspan="2">Situação</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>OUT/15</td>
-                        <td>OUT/15</td>
-                        <td>4.404,26</td>
-                        <td>NS - 06</td>
-                        <td>1.761,70</td>
-                        <td>880,85 </td>
-                        <td>POSTAL SAÚDE - EMPREGADOS ECT ATIVOS</td>
-                        <td>48.854,20</td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td colspan="3">
-                            <span>1.761,70</span>
-                            <span class="badge badge-pill badge-primary badge-right Folha"
-                                data-toggle="tooltip" data-placement="top"
-                                title="Folha">F</span>
-                            <!-- <span class="badge badge-pill badge-invisivel badge-right" *ngIf="registro?.tipoPagamento.sigla == ''">&nbsp;</span> -->
+                    <ng-container *ngFor="let ficha of fichas?.registros; let i = index">
+                        <tr>
+                            <td>{{ ficha.competencia.mes }}/{{ ficha.competencia.ano }}</td>
+                            <td>{{ ficha.remuneracaoBruta | number:'1.2-2':'pt' }}</td>
+                            <td>{{ ficha.teto | number:'1.2-2':'pt' }}</td>
+                            <td>{{ ficha.remuneracaoLiquida | number:'1.2-2':'pt' }}</td>
+                            <td>{{ ficha.margem | number:'1.2-2':'pt' }}</td>
+                            <td>{{ ficha.rubrica.descricao }}</td>
+                            <td>{{ ficha.valorDespesa | number:'1.2-2':'pt' }}</td>
+                            <td>{{ ficha.valorCoparticipacao | number:'1.2-2':'pt' }}</td>
+                            <td>{{ ficha.saldoDevedor | number:'1.2-2':'pt' }}</td>
+                            <td colspan="3">
+                                <span>{{ ficha.tipoPagamento.valor | number:'1.2-2':'pt' }}</span>
+                                <span
+                                    class="badge badge-pill badge-primary badge-right {{ ficha?.tipoPagamento.descricao}}"
+                                    data-toggle="tooltip" data-placement="top"
+                                    title="Folha">{{ ficha?.tipoPagamento.sigla }}</span>
+                                <span class="badge badge-pill badge-invisivel badge-right"
+                                    *ngIf="ficha?.tipoPagamento.sigla == ''">&nbsp;</span>
                             </td>
-                        <td>1.761,70</td>
-                        <td>Inadimplência</td>
-                    </tr>
+                            <td>{{ ficha.residuo | number:'1.2-2':'pt'}} </td>
+                            <td>{{ ficha.situacao }}</td>
+                        </tr>
+                    </ng-container>
                 </tbody>
             </table>
         </div>
