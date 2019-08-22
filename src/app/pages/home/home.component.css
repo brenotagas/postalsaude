@@ -50,3 +50,8 @@ input:focus {
 .show{
   display: inline-flex;
 }
+
+.progress>.progress-ps{
+  background-color: #004d71;
+  width: 100%
+}

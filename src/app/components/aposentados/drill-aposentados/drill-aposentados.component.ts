@@ -18,7 +18,7 @@ export class DrillComponent implements OnInit {
   ngOnInit() {
     this.VerificarQueryString();
     this.BuscarInformacoesPorMatricula(this.matricula);
-    this.BuscarCompetenciasComDespesasPorMatricula(this.matricula);
+    //this.BuscarCompetenciasComDespesasPorMatricula(this.matricula);
   }
 
   VerificarQueryString(): any {

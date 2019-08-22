@@ -12,6 +12,8 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit {
 
+  carregando = false;
+
   formMatricula = new FormGroup({
     matricula: new FormControl()
   });
@@ -25,6 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   BuscarInformacoesPorMatricula(matricula) {
+    this.carregando = true;
     let matriculaTratada;
     if (matricula.charAt(0) === '0') {
       matriculaTratada = matricula.substring(1);
@@ -33,21 +36,24 @@ export class HomeComponent implements OnInit {
     }
     matriculaTratada = matriculaTratada.trim();
     this.rotinaservice.BuscarInformacoesPorMatricula(matriculaTratada).subscribe((res: any) => {
-      this.dados = res;
-      //console.log(this.dados);
-      if (this.dados.data.matricula == null && this.dados.data.nome == null && this.dados.data.tipoBeneficiario == null) {
-        console.log("Matrícula Inválida ou Beneficiario não encontrado!");
-        $('#alertMatricula').removeClass("hide");
-      } else if (this.dados.data.tipoBeneficiario == "Aposentado Normal" || this.dados.data.tipoBeneficiario == "Aposentado por Invalidez") {
+      this.dados = res.data;
+      console.log(this.dados);
+      if (this.dados.matricula == null && this.dados.nome == null && this.dados.tipoBeneficiario == null) {
+        //console.log("Matrícula Inválida ou Beneficiario não encontrado!");
+        //$('#alertMatricula').removeClass("hide");
+        this.carregando = false;
+      } else if (this.dados.tipoBeneficiario == "Aposentado Normal" || this.dados.tipoBeneficiario == "Aposentado por Invalidez") {
+        this.carregando = false;
         this.router.navigate(['drill-aposentados'], { queryParams: { matricula: matriculaTratada } })
-      } else if (this.dados.data.tipoBeneficiario == "Ativo" || this.dados.data.tipoBeneficiario == "Afastado") {
+      } else if (this.dados.tipoBeneficiario == "Ativo" || this.dados.tipoBeneficiario == "Afastado") {
+        this.carregando = false;
         this.router.navigate(['drill-ativos'], { queryParams: { matricula: matriculaTratada } })
       }// } else {
       //   this.router.navigate(['drill-afastados'], { queryParams: { matricula: matriculaTratada } })
       // }
     },
       error => {
-        console.log("Error", error);
+        console.log(error.error);
       });
   }
 }
