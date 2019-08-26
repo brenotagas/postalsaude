@@ -17,6 +17,8 @@ import { FichaFinanCopar2Component } from './components/aposentados/ficha-finan-
 import { MensalidadeAfastadosComponent } from './components/afastados/mensalidade-afastados/mensalidade-afastados.component';
 import { ParcelamentoAfastadosComponent } from './components/afastados/parcelamento-afastados/parcelamento-afastados.component';
 import { ParcelamentoAposentadosComponent } from './components/aposentados/parcelamento-aposentados/parcelamento-aposentados.component';
+import { HomeredirectComponent } from './pages/homeredirect/homeredirect.component';
+import { InadimplenciaAposentadoComponent } from './components/aposentados/inadimplencia-aposentado/inadimplencia-aposentado.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -34,7 +36,9 @@ const routes: Routes = [
   { path: 'ffcsii-afastados', component: CorreiosIiAfastadosComponent },
   { path: 'parcelamento-aposentados', component: ParcelamentoAposentadosComponent },
   { path: 'parcelamento-afastados', component: ParcelamentoAfastadosComponent },
+  { path: 'inadimplencia-aposentados', component: InadimplenciaAposentadoComponent },
   { path: 'regras', component: RegrasComponent },
+  { path: 'redirect', component: HomeredirectComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' }
 ]
 

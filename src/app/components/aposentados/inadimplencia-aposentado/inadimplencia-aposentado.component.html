@@ -1,0 +1,51 @@
+<app-header></app-header>
+<div class="conteudo">
+    <app-cabecalho titulo="Inadimplências"></app-cabecalho>
+    <br />
+    <div class="card shadow">
+        <div class="card-body align-items-center">
+            <div class="d-flex align-items-center" *ngIf="(!inadimplencias?.data) && carregando">
+                <strong>Carregando dados...</strong>
+                <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+            </div>
+            <div class="alert alert-danger" role="alert"
+                *ngIf="(inadimplencias?.data == null || inadimplencias?.data.length == 0) && !carregando">
+                <h2>Sem dados para exibição!</h2>
+            </div>
+            <!-- Inadimplências -->
+            <table id="" class="table table-bordered table-sm text-center cabecalhoDeTabelas"
+                *ngIf="inadimplencias?.data.length != 0 && inadimplencias?.data != null">
+                <thead class="postal">
+                    <tr>
+                        <th class="campo-menor" scope="col" rowspan="2">Competência</th>
+                        <th scope="col" rowspan="2">Número da Parcela</th>
+                        <th scope="col" rowspan="2">Data Vencimento</th>
+                        <th scope="col" rowspan="2">Tipo Pagamento</th>
+                        <th scope="col" colspan="3">Valor (R$)</th>
+                        <th scope="col" rowspan="2">Situação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let inadimplencias of inadimplencias.data; let i = index">
+                        <tr>
+                            <td>{{ inadimplencias.competencia.mes }}/{{ inadimplencias.competencia.ano }}</td>
+                            <td>{{ inadimplencias.numeroParcela }}</td>
+                            <td>{{ inadimplencias.dataVencimento | date: 'dd/MM/yyyy' }}</td>
+                            <td>{{ inadimplencias.tipoPagamento.descricao }}</td>
+                            <td>{{ inadimplencias.tipoPagamento.valor | number:'1.2-2':'pt' }}
+                                <span
+                                    class="badge badge-pill badge-primary badge-right {{ inadimplencias.tipoPagamento.descricao }}"
+                                    data-toggle="tooltip" data-placement="top"
+                                    title="{{ inadimplencias?.tipoPagamento.descricao }}">{{ inadimplencias?.tipoPagamento.sigla }}</span>
+                                <span class="badge badge-pill badge-invisivel badge-right"
+                                    *ngIf="inadimplencias?.tipoPagamento.sigla == ''">&nbsp;</span>
+                            </td>
+                            <td colspan="3">{{ inadimplencias.situacaoParcela | titlecase}}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

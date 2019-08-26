@@ -31,6 +31,8 @@ import { ParcelamentoAfastadosComponent } from './components/afastados/parcelame
 import { ParcelamentoAposentadosComponent } from './components/aposentados/parcelamento-aposentados/parcelamento-aposentados.component';
 import { CabecalhoComponent } from './components/shared/cabecalho/cabecalho.component';
 import { NomePipe } from './pipes/nome.pipe';
+import { HomeredirectComponent } from './pages/homeredirect/homeredirect.component';
+import { InadimplenciaAposentadoComponent } from './components/aposentados/inadimplencia-aposentado/inadimplencia-aposentado.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { NomePipe } from './pipes/nome.pipe';
     ParcelamentoAfastadosComponent,
     ParcelamentoAposentadosComponent,
     CabecalhoComponent,
-    NomePipe
+    NomePipe,
+    HomeredirectComponent,
+    InadimplenciaAposentadoComponent
   ],
   imports: [
     BrowserModule,

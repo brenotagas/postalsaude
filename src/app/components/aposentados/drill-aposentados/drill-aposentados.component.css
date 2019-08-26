@@ -33,3 +33,9 @@
 .texto-centro{
   text-align: center;
 }
+
+.Ativo{
+  background-color: grey;
+  cursor: no-drop;
+  border-color: grey !important;
+}

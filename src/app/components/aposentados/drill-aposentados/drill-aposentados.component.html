@@ -101,8 +101,9 @@
         </button>
       </div>
       <div class="col-4">
-        <button class="btn btn-block btn-lg botao btn-danger">Inadimplência<br>
-          <p class="sub-titulo">R$ 0,00</p>
+        <button routerLink="/inadimplencia-aposentados" [queryParams]="{matricula: dados?.matricula}"
+        class="btn btn-block btn-lg botao btn-danger">Inadimplência<br>
+          <p class="sub-titulo" *ngIf="inadimplencias.length != 0">R$ {{ inadimplencias[0]?.inadimplenciasSomadas | number:'1.2-2':'pt' }}</p>
         </button>
       </div>
     </div>
@@ -114,12 +115,11 @@
     <div class="accordion" id="accordionRegra">
       <div class="card">
         <div class="row card-header" id="headingOne">
-          <button class="btn col-12" type="button" data-toggle="collapse" data-target="#collapseRegra"
-            aria-expanded="false" aria-controls="collapseRegra">
+          <button class="btn col-12" type="button">
             <div class="col">
               <h4><strong>Regras de Cobrança</strong></h4>
             </div>
-            <div class="col">(Clique aqui para saber mais)</div>
+            <div class="col"><a href="http://www.postalsaude.com.br/beneficiario/mensalidade-e-coparticipacao" target="_blank">(Clique aqui para saber mais)</a></div>
           </button>
         </div>
 

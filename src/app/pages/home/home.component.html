@@ -1,14 +1,14 @@
 <app-header></app-header>
-<div id="alertMatricula" class="alert alert-danger" role="alert" *ngIf="dados?.data[0].version == 1">
+<div id="alertMatricula" class="alert alert-danger" role="alert" *ngIf="dados?.codigo == 0 || dados?.version == 1">Beneficiário não encontrado! 
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<div id="alertMatricula" class="alert alert-danger" role="alert" *ngIf="dados?.codigo == 0">Beneficiário não encontrado!
+<!-- <div id="alertMatricula" class="alert alert-danger" role="alert" *ngIf="dados?.data.length == 1">{{ dados?.data[0].value }}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
-</div>
+</div> -->
 <br />
 <br />
 <br />
@@ -29,7 +29,7 @@
                     <form class="form-inline align-items-center" [formGroup]="formMatricula">
                         <div class="col-auto">
                             <input class="js-matricula" type="text" maxlength="9" style="width: 15rem"
-                                placeholder="Informar a Matrícula" formControlName="matricula" autofocus>
+                                placeholder="Informar a Matrícula" formControlName="matricula" autofocus #matricula>
                         </div>
                         <div class="col-auto">
                             <button style="background-color:#004d71; color: aliceblue; width: 8rem;" href="#"

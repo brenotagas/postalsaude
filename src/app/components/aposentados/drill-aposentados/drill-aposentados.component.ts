@@ -12,6 +12,7 @@ export class DrillComponent implements OnInit {
   matricula: string;
   dados: any;
   competencias: any;
+  inadimplencias: any;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
 
@@ -19,11 +20,11 @@ export class DrillComponent implements OnInit {
     this.VerificarQueryString();
     this.BuscarInformacoesPorMatricula(this.matricula);
     //this.BuscarCompetenciasComDespesasPorMatricula(this.matricula);
+    this.BuscarInadimplenciasPorMatricula(this.matricula);
   }
 
   VerificarQueryString(): any {
     this.route.queryParams.subscribe(params => {
-      //console.log(params.matricula)
       this.matricula = params.matricula;
     });
   }
@@ -38,7 +39,13 @@ export class DrillComponent implements OnInit {
   BuscarCompetenciasComDespesasPorMatricula(matricula: any) {
     this.rotinaservice.BuscarCompetenciasComDespesasPorMatricula(matricula).subscribe((res: any) => {
       this.competencias = res.data;
-      //console.log(this.competencias);
+    });
+  }
+
+  BuscarInadimplenciasPorMatricula(matricula: any) {
+    this.rotinaservice.BuscarInadimplenciasAposentadosPorMatricula(matricula).subscribe((res: any) => {
+      this.inadimplencias = res.data;
+      console.log(this.inadimplencias);
     });
   }
 

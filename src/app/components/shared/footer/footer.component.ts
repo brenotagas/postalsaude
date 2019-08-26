@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+declare var $: any;
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  url: string;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.VerificarUrl();
+  }
+
+  VerificarUrl() {
+    this.url = this.router.url;
+    if (this.url.includes('drill')) {
+      $('#footerpostal').addClass('footer-drill');
+    }
   }
 
 }
