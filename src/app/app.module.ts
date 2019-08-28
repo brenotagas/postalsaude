@@ -33,6 +33,7 @@ import { CabecalhoComponent } from './components/shared/cabecalho/cabecalho.comp
 import { NomePipe } from './pipes/nome.pipe';
 import { HomeredirectComponent } from './pages/homeredirect/homeredirect.component';
 import { InadimplenciaAposentadoComponent } from './components/aposentados/inadimplencia-aposentado/inadimplencia-aposentado.component';
+import { BoletosAbertosComponent } from './components/aposentados/boletos-abertos/boletos-abertos.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { InadimplenciaAposentadoComponent } from './components/aposentados/inadi
     CabecalhoComponent,
     NomePipe,
     HomeredirectComponent,
-    InadimplenciaAposentadoComponent
+    InadimplenciaAposentadoComponent,
+    BoletosAbertosComponent
   ],
   imports: [
     BrowserModule,

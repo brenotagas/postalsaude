@@ -80,7 +80,7 @@
       <div class="col-4">
         <button routerLink="/ffcs-aposentados" [queryParams]="{matricula: dados?.matricula}"
           class="btn btn-block btn-lg botao postal">Ficha Financeira<p class="sub-titulo">Plano CorreiosSaúde</p>
-          </button>
+        </button>
       </div>
       <div class="col-4">
         <button routerLink="/ffcsii-aposentados" [queryParams]="{matricula: dados?.matricula}"
@@ -96,14 +96,20 @@
           class="btn btn-block btn-lg botao postal">Parcelamento</button>
       </div>
       <div class="col-4">
-        <button class="btn btn-block btn-lg botao postal">Boleto em aberto<br>
-          <p class="sub-titulo">R$ 0,00</p>
+        <button routerLink="/boletos-abertos" [queryParams]="{matricula: dados?.matricula}"
+          class="btn btn-block btn-lg botao postal">Boleto em aberto<br>
+          <p class="sub-titulo" *ngIf="boletos?.data.length != 0">R$
+            {{ boletos?.data[0].boletosAbertosSomados | number:'1.2-2':'pt' }}</p>
         </button>
       </div>
       <div class="col-4">
         <button routerLink="/inadimplencia-aposentados" [queryParams]="{matricula: dados?.matricula}"
-        class="btn btn-block btn-lg botao btn-danger">Inadimplência<br>
-          <p class="sub-titulo" *ngIf="inadimplencias.length != 0">R$ {{ inadimplencias[0]?.inadimplenciasSomadas | number:'1.2-2':'pt' }}</p>
+          class="btn btn-block btn-lg botao btn-danger">Inadimplência<br>
+          <p class="sub-titulo" *ngIf="inadimplencias?.data.length != 0">R$
+            {{ inadimplencias?.data[0].inadimplenciasSomadas | number:'1.2-2':'pt' }}</p>
+          <div class="spinner-grow spinner-grow-sm" role="status" *ngIf="carregando">
+            <span class="sr-only">Loading...</span>
+          </div>
         </button>
       </div>
     </div>
@@ -119,7 +125,8 @@
             <div class="col">
               <h4><strong>Regras de Cobrança</strong></h4>
             </div>
-            <div class="col"><a href="http://www.postalsaude.com.br/beneficiario/mensalidade-e-coparticipacao" target="_blank">(Clique aqui para saber mais)</a></div>
+            <div class="col"><a href="http://www.postalsaude.com.br/beneficiario/mensalidade-e-coparticipacao"
+                target="_blank">(Clique aqui para saber mais)</a></div>
           </button>
         </div>
 

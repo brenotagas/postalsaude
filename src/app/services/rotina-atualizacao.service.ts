@@ -28,29 +28,33 @@ export class RotinaAtualizacaoService {
     return this.http.get<any[]>(`${this.urlApiArrecada}/Aposentados/${matricula}/parcelamentos`)
   }
 
-  BuscarFichaFinanceiraAposentadoCopar1PorMatricula(matricula){
+  BuscarFichaFinanceiraAposentadoCopar1PorMatricula(matricula) {
     return this.http.get<any[]>(`${this.urlApiArrecada}/Aposentados/${matricula}/ficha-financeira-copar-i`)
   }
 
-  BuscarFichaFinanceiraAposentadoCopar2PorMatricula(matricula){
+  BuscarFichaFinanceiraAposentadoCopar2PorMatricula(matricula) {
     return this.http.get<any[]>(`${this.urlApiArrecada}/Aposentados/${matricula}/ficha-financeira-copar-ii`)
   }
 
-  BuscarInadimplenciasAposentadosPorMatricula(matricula){
+  BuscarInadimplenciasAposentadosPorMatricula(matricula) {
     return this.http.get<any[]>(`${this.urlApiArrecada}/Aposentados/${matricula}/inadimplencias`)
   }
 
-//Ativos
+  BuscarBoletosEmAbertoAposentadosPorMatricula(matricula) {
+    return this.http.get<any[]>(`${this.urlApiArrecada}/Aposentados/${matricula}/boletos-em-aberto`)
+  }
+
+  //Ativos
 
   BuscarMensalidadesAtivosPorMatricula(matricula) {
     return this.http.get<any[]>(`${this.urlApiArrecada}/Ativos/${matricula}/mensalidades`)
   }
 
-  BuscarFichaFinanceiraAtivoCopar1PorMatricula(matricula){
+  BuscarFichaFinanceiraAtivoCopar1PorMatricula(matricula) {
     return this.http.get<any[]>(`${this.urlApiArrecada}/Ativos/${matricula}/ficha-financeira-copar-i`)
   }
 
-  BuscarFichaFinanceiraAtivoCopar2PorMatricula(matricula){
+  BuscarFichaFinanceiraAtivoCopar2PorMatricula(matricula) {
     return this.http.get<any[]>(`${this.urlApiArrecada}/Ativos/${matricula}/ficha-financeira-copar-ii`)
   }
 
@@ -60,11 +64,11 @@ export class RotinaAtualizacaoService {
     return this.http.get<any[]>(`${this.urlApiArrecada}/Afastados/${matricula}/mensalidades`)
   }
 
-  BuscarFichaFinanceiraAfastadosCopar1PorMatricula(matricula){
+  BuscarFichaFinanceiraAfastadosCopar1PorMatricula(matricula) {
     return this.http.get<any[]>(`${this.urlApiArrecada}/Afastados/${matricula}/ficha-financeira-copar-i`)
   }
 
-  BuscarFichaFinanceiraAfastadosCopar2PorMatricula(matricula){
+  BuscarFichaFinanceiraAfastadosCopar2PorMatricula(matricula) {
     return this.http.get<any[]>(`${this.urlApiArrecada}/Afastados/${matricula}/ficha-financeira-copar-ii`)
   }
 
