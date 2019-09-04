@@ -50,12 +50,12 @@ export class HomeComponent implements OnInit {
         } else if (this.dados.tipoBeneficiario == "Aposentado Normal" || this.dados.tipoBeneficiario == "Aposentado por Invalidez") {
           this.carregando = false;
           this.router.navigate(['drill-aposentados'], { queryParams: { matricula: matriculaTratada } })
-        } else if (this.dados.tipoBeneficiario == "Ativo" || this.dados.tipoBeneficiario == "Afastado") {
+        } else if (this.dados.tipoBeneficiario == "Ativo") {
           this.carregando = false;
           this.router.navigate(['drill-ativos'], { queryParams: { matricula: matriculaTratada } })
-        }// } else {
-        //   this.router.navigate(['drill-afastados'], { queryParams: { matricula: matriculaTratada } })
-        // }
+        } else {
+          this.router.navigate(['drill-afastados'], { queryParams: { matricula: matriculaTratada } })
+        }
       },
         error => {
           this.carregando = false;

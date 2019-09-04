@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RotinaAtualizacaoService } from 'src/app/services/rotina-atualizacao.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-mensalidade-afastados',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MensalidadeAfastadosComponent implements OnInit {
 
-  constructor() { }
+  matricula: string;
+  mensalidades: any;
+  carregando: boolean;
+
+  constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.VerificarQueryString();
+    this.BuscarMensalidadesAfastadosPorMatricula(this.matricula)
   }
 
+  VerificarQueryString(): any {
+    this.route.queryParams.subscribe(params => {
+      //console.log(params.matricula)
+      this.matricula = params.matricula;
+    });
+  }
+
+  BuscarMensalidadesAfastadosPorMatricula(matricula) {
+    this.carregando = true;
+    this.rotinaservice.BuscarMensalidadesAfastadosPorMatricula(matricula).subscribe((res: any) => {
+      this.mensalidades = res;
+      console.log(this.mensalidades);
+      this.carregando = false;
+    });
+  }
 }

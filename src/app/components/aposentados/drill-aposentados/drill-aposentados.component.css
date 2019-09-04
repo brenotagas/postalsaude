@@ -1,3 +1,15 @@
+@media (max-width: 375px){
+  .conteudo {
+      width: 100% !important;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px){
+  .conteudo {
+      width: 100% !important;
+  }
+}
+
 .conteudo{
   width: 50%;  margin: 0 auto;  padding: 0 30px;
 }

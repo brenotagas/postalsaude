@@ -1,189 +1,63 @@
 <app-header></app-header>
 <div class="conteudo">
-    <app-cabecalho></app-cabecalho>
+    <app-cabecalho titulo="Ficha Financeira Plano CorreiosSaúde"></app-cabecalho>
     <br />
     <div class="card text-center shadow">
         <div class="card-body">
+            <div class="d-flex align-items-center"
+                *ngIf="(!fichas?.registros || fichas?.registros.length == 0) && carregando">
+                <strong>Carregando dados...</strong>
+                <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+            </div>
+            <div class="alert alert-danger" role="alert"
+                *ngIf="(fichas?.registros == null || fichas?.registros.length == 0) && !carregando">
+                <h2>Sem dados para exibição!</h2>
+            </div>
             <!-- COPAR I   -->
-            <table class="table table-bordered table-sm text-center cabecalhoDeTabelas">
+            <table class="table table-bordered table-sm text-center cabecalhoDeTabelas"
+            *ngIf="fichas?.registros.length != 0 && fichas?.registros != null">
                 <thead>
                     <tr>
-                        <th class="campo-menor" scope="col" rowspan="2">Referência do Extrato de Utilização</th>
-                        <th class="campo-menor" scope="col" rowspan="2">Competência da Coparticipação</th>
-                        <th scope="col" rowspan="2">Remuneração</th>
-                        <th class="campo-menor" scope="col" rowspan="2">Referência Salarial</th>
-                        <th scope="col" rowspan="2">Teto</th>
-                        <th scope="col" rowspan="2">Margem</th>
-                        <th scope="col" rowspan="2">Rubrica</th>
+                        <th class="campo-menor" scope="col" rowspan="2">Competência</th>
+                        <!-- <th class="campo-menor" scope="col" rowspan="2">Remuneração Bruta (R$)</th> -->
+                        <!-- <th scope="col" rowspan="2">Teto (R$)</th> -->
+                        <!-- <th class="campo-menor" scope="col" rowspan="2">Remuneração Líquida (R$)</th> -->
+                        <!-- <th scope="col" rowspan="2">Margem (R$)</th> -->
                         <th scope="col" rowspan="2">Descrição</th>
-                        <th class="campo-menor" scope="col" rowspan="2">Valor da Despesa</th>
-                        <th class="campo-menor" scope="col" rowspan="2">Valor da Coparticipação</th>
-                        <th scope="col" rowspan="2">Resíduo Anterior</th>
-                        <th scope="col" rowspan="2">Saldo devedor</th>
-                        <th scope="col" colspan="3">Forma de Cobrança</th>
+                        <th scope="col" rowspan="2">Valor da Despesa (R$)</th>
+                        <th scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
+                            title="Valor da Coparticipação (R$)" class="ps-tooltip">Valor da Copar. (R$)</th>
+                        <th scope="col" rowspan="2">Saldo Devedor (R$)</th>
+                        <th scope="col" colspan="3">Forma de cobrança</th>
+                        <th scope="col" rowspan="2">Resíduo (R$)</th>
                         <th scope="col" rowspan="2">Situação</th>
-                        <th scope="col" rowspan="2">Resíduo Posterior</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">Desconto em folha</th>
-                        <th scope="col">Boleto</th>
-                        <th scope="col">Parcelamento</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>OUT/15</td>
-                        <td>OUT/15</td>
-                        <td>4.404,26</td>
-                        <td>NS - 06</td>
-                        <td>1.761,70</td>
-                        <td>880,85 </td>
-                        <td>54886</td>
-                        <td>POSTAL SAÚDE - EMPREGADOS ECT ATIVOS</td>
-                        <td>48.854,20</td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td></td>
-                        <td></td>
-                        <td class="inadimplente">Inadimplência</td>
-                        <td>1.761,70</td>
-                    </tr>
-                    <tr>
-                        <td>OUT/15</td>
-                        <td>OUT/15</td>
-                        <td>4.404,26</td>
-                        <td>NS - 06</td>
-                        <td>1.761,70</td>
-                        <td>880,85 </td>
-                        <td>54886</td>
-                        <td>POSTAL SAÚDE - EMPREGADOS ECT ATIVOS</td>
-                        <td>48.854,20</td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td></td>
-                        <td></td>
-                        <td class="inadimplente">Inadimplência</td>
-                        <td>1.761,70</td>
-                    </tr>
-                    <tr>
-                        <td>OUT/15</td>
-                        <td>OUT/15</td>
-                        <td>4.404,26</td>
-                        <td>NS - 06</td>
-                        <td>1.761,70</td>
-                        <td>880,85 </td>
-                        <td>54886</td>
-                        <td>POSTAL SAÚDE - EMPREGADOS ECT ATIVOS</td>
-                        <td>48.854,20</td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td></td>
-                        <td></td>
-                        <td class="inadimplente">Inadimplência</td>
-                        <td>1.761,70</td>
-                    </tr>
-                    <tr>
-                        <td>OUT/15</td>
-                        <td>OUT/15</td>
-                        <td>4.404,26</td>
-                        <td>NS - 06</td>
-                        <td>1.761,70</td>
-                        <td>880,85 </td>
-                        <td>54886</td>
-                        <td>POSTAL SAÚDE - EMPREGADOS ECT ATIVOS</td>
-                        <td>48.854,20</td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td></td>
-                        <td></td>
-                        <td class="inadimplente">Inadimplência</td>
-                        <td>1.761,70</td>
-                    </tr>
-                    <tr>
-                        <td>OUT/15</td>
-                        <td>OUT/15</td>
-                        <td>4.404,26</td>
-                        <td>NS - 06</td>
-                        <td>1.761,70</td>
-                        <td>880,85 </td>
-                        <td>54886</td>
-                        <td>POSTAL SAÚDE - EMPREGADOS ECT ATIVOS</td>
-                        <td>48.854,20</td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td></td>
-                        <td></td>
-                        <td class="inadimplente">Inadimplência</td>
-                        <td>1.761,70</td>
-                    </tr>
-                    <tr>
-                        <td>OUT/15</td>
-                        <td>OUT/15</td>
-                        <td>4.404,26</td>
-                        <td>NS - 06</td>
-                        <td>1.761,70</td>
-                        <td>880,85 </td>
-                        <td>54886</td>
-                        <td>POSTAL SAÚDE - EMPREGADOS ECT ATIVOS</td>
-                        <td>48.854,20</td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td></td>
-                        <td></td>
-                        <td class="inadimplente">Inadimplência</td>
-                        <td>1.761,70</td>
-                    </tr>
-                    <tr>
-                        <td>OUT/15</td>
-                        <td>OUT/15</td>
-                        <td>4.404,26</td>
-                        <td>NS - 06</td>
-                        <td>1.761,70</td>
-                        <td>880,85 </td>
-                        <td>54886</td>
-                        <td>POSTAL SAÚDE - EMPREGADOS ECT ATIVOS</td>
-                        <td>48.854,20</td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td></td>
-                        <td></td>
-                        <td class="inadimplente">Inadimplência</td>
-                        <td>1.761,70</td>
-                    </tr>
-                    <tr> 
-                        <td>OUT/15</td>
-                        <td>OUT/15</td>
-                        <td>4.404,26</td>
-                        <td>NS - 06</td>
-                        <td>1.761,70</td>
-                        <td>880,85 </td>
-                        <td>54886</td>
-                        <td>POSTAL SAÚDE - EMPREGADOS ECT ATIVOS</td>
-                        <td>48.854,20</td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td>1.761,70</td>
-                        <td> - </td>
-                        <td></td>
-                        <td></td>
-                        <td>Quitado</td>
-                        <td> 0,00</td>
-                    </tr>
-  
+                    <ng-container *ngFor="let ficha of fichas?.registros; let i = index">
+                        <tr>
+                            <td>{{ ficha.competencia.mes }}/{{ ficha.competencia.ano }}</td>
+                            <!-- <td>{{ ficha.remuneracaoBruta | number:'1.2-2':'pt' }}</td> -->
+                            <!-- <td>{{ ficha.teto | number:'1.2-2':'pt' }}</td> -->
+                            <!-- <td>{{ ficha.remuneracaoLiquida | number:'1.2-2':'pt' }}</td> -->
+                            <!-- <td>{{ ficha.margem | number:'1.2-2':'pt' }}</td> -->
+                            <td>{{ ficha.rubrica.descricao }}</td>
+                            <td>{{ ficha.valorDespesa | number:'1.2-2':'pt' }}</td>
+                            <td>{{ ficha.valorCoparticipacao | number:'1.2-2':'pt' }}</td>
+                            <td>{{ ficha.saldoDevedor | number:'1.2-2':'pt' }}</td>
+                            <td colspan="3">
+                                <span>{{ ficha.tipoPagamento.valor | number:'1.2-2':'pt' }}</span>
+                                <span
+                                    class="badge badge-pill badge-primary badge-right {{ ficha?.tipoPagamento.descricao}}"
+                                    data-toggle="tooltip" data-placement="top"
+                                    title="{{ ficha?.tipoPagamento.descricao}}">{{ ficha?.tipoPagamento.sigla }}</span>
+                                <span class="badge badge-pill badge-invisivel badge-right"
+                                    *ngIf="ficha?.tipoPagamento.sigla == ''">&nbsp;</span>
+                            </td>
+                            <td>{{ ficha.residuo | number:'1.2-2':'pt'}} </td>
+                            <td>{{ ficha.situacao }}</td>
+                        </tr>
+                    </ng-container>
                 </tbody>
             </table>
         </div>

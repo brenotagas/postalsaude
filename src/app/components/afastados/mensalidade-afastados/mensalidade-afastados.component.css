@@ -29,3 +29,52 @@
 .campo-menor{
     width: 13px
 }
+
+th.ps-tooltip{
+    cursor: help;
+    text-decoration: underline;
+}
+
+/* BADGES */
+
+.badge-right{
+    float: right;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+.badge-invisivel{
+    color: white;
+}
+
+.Folha{
+    background-color: #E6A31E;
+}
+
+.Boleto{
+    background-color: #004D71;
+}
+
+.Parcelamento{
+    background-color: #07913A;
+}
+
+.Cobrado{
+    background-color: #e34c26;
+}
+
+.valor{
+    margin-right: -20px;
+}
+
+.hide{
+    display: none
+}
+
+.fixed-top {
+    position: fixed;
+    top: 56px;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
