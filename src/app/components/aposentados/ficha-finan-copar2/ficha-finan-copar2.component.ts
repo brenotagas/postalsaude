@@ -12,12 +12,14 @@ export class FichaFinanCopar2Component implements OnInit {
   matricula: string;
   ficha: any;
   carregando: boolean;
+  agora: any;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.VerificarQueryString();
     this.BuscarFichaFinanceiraAposentadoCopar2PorMatricula(this.matricula);
+    this.agora = new Date();
   }
 
   VerificarQueryString(): any {

@@ -2,8 +2,8 @@
 <div class="conteudo">
     <app-cabecalho titulo="Ficha Financeira Plano CorreiosSaúde"></app-cabecalho>
     <br />
-    <div class="card text-center shadow">
-        <div class="card-body">
+    <div class="card shadow">
+        <div class="card-body align-items-center">
             <div class="d-flex align-items-center"
                 *ngIf="(!fichas?.registros || fichas?.registros.length == 0) && carregando">
                 <strong>Carregando dados...</strong>
@@ -15,14 +15,14 @@
             </div>
             <!-- COPAR I   -->
             <table class="table table-bordered table-sm text-center cabecalhoDeTabelas"
-            *ngIf="fichas?.registros.length != 0 && fichas?.registros != null">
+                *ngIf="fichas?.registros.length != 0 && fichas?.registros != null">
                 <thead>
                     <tr>
                         <th class="campo-menor" scope="col" rowspan="2">Competência</th>
-                        <!-- <th class="campo-menor" scope="col" rowspan="2">Remuneração Bruta (R$)</th> -->
-                        <!-- <th scope="col" rowspan="2">Teto (R$)</th> -->
-                        <!-- <th class="campo-menor" scope="col" rowspan="2">Remuneração Líquida (R$)</th> -->
-                        <!-- <th scope="col" rowspan="2">Margem (R$)</th> -->
+                        <th class="campo-menor" scope="col" rowspan="2">Remuneração Bruta (R$)</th>
+                        <th scope="col" rowspan="2">Teto (R$)</th>
+                        <th class="campo-menor" scope="col" rowspan="2">Remuneração Líquida (R$)</th>
+                        <th scope="col" rowspan="2">Margem (R$)</th>
                         <th scope="col" rowspan="2">Descrição</th>
                         <th scope="col" rowspan="2">Valor da Despesa (R$)</th>
                         <th scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
@@ -37,10 +37,10 @@
                     <ng-container *ngFor="let ficha of fichas?.registros; let i = index">
                         <tr>
                             <td>{{ ficha.competencia.mes }}/{{ ficha.competencia.ano }}</td>
-                            <!-- <td>{{ ficha.remuneracaoBruta | number:'1.2-2':'pt' }}</td> -->
-                            <!-- <td>{{ ficha.teto | number:'1.2-2':'pt' }}</td> -->
-                            <!-- <td>{{ ficha.remuneracaoLiquida | number:'1.2-2':'pt' }}</td> -->
-                            <!-- <td>{{ ficha.margem | number:'1.2-2':'pt' }}</td> -->
+                            <td>{{ ficha.remuneracaoBruta | number:'1.2-2':'pt' }}</td>
+                            <td>{{ ficha.teto | number:'1.2-2':'pt' }}</td>
+                            <td>{{ ficha.remuneracaoLiquida | number:'1.2-2':'pt' }}</td>
+                            <td>{{ ficha.margem | number:'1.2-2':'pt' }}</td>
                             <td>{{ ficha.rubrica.descricao }}</td>
                             <td>{{ ficha.valorDespesa | number:'1.2-2':'pt' }}</td>
                             <td>{{ ficha.valorCoparticipacao | number:'1.2-2':'pt' }}</td>
@@ -48,113 +48,122 @@
                             <td colspan="3">
                                 <span>{{ ficha.tipoPagamento.valor | number:'1.2-2':'pt' }}</span>
                                 <span
-                                    class="badge badge-pill badge-primary badge-right {{ ficha?.tipoPagamento.descricao}}"
+                                    class="badge badge-pill badge-primary badge-right {{ ficha?.tipoPagamento.descricao }}"
                                     data-toggle="tooltip" data-placement="top"
-                                    title="{{ ficha?.tipoPagamento.descricao}}">{{ ficha?.tipoPagamento.sigla }}</span>
+                                    title="{{ ficha?.tipoPagamento.descricao }}">{{ ficha?.tipoPagamento.sigla }}</span>
                                 <span class="badge badge-pill badge-invisivel badge-right"
                                     *ngIf="ficha?.tipoPagamento.sigla == ''">&nbsp;</span>
                             </td>
-                            <td>{{ ficha.residuo | number:'1.2-2':'pt'}} </td>
+                            <td>{{ ficha.residuo | number:'1.2-2':'pt' }} </td>
                             <td>{{ ficha.situacao }}</td>
                         </tr>
                     </ng-container>
                 </tbody>
             </table>
+            {{ agora | date: 'dd/MM/yyyy - hh:mm:ss ZZZZ' }}
         </div>
     </div>
     <br />
-    <p class="text-center">Informamos que os detalhamentos da cobrança estão nos extratos de utilização disponíveis no site da
-            Postal Saúde, sendo necessário realizar o cadastro, registrar login e senha, através do
-            link: <a href="http://portal.postalsaudeservicos.com.br/portalpostal/Home/" target="_blank"
-                rel="noopener noreferrer">http://portal.postalsaudeservicos.com.br/portalpostal/Home/</a>
-        </p>
-        <div class="card shadow">
-          <div class="accordion" id="accordionRegra">
+    <p class="text-center">Informamos que os detalhamentos da cobrança estão nos extratos de utilização disponíveis no
+        site da
+        Postal Saúde, sendo necessário realizar o cadastro, registrar login e senha, através do
+        link: <a href="http://portal.postalsaudeservicos.com.br/portalpostal/Home/" target="_blank"
+            rel="noopener noreferrer">http://portal.postalsaudeservicos.com.br/portalpostal/Home/</a>
+    </p>
+    <div class="card shadow">
+        <div class="accordion" id="accordionRegra">
             <div class="card">
-              <div class="row card-header" id="headingOne">
-                <button class="btn col-12" type="button" data-toggle="collapse" data-target="#collapseRegra"
-                  aria-expanded="false" aria-controls="collapseRegra">
-                  <div class="col">
-                    <h4><strong>Legenda</strong></h4>
-                  </div>
-                  <div class="col">(Clique aqui para saber mais)</div>
-                </button>
-              </div>
-        
-              <div class="collapse" id="collapseRegra">
-                <div class="card card-body">
-                    <p><strong>Referência do Extrato de Utilização:</strong> competência do extrato de utilização
-                    </p>
-                    <p><strong>Competência da Coparticipação :</strong> corresponde ao mês do compatilhamento das despesas
-                        médicas e
-                        odontológias
-                    </p>
-                    <p><strong>Referência Salarial:</strong> nível salarial do empregado
-                    </p>
-                    <p><strong>Teto:</strong> é o valor máximo sobre o qual será calculado o valor da coparticipação nos
-                        custos com a
-                        utilização da Assistência Médico-Hospitalar ou Odontológica na Rede Credenciada, a ser cobrado do
-                        beneficiário.
-                    </p>
-                    <p><strong>a) Beneficiário Ativo:</strong> duas vezes o salário base.
-                    </p>
-                    <p><strong>b) Beneficiário Aposentado:</strong> três vezes o salário base.
-                    </p>
-                    <p><strong>c) Beneficiário Afastado:</strong> duas vezes o salário base.
-                    </p>
-                    <p><strong>Margem:</strong> valor máximo de desconto mensal, incidente sobre o salário base do empregado
-                        em caso de
-                        utilização
-                    </p>
-                    <p><strong>Rubrica:</strong> número descritivo da identificação do desconto da coparticipação do
-                        beneficiário ativo no
-                        contracheque
-                    </p>
-                    <p><strong>053886</strong> - Devolução de despesa médica
-                    </p>
-                    <p><strong>057886</strong> - Despesa médica Postal Saúde
-                    </p>
-                    <p><strong>Descrição:</strong> especificação da rubrica
-                    </p>
-                    <p><strong>Valor da Depesa:</strong> somatório do valor total de todos os eventos pago ao prestador por
-                        cada guia
-                    </p>
-                    <p><strong>Valor da Coparticipação:</strong> identifica o valor compartilhado pelo beneficiário
-                    </p>
-                    <p><strong>Resíduo Anterior:</strong> valores acumulados a serem descontados
-                    </p>
-                    <p><strong>Saldo Devedor:</strong> valores acumulados ainda não pagos
-                    </p>
-                    <p><strong>Forma de Cobrança:</strong> identifica a forma de pagamento
-                    </p>
-                    <p><strong>a) Folha de Pagamento:</strong> beneficiários ativos
-                    </p>
-                    <p><strong>b) Boleto:</strong> Beneficiários aposentados e afastados
-                    </p>
-                    <p><strong>c) Parcelamento:</strong> É a negociação de boletos de mensalidade e despeas
-                        médico-hospitalar e /ou
-                        odontológica inadimplentes.
-                    </p>
-                    <p><strong>Situação:</strong> É o status de pagamento
-                    </p>
-                    <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
-                        pagas até a data de
-                        vencimento
-                    </p>
-                    <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas
-                    </p>
-                    <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
-                        pagas, passíveis
-                        de parcelamento.
-                    </p>
-                    <p><strong>d) Devolução:</strong> É o ajuste realizado na ficha financeira
-                    </p>
-                    <p><strong>Resíduo Posterior:</strong> Valor residual após a realização do pagamento</p>
+                <div class="row card-header" id="headingOne">
+                    <button class="btn col-12" type="button" data-toggle="collapse" data-target="#collapseRegra"
+                        aria-expanded="false" aria-controls="collapseRegra">
+                        <div class="col">
+                            <h4><strong>Legenda</strong></h4>
+                        </div>
+                        <div class="col">(Clique aqui para saber mais)</div>
+                    </button>
                 </div>
-              </div>
+
+                <div class="collapse" id="collapseRegra">
+                    <div class="card card-body">
+                        <p><strong>Referência do Extrato de Utilização:</strong> competência do extrato de utilização
+                        </p>
+                        <p><strong>Competência da Coparticipação :</strong> corresponde ao mês do compatilhamento das
+                            despesas
+                            médicas e
+                            odontológias
+                        </p>
+                        <p><strong>Referência Salarial:</strong> nível salarial do empregado
+                        </p>
+                        <p><strong>Teto:</strong> é o valor máximo sobre o qual será calculado o valor da coparticipação
+                            nos
+                            custos com a
+                            utilização da Assistência Médico-Hospitalar ou Odontológica na Rede Credenciada, a ser
+                            cobrado do
+                            beneficiário.
+                        </p>
+                        <p><strong>a) Beneficiário Ativo:</strong> duas vezes o salário base.
+                        </p>
+                        <p><strong>b) Beneficiário Aposentado:</strong> três vezes o salário base.
+                        </p>
+                        <p><strong>c) Beneficiário Afastado:</strong> duas vezes o salário base.
+                        </p>
+                        <p><strong>Margem:</strong> valor máximo de desconto mensal, incidente sobre o salário base do
+                            empregado
+                            em caso de
+                            utilização
+                        </p>
+                        <p><strong>Rubrica:</strong> número descritivo da identificação do desconto da coparticipação do
+                            beneficiário ativo no
+                            contracheque
+                        </p>
+                        <p><strong>053886</strong> - Devolução de despesa médica
+                        </p>
+                        <p><strong>057886</strong> - Despesa médica Postal Saúde
+                        </p>
+                        <p><strong>Descrição:</strong> especificação da rubrica
+                        </p>
+                        <p><strong>Valor da Depesa:</strong> somatório do valor total de todos os eventos pago ao
+                            prestador por
+                            cada guia
+                        </p>
+                        <p><strong>Valor da Coparticipação:</strong> identifica o valor compartilhado pelo beneficiário
+                        </p>
+                        <p><strong>Resíduo Anterior:</strong> valores acumulados a serem descontados
+                        </p>
+                        <p><strong>Saldo Devedor:</strong> valores acumulados ainda não pagos
+                        </p>
+                        <p><strong>Forma de Cobrança:</strong> identifica a forma de pagamento
+                        </p>
+                        <p><strong>a) Folha de Pagamento:</strong> beneficiários ativos
+                        </p>
+                        <p><strong>b) Boleto:</strong> Beneficiários aposentados e afastados
+                        </p>
+                        <p><strong>c) Parcelamento:</strong> É a negociação de boletos de mensalidade e despeas
+                            médico-hospitalar e /ou
+                            odontológica inadimplentes.
+                        </p>
+                        <p><strong>Situação:</strong> É o status de pagamento
+                        </p>
+                        <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e
+                            não
+                            pagas até a data de
+                            vencimento
+                        </p>
+                        <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e
+                            pagas
+                        </p>
+                        <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares
+                            processadas e não
+                            pagas, passíveis
+                            de parcelamento.
+                        </p>
+                        <p><strong>d) Devolução:</strong> É o ajuste realizado na ficha financeira
+                        </p>
+                        <p><strong>Resíduo Posterior:</strong> Valor residual após a realização do pagamento</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-  </div>
-  <app-footer></app-footer>
-  
+    </div>
+</div>
+<app-footer></app-footer>

@@ -12,12 +12,14 @@ export class ParcelamentoAposentadosComponent implements OnInit {
   matricula: string;
   parcelamento: any;
   carregando: boolean;
+  agora: any;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.VerificarQueryString();
     this.BuscarParcelamentosAposentadoPorMatricula(this.matricula);
+    this.agora = new Date();
   }
 
   VerificarQueryString(): any {

@@ -12,12 +12,14 @@ export class CorreiosIiAfastadosComponent implements OnInit {
   matricula: string;
   fichas: any;
   carregando: boolean;
+  agora: any;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.VerificarQueryString();
     this.BuscarFichaFinanceiraAfastadoCopar2PorMatricula(this.matricula);
+    this.agora = new Date();
   }
 
   VerificarQueryString(): any {

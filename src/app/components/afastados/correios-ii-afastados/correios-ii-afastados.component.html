@@ -1,165 +1,167 @@
 <app-header></app-header>
 <div class="conteudo">
-    <app-cabecalho titulo="Ficha Financeira Plano CorreiosSaúde II"></app-cabecalho>
-    <br />
-    <!-- COPAR II  --> 
-    <div class="card text-center shadow">
-        <div class="card-body">
-          <div class="d-flex align-items-center"
-            *ngIf="(!fichas?.registros || fichas?.registros.length == 0) && carregando">
-            <strong>Carregando dados...</strong>
-            <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+  <app-cabecalho titulo="Ficha Financeira Plano CorreiosSaúde II"></app-cabecalho>
+  <br />
+  <!-- COPAR II  -->
+  <div class="card shadow">
+    <div class="card-body align-items-center">
+      <div class="d-flex align-items-center"
+        *ngIf="(!fichas?.registros || fichas?.registros.length == 0) && carregando">
+        <strong>Carregando dados...</strong>
+        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+      </div>
+      <div class="alert alert-danger" role="alert"
+        *ngIf="(fichas?.registros == null || fichas?.registros.length == 0) && !carregando">
+        <h2>Sem dados para exibição!</h2>
+      </div>
+      <!-- COPAR II -->
+      <table class="table table-bordered table-sm text-center cabecalhoDeTabelas"
+        *ngIf="fichas?.registros.length != 0 && fichas?.registros != null">
+        <thead>
+          <tr>
+            <th class="campo-menor" scope="col" rowspan="2">Competência</th>
+            <th class="campo-menor" scope="col" rowspan="2">Remuneração Bruta (R$)</th>
+            <th scope="col" rowspan="2">Teto (R$)</th>
+            <th class="campo-menor" scope="col" rowspan="2">Remuneração Líquida (R$)</th>
+            <th scope="col" rowspan="2">Margem (R$)</th>
+            <th scope="col" rowspan="2">Descrição</th>
+            <th scope="col" rowspan="2">Valor da Despesa (R$)</th>
+            <th scope="col" rowspan="2" data-toggle="tooltip" data-placement="top" title="Valor da Coparticipação (R$)"
+              class="ps-tooltip">Valor da Copar. (R$)</th>
+            <th scope="col" rowspan="2">Saldo Devedor (R$)</th>
+            <th scope="col" colspan="3">Forma de cobrança</th>
+            <th scope="col" rowspan="2">Resíduo (R$)</th>
+            <th scope="col" rowspan="2">Situação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let ficha of fichas?.registros; let i = index">
+            <tr>
+              <td>{{ ficha.competencia.mes }}/{{ ficha.competencia.ano }}</td>
+              <td>{{ ficha.remuneracaoBruta | number:'1.2-2':'pt' }}</td>
+              <td>{{ ficha.teto | number:'1.2-2':'pt' }}</td>
+              <td>{{ ficha.remuneracaoLiquida | number:'1.2-2':'pt' }}</td>
+              <td>{{ ficha.margem | number:'1.2-2':'pt' }}</td>
+              <td>{{ ficha.rubrica.descricao }}</td>
+              <td>{{ ficha.valorDespesa | number:'1.2-2':'pt' }}</td>
+              <td>{{ ficha.valorCoparticipacao | number:'1.2-2':'pt' }}</td>
+              <td>{{ ficha.saldoDevedor | number:'1.2-2':'pt' }}</td>
+              <td colspan="3">
+                <span>{{ ficha.valorBaixa | number:'1.2-2':'pt' }}</span>
+                <span class="badge badge-pill badge-primary badge-right {{ ficha?.tipoPagamento.descricao}}"
+                  data-toggle="tooltip" data-placement="top" title="Folha">{{ ficha?.tipoPagamento.sigla }}</span>
+                <span class="badge badge-pill badge-invisivel badge-right"
+                  *ngIf="ficha?.tipoPagamento.sigla == ''">&nbsp;</span>
+              </td>
+              <td>{{ ficha.residuo | number:'1.2-2':'pt'}} </td>
+              <td>{{ ficha.situacao }}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+      {{ agora | date: 'dd/MM/yyyy - hh:mm:ss ZZZZ' }}
+    </div>
+  </div>
+  <br />
+  <p class="text-center">Informamos que os detalhamentos da cobrança estão nos extratos de utilização disponíveis no
+    site da
+    Postal Saúde, sendo necessário realizar o cadastro, registrar login e senha, através do
+    link: <a href="http://portal.postalsaudeservicos.com.br/portalpostal/Home/" target="_blank"
+      rel="noopener noreferrer">http://portal.postalsaudeservicos.com.br/portalpostal/Home/</a>
+  </p>
+  <div class="card shadow">
+    <div class="accordion" id="accordionRegra">
+      <div class="card">
+        <div class="row card-header" id="headingOne">
+          <button class="btn col-12" type="button" data-toggle="collapse" data-target="#collapseRegra"
+            aria-expanded="false" aria-controls="collapseRegra">
+            <div class="col">
+              <h4><strong>Legenda</strong></h4>
+            </div>
+            <div class="col">(Clique aqui para saber mais)</div>
+          </button>
+        </div>
+
+        <div class="collapse" id="collapseRegra">
+          <div class="card card-body">
+            <p><strong>Competência:</strong> corresponde ao mês do compatilhamento das despesas médicas e
+              odontológias
+            </p>
+            <p><strong>Remuneração bruta:</strong>
+            </p>
+            <p><strong>a) Empregado Ativo:</strong> são as rubricas que sofrem a incidência de IRPF não sendo
+              consideradas as rubricas
+              relacionadas ao pagamento de férias e 13º salários
+            </p>
+            <p><strong>b) Empregado Aposentado:</strong> são considerados o benefício recebido do INSS, mais o
+              coplemtno da União, caso
+              tenha, mais a suplementação do Postalis, planos CD e BD
+            </p>
+            <p><strong>c) Empregado Afastado:</strong> é considerado a remuneração atualizada que incide IR, com
+              exceção do 13º salário
+              e férias
+            </p>
+            <p><strong> Teto:</strong> é o valor máximo sobre o qual será calculado o valor da coparticipação nos custos
+              com
+              a utilização
+              da Assistência Médico-Hospitalar ou Odontológica na Rede Credenciada, a ser cobrado do beneficiário
+              sobre a remuneração bruta.
+            </p>
+            <p><strong>a) Beneficiário Ativo:</strong> duas vezes o salário base.
+            </p>
+            <p><strong>b) Beneficiário Aposentado:</strong> três vezes o salário base.
+            </p>
+            <p><strong>c) Beneficiário Afastado:</strong> duas vezes o salário base.
+            </p>
+            <p><strong>Remuneração Liquída:</strong> remuneração bruta após os descontos
+            </p>
+            <p><strong>Margem:</strong> valor máximo de desconto mensal, incidente sobre a remuneração líquida do
+              empregado, em caso de
+              utilização
+            </p>
+            <p><strong>Rubrica:</strong> número descritivo da identificação do desconto da coparticipação do
+              beneficiário
+            </p>
+            <p><strong>Descrição:</strong> especificação da rubrica
+            </p>
+            <p><strong>Valor da Depesa:</strong> somatório do valor total de todos os eventos pago ao prestador por
+              cada guia
+            </p>
+            <p><strong>Valor da Coparticipação:</strong> identifica o valor compartilhado
+            </p>
+            <p><strong>Resíduo Anterior:</strong> valores acumulados a serem descontados
+            </p>
+            <p><strong>Saldo Devedor:</strong> valores acumulados ainda não pagos
+            </p>
+            <p><strong>Forma de Cobrança:</strong> identifica a forma de pagamento
+            </p>
+            <p><strong>a) Folha de Pagamento:</strong> beneficiários ativos
+            </p>
+            <p><strong>b) Boleto:</strong> Beneficiários aposentados e afastados
+            </p>
+            <p><strong>c) Parcelamento:</strong> É a negociação de boletos de mensalidade e despeas
+              médico-hospitalar e /ou odontológica
+              inadimplentes, respeitando as regras vigentes.
+            </p>
+            <p><strong> Situação:</strong> É o status de pagamento
+            </p>
+            <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
+              pagas até a data de
+              vencimento
+            </p>
+            <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas
+            </p>
+            <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
+              pagas, passíveis de
+              parcelamento.
+            </p>
+            <p><strong>d) Devolução:</strong> É o ajuste realizado na ficha financeira
+            </p>
+            <p><strong>Resíduo Posterior:</strong> Valor residual após a realização do pagamento</p>
           </div>
-          <div class="alert alert-danger" role="alert"
-            *ngIf="(fichas?.registros == null || fichas?.registros.length == 0) && !carregando">
-            <h2>Sem dados para exibição!</h2>
-          </div>
-          <!-- COPAR II -->
-          <table class="table table-bordered table-sm text-center cabecalhoDeTabelas"
-            *ngIf="fichas?.registros.length != 0 && fichas?.registros != null">
-            <thead>
-              <tr>
-                <th class="campo-menor" scope="col" rowspan="2">Competência</th>
-                <th class="campo-menor" scope="col" rowspan="2">Remuneração Bruta (R$)</th>
-                <th scope="col" rowspan="2">Teto (R$)</th>
-                <th class="campo-menor" scope="col" rowspan="2">Remuneração Líquida (R$)</th>
-                <th scope="col" rowspan="2">Margem (R$)</th>
-                <th scope="col" rowspan="2">Descrição</th>
-                <th scope="col" rowspan="2">Valor da Despesa (R$)</th>
-                <th scope="col" rowspan="2" data-toggle="tooltip" data-placement="top" title="Valor da Coparticipação (R$)"
-                  class="ps-tooltip">Valor da Copar. (R$)</th>
-                <th scope="col" rowspan="2">Saldo Devedor (R$)</th>
-                <th scope="col" colspan="3">Forma de cobrança</th>
-                <th scope="col" rowspan="2">Resíduo (R$)</th>
-                <th scope="col" rowspan="2">Situação</th>
-              </tr>
-            </thead>
-            <tbody>
-              <ng-container *ngFor="let ficha of fichas?.registros; let i = index">
-                <tr>
-                  <td>{{ ficha.competencia.mes }}/{{ ficha.competencia.ano }}</td>
-                  <td>{{ ficha.remuneracaoBruta | number:'1.2-2':'pt' }}</td>
-                  <td>{{ ficha.teto | number:'1.2-2':'pt' }}</td>
-                  <td>{{ ficha.remuneracaoLiquida | number:'1.2-2':'pt' }}</td>
-                  <td>{{ ficha.margem | number:'1.2-2':'pt' }}</td>
-                  <td>{{ ficha.rubrica.descricao }}</td>
-                  <td>{{ ficha.valorDespesa | number:'1.2-2':'pt' }}</td>
-                  <td>{{ ficha.valorCoparticipacao | number:'1.2-2':'pt' }}</td>
-                  <td>{{ ficha.saldoDevedor | number:'1.2-2':'pt' }}</td>
-                  <td colspan="3">
-                    <span>{{ ficha.valorBaixa | number:'1.2-2':'pt' }}</span>
-                    <span class="badge badge-pill badge-primary badge-right {{ ficha?.tipoPagamento.descricao}}"
-                      data-toggle="tooltip" data-placement="top" title="Folha">{{ ficha?.tipoPagamento.sigla }}</span>
-                    <span class="badge badge-pill badge-invisivel badge-right"
-                      *ngIf="ficha?.tipoPagamento.sigla == ''">&nbsp;</span>
-                  </td>
-                  <td>{{ ficha.residuo | number:'1.2-2':'pt'}} </td>
-                  <td>{{ ficha.situacao }}</td>
-                </tr>
-              </ng-container>
-            </tbody>
-          </table>
         </div>
       </div>
-    <br />
-    <p class="text-center">Informamos que os detalhamentos da cobrança estão nos extratos de utilização disponíveis no site da
-            Postal Saúde, sendo necessário realizar o cadastro, registrar login e senha, através do
-            link: <a href="http://portal.postalsaudeservicos.com.br/portalpostal/Home/" target="_blank"
-                rel="noopener noreferrer">http://portal.postalsaudeservicos.com.br/portalpostal/Home/</a>
-        </p>
-        <div class="card shadow">
-          <div class="accordion" id="accordionRegra">
-            <div class="card">
-              <div class="row card-header" id="headingOne">
-                <button class="btn col-12" type="button" data-toggle="collapse" data-target="#collapseRegra"
-                  aria-expanded="false" aria-controls="collapseRegra">
-                  <div class="col">
-                    <h4><strong>Legenda</strong></h4>
-                  </div>
-                  <div class="col">(Clique aqui para saber mais)</div>
-                </button>
-              </div>
-        
-              <div class="collapse" id="collapseRegra">
-                <div class="card card-body">
-                    <p><strong>Competência:</strong> corresponde ao mês do compatilhamento das despesas médicas e
-                      odontológias
-                  </p>
-                  <p><strong>Remuneração bruta:</strong>
-                  </p>
-                  <p><strong>a) Empregado Ativo:</strong> são as rubricas que sofrem a incidência de IRPF não sendo
-                      consideradas as rubricas
-                      relacionadas ao pagamento de férias e 13º salários
-                  </p>
-                  <p><strong>b) Empregado Aposentado:</strong> são considerados o benefício recebido do INSS, mais o
-                      coplemtno da União, caso
-                      tenha, mais a suplementação do Postalis, planos CD e BD
-                  </p>
-                  <p><strong>c) Empregado Afastado:</strong> é considerado a remuneração atualizada que incide IR, com
-                      exceção do 13º salário
-                      e férias
-                    </p>
-                    <p><strong>  Teto:</strong> é o valor máximo sobre o qual será calculado o valor da coparticipação nos custos com
-                      a utilização
-                      da Assistência Médico-Hospitalar ou Odontológica na Rede Credenciada, a ser cobrado do beneficiário
-                      sobre a remuneração bruta.
-                  </p>
-                  <p><strong>a) Beneficiário Ativo:</strong> duas vezes o salário base.
-                  </p>
-                  <p><strong>b) Beneficiário Aposentado:</strong> três vezes o salário base.
-                  </p>
-                  <p><strong>c) Beneficiário Afastado:</strong> duas vezes o salário base.
-                  </p>
-                  <p><strong>Remuneração Liquída:</strong> remuneração bruta após os descontos
-                  </p>
-                  <p><strong>Margem:</strong> valor máximo de desconto mensal, incidente sobre a remuneração líquida do
-                      empregado, em caso de
-                      utilização
-                  </p>
-                  <p><strong>Rubrica:</strong> número descritivo da identificação do desconto da coparticipação do
-                      beneficiário
-                  </p>
-                  <p><strong>Descrição:</strong> especificação da rubrica
-                  </p>
-                  <p><strong>Valor da Depesa:</strong> somatório do valor total de todos os eventos pago ao prestador por
-                      cada guia
-                  </p>
-                  <p><strong>Valor da Coparticipação:</strong> identifica o valor compartilhado
-                  </p>
-                  <p><strong>Resíduo Anterior:</strong> valores acumulados a serem descontados
-                  </p>
-                  <p><strong>Saldo Devedor:</strong> valores acumulados ainda não pagos
-                  </p>
-                  <p><strong>Forma de Cobrança:</strong> identifica a forma de pagamento
-                  </p>
-                  <p><strong>a) Folha de Pagamento:</strong> beneficiários ativos
-                  </p>
-                  <p><strong>b) Boleto:</strong> Beneficiários aposentados e afastados
-                  </p>
-                  <p><strong>c) Parcelamento:</strong> É a negociação de boletos de mensalidade e despeas
-                      médico-hospitalar e /ou odontológica
-                      inadimplentes, respeitando as regras vigentes.
-                    </p>
-                    <p><strong> Situação:</strong> É o status de pagamento
-                  </p>
-                  <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
-                      pagas até a data de
-                      vencimento
-                  </p>
-                  <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas
-                  </p>
-                  <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
-                      pagas, passíveis de
-                      parcelamento.
-                  </p>
-                  <p><strong>d) Devolução:</strong> É o ajuste realizado na ficha financeira
-                  </p>
-                  <p><strong>Resíduo Posterior:</strong> Valor residual após a realização do pagamento</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    </div>
   </div>
-  <app-footer></app-footer>
-  
+</div>
+<app-footer></app-footer>

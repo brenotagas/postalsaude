@@ -2,8 +2,8 @@
 <div class="conteudo">
   <app-cabecalho titulo="Ficha Financeira Plano CorreiosSaúde"></app-cabecalho>
   <br />
-  <div class="card text-center shadow">
-    <div class="card-body">
+  <div class="card shadow">
+    <div class="card-body align-items-center">
       <div class="d-flex align-items-center" *ngIf="!ficha && carregando">
         <strong>Carregando dados...</strong>
         <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
@@ -60,6 +60,7 @@
           </tr>
         </tbody>
       </table>
+      {{ agora | date: 'dd/MM/yyyy - hh:mm:ss ZZZZ' }}
     </div>
   </div>
   <br />

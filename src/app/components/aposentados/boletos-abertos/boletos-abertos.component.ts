@@ -12,12 +12,14 @@ export class BoletosAbertosComponent implements OnInit {
   matricula: string;
   boletos: any;
   carregando: boolean;
+  agora: any;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.VerificarQueryString();
     this.BuscarBoletosAbertos(this.matricula);
+    this.agora = new Date();
   }
 
   VerificarQueryString(): any {

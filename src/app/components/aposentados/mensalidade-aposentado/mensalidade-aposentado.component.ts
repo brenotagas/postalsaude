@@ -13,12 +13,14 @@ export class MensalidadeAposentadoComponent implements OnInit {
   matricula: string;
   mensalidades: any;
   carregando: boolean;
+  agora: any;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.VerificarQueryString();
     this.BuscarMensalidadesAposentadoPorMatricula(this.matricula)
+    this.agora = new Date();
   }
 
   VerificarQueryString(): any {

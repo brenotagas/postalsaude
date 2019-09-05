@@ -12,12 +12,14 @@ export class InadimplenciaAposentadoComponent implements OnInit {
   matricula: string;
   inadimplencias: any;
   carregando: boolean;
+  agora: any;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.VerificarQueryString();
     this.BuscarInadimplenciasPorMatricula(this.matricula);
+    this.agora = new Date();
   }
 
   VerificarQueryString(): any {

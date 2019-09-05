@@ -75,4 +75,8 @@ export class RotinaAtualizacaoService {
     return this.http.get<any[]>(`${this.urlApiArrecada}/Afastados/${matricula}/ficha-financeira-copar-ii`)
   }
 
+  BuscarParcelamentosAfastadosPorMatricula(matricula) {
+    return this.http.get<any[]>(`${this.urlApiArrecada}/Afastados/${matricula}/parcelamentos`)
+  }
+
 }
