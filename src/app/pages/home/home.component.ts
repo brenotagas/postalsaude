@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
       matriculaTratada = matriculaTratada.trim();
       this.rotinaservice.BuscarInformacoesPorMatricula(matriculaTratada).subscribe((res: any) => {
         this.dados = res.data;
-        console.log(this.dados);
+        //console.log(this.dados);
         if (this.dados.matricula == null && this.dados.nome == null && this.dados.tipoBeneficiario == null) {
           //console.log("Matrícula Inválida ou Beneficiario não encontrado!");
           //$('#alertMatricula').removeClass("hide");

@@ -33,7 +33,7 @@ export class ParcelamentoAposentadosComponent implements OnInit {
     this.carregando = true;
     this.rotinaservice.BuscarParcelamentosAposentadoPorMatricula(matricula).subscribe((res: any) => {
       this.parcelamento = res;
-      console.log(this.parcelamento);
+      //console.log(this.parcelamento);
       this.carregando = false;
     });
   }

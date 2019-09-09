@@ -37,7 +37,7 @@ export class DrillComponent implements OnInit {
   BuscarInformacoesPorMatricula(matricula: any) {
     this.rotinaservice.BuscarInformacoesPorMatricula(matricula).subscribe((res: any) => {
       this.dados = res.data;
-      console.log(this.dados);
+      // console.log(this.dados);
     }, (error: any) => {
       console.log('Erro: ' + error);
     });
@@ -55,7 +55,7 @@ export class DrillComponent implements OnInit {
     this.carregando = true;
     this.rotinaservice.BuscarInadimplenciasAposentadosPorMatricula(matricula).subscribe((res: any) => {
       this.inadimplencias = res;
-      console.log(this.inadimplencias);
+      // console.log(this.inadimplencias);
       this.carregando = false
     }, (error: any) => {
       console.log('Erro: ' + error);
@@ -66,7 +66,7 @@ export class DrillComponent implements OnInit {
     this.carregando = true;
     this.rotinaservice.BuscarBoletosEmAbertoAposentadosPorMatricula(matricula).subscribe((res: any) => {
       this.boletos = res;
-      console.log(this.boletos);
+      //console.log(this.boletos);
       this.carregando = false;
     }, (error: any) => {
       console.log('Erro: ' + error);

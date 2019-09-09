@@ -29,12 +29,12 @@
         <tbody>
           <tr *ngFor="let registro of parcelamento?.data; let i = index">
             <td [attr.rowspan]="registro.quantidadeParcelas" *ngIf="registro.numeroParcela == 1">{{ registro.dataSolicitacao | date: 'dd/MM/yyyy' }}</td>
-            <td [attr.rowspan]="registro.quantidadeParcelas" *ngIf="registro.numeroParcela == 1">{{ registro.valorDivida  | number:'1.2-2':'pt' }}</td>
-            <td [attr.rowspan]="registro.quantidadeParcelas" *ngIf="registro.numeroParcela == 1">{{ registro.valorCorrigido  | number:'1.2-2':'pt' }}</td>
+            <td [attr.rowspan]="registro.quantidadeParcelas" *ngIf="registro.numeroParcela == 1">{{ registro.valorDivida | number:'1.2-2':'pt' }}</td>
+            <td [attr.rowspan]="registro.quantidadeParcelas" *ngIf="registro.numeroParcela == 1">{{ registro.valorCorrigido | number:'1.2-2':'pt' }}</td>
             <td>{{ registro.numeroParcela + ' de ' + registro.quantidadeParcelas }}</td>
             <td>{{ registro.dataVencimento | date: 'dd/MM/yyyy' }}</td>
-            <td>{{ registro.valorParcela  | number:'1.2-2':'pt' }}</td>
-            <td>{{ registro.dataPagamento | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ registro.valorParcela | number:'1.2-2':'pt' }}</td>
+            <td *ngIf="registro.dataPagamento != '0001-01-01T00:00:00'">{{ registro.dataPagamento | date: 'dd/MM/yyyy' }}</td><td *ngIf="registro.dataPagamento == '0001-01-01T00:00:00'">{{ 'Aguardando Pagamento' }}</td>
             <td>{{ registro.situacao }}</td>
           </tr>
         </tbody>
@@ -82,12 +82,12 @@
 
             <p><strong>Situação:</strong> É o status de pagamento
             </p>
+            <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas
+            </p>
             <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
               pagas até a data de
               vencimento
-            </p>
-            <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas
-            </p>
+            </p>            
             <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
               pagas, passíveis
               de parcelamento.

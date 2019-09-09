@@ -32,7 +32,7 @@ export class InadimplenciaAposentadoComponent implements OnInit {
     this.carregando = true;
     this.rotinaservice.BuscarInadimplenciasAposentadosPorMatricula(matricula).subscribe((res: any) => {
       this.inadimplencias = res;
-      console.log(this.inadimplencias);
+      //console.log(this.inadimplencias);
       this.carregando = false;
     });
   }

@@ -33,7 +33,7 @@ export class MensalidadeAfastadosComponent implements OnInit {
     this.carregando = true;
     this.rotinaservice.BuscarMensalidadesAfastadosPorMatricula(matricula).subscribe((res: any) => {
       this.mensalidades = res;
-      console.log(this.mensalidades);
+      //console.log(this.mensalidades);
       this.carregando = false;
     });
   }

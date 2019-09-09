@@ -33,7 +33,7 @@ export class FichaFinanCopar2Component implements OnInit {
     this.carregando = true;
     this.rotinaservice.BuscarFichaFinanceiraAposentadoCopar2PorMatricula(matricula).subscribe((res: any) => {
       this.ficha = res.data;
-      console.log(this.ficha);
+      //console.log(this.ficha);
       this.carregando = false;
     });
   }

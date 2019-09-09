@@ -33,7 +33,7 @@ export class CorreiosIAfastadosComponent implements OnInit {
     this.carregando = true;
     this.rotinaservice.BuscarFichaFinanceiraAfastadosCopar1PorMatricula(matricula).subscribe((res: any) => {
       this.fichas = res.data;
-      console.log(this.fichas);
+      //console.log(this.fichas);
       this.carregando = false;
     });
   }

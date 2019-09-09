@@ -13,14 +13,15 @@
         <h2>Sem dados para exibição!</h2>
       </div>
       <!-- COPAR I   -->
-      <table class="table table-bordered table-sm text-center cabecalhoDeTabelas table-striped" *ngIf="ficha?.registros != null">
+      <table class="table table-bordered table-sm text-center cabecalhoDeTabelas table-striped"
+        *ngIf="ficha?.registros != null">
         <thead>
           <tr>
-            <th class="campo-menor" scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
-              title="Referência do Extrato de Utilização" class="ps-tooltip">Ref. do Extrato de Utilização</th>
+            <!-- <th class="campo-menor" scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
+              title="Referência do Extrato de Utilização" class="ps-tooltip">Ref. do Extrato de Utilização</th> -->
             <th class="campo-menor" scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
               title="Competência da Coparticipação" class="ps-tooltip">Competência da Copar.</th>
-            <th scope="col" rowspan="2">Remuneração (R$)</th>
+            <!-- <th scope="col" rowspan="2">Remuneração (R$)</th> -->
             <th class="campo-menor" scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
               title="Referência Salarial" class="ps-tooltip">Ref. Salarial</th>
             <th scope="col" rowspan="2">Teto (R$)</th>
@@ -37,9 +38,9 @@
         </thead>
         <tbody>
           <tr *ngFor="let registro of ficha?.registros; let i = index">
+            <!-- <td>{{ registro.competencia.mes }}/{{ registro.competencia.ano }}</td> -->
             <td>{{ registro.competencia.mes }}/{{ registro.competencia.ano }}</td>
-            <td>{{ registro.competencia.mes }}/{{ registro.competencia.ano }}</td>
-            <td>{{ registro.remuneracao  | number:'1.2-2':'pt' }}</td>
+            <!-- <td>{{ registro.remuneracao  | number:'1.2-2':'pt' }}</td> -->
             <td>{{ registro.referenciaSalarial }}</td>
             <td>{{ registro.teto  | number:'1.2-2':'pt' }}</td>
             <td>{{ registro.margem  | number:'1.2-2':'pt' }}</td>
@@ -85,73 +86,37 @@
 
         <div class="collapse" id="collapseRegra">
           <div class="card card-body">
-            <p><strong>Referência do Extrato de Utilização:</strong> competência do extrato de utilização
-            </p>
-            <p><strong>Competência da Coparticipação :</strong> corresponde ao mês do compatilhamento das despesas
-              médicas e
-              odontológias
-            </p>
-            <p><strong>Referência Salarial:</strong> nível salarial do empregado
-            </p>
+            <!-- <p><strong>Referência do Extrato de Utilização:</strong> competência do extrato de utilização</p> -->
+            <p><strong>Competência da Coparticipação :</strong> corresponde ao extrato do mês de faturamento das despesas médicas e odontológicas</p>
+            <p><strong>Referência Salarial:</strong> nível salarial do empregado</p>
             <p><strong>Teto:</strong> é o valor máximo sobre o qual será calculado o valor da coparticipação nos
               custos com a
               utilização da Assistência Médico-Hospitalar ou Odontológica na Rede Credenciada, a ser cobrado do
-              beneficiário.
-            </p>
-            <p><strong>a) Beneficiário Ativo:</strong> duas vezes o salário base.
-            </p>
-            <p><strong>b) Beneficiário Aposentado:</strong> três vezes o salário base.
-            </p>
-            <p><strong>c) Beneficiário Afastado:</strong> duas vezes o salário base.
-            </p>
-            <p><strong>Margem:</strong> valor máximo de desconto mensal, incidente sobre o salário base do empregado
-              em caso de
-              utilização
-            </p>
-            <p><strong>Rubrica:</strong> número descritivo da identificação do desconto da coparticipação do
+              beneficiário.</p>
+            <p><strong>a) Beneficiário Ativo:</strong> duas vezes o salário base.</p>
+            <p><strong>b) Beneficiário Aposentado:</strong> três vezes o salário base.</p>
+            <p><strong>c) Beneficiário Afastado:</strong> duas vezes o salário base.</p>
+            <p><strong>Margem:</strong> valor máximo de desconto mensal, que incide sobre o salário base do empregado.</p>
+            <!-- <p><strong>Rubrica:</strong> número descritivo da identificação do desconto da coparticipação do
               beneficiário ativo no
-              contracheque
-            </p>
-            <p><strong>053886</strong> - Devolução de despesa médica
-            </p>
-            <p><strong>057886</strong> - Despesa médica Postal Saúde
-            </p>
-            <p><strong>Descrição:</strong> especificação da rubrica
-            </p>
-            <p><strong>Valor da Depesa:</strong> somatório do valor total de todos os eventos pago ao prestador por
-              cada guia
-            </p>
-            <p><strong>Valor da Coparticipação:</strong> identifica o valor compartilhado pelo beneficiário
-            </p>
-            <p><strong>Resíduo Anterior:</strong> valores acumulados a serem descontados
-            </p>
-            <p><strong>Saldo Devedor:</strong> valores acumulados ainda não pagos
-            </p>
-            <p><strong>Forma de Cobrança:</strong> identifica a forma de pagamento
-            </p>
-            <p><strong>a) Folha de Pagamento:</strong> beneficiários ativos
-            </p>
-            <p><strong>b) Boleto:</strong> Beneficiários aposentados e afastados
-            </p>
-            <p><strong>c) Parcelamento:</strong> É a negociação de boletos de mensalidade e despeas
-              médico-hospitalar e /ou
-              odontológica inadimplentes.
-            </p>
-            <p><strong>Situação:</strong> É o status de pagamento
-            </p>
-            <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
-              pagas até a data de
-              vencimento
-            </p>
-            <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas
-            </p>
-            <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
-              pagas, passíveis
-              de parcelamento.
-            </p>
-            <p><strong>d) Devolução:</strong> É o ajuste realizado na ficha financeira
-            </p>
-            <p><strong>Resíduo Posterior:</strong> Valor residual após a realização do pagamento</p>
+              contracheque</p>
+            <p><strong>053886</strong> - Devolução de despesa médica</p>
+            <p><strong>057886</strong> - Despesa médica Postal Saúde</p> -->
+            <p><strong>Descrição:</strong> especificação da rubrica</p>
+            <p><strong>Valor da Despesa:</strong> somatório do valor total de todos os eventos faturados ao prestador por cada guia</p>
+            <p><strong>Valor da Coparticipação:</strong> identifica o valor compartilhado pelo beneficiário</p>
+            <!-- <p><strong>Resíduo Anterior:</strong> valores acumulados a serem descontados</p> -->
+            <p><strong>Saldo Devedor:</strong> valores acumulados (coparticipação da competência + resíduo da competência anterior) ainda não pagos</p>
+            <p><strong>Forma de Pagamento:</strong> identifica a forma de pagamento</p>
+            <p><strong>a) Folha de Pagamento:</strong> beneficiários ativos</p>
+            <p><strong>b) Boleto:</strong> Beneficiários aposentados e afastados</p>
+            <p><strong>c) Parcelamento:</strong> É a negociação de boletos de mensalidade e despesas médico-hospitalar e /ou odontológica inadimplentes.</p>
+            <p><strong>Situação:</strong> É o status de pagamento</p>
+            <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas</p>
+            <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não pagas até a data de vencimento</p>
+            <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não pagas, passíveis de parcelamento.</p>
+            <p><strong>d) Devolução:</strong> É o ajuste realizado na ficha financeira</p>
+            <p><strong>Resíduo:</strong> Valor residual após a realização do pagamento</p>
           </div>
         </div>
       </div>

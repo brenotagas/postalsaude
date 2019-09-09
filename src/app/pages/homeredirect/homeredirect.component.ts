@@ -18,12 +18,12 @@ export class HomeredirectComponent implements OnInit {
 
   ngOnInit() {
     this.VerificarQueryString();
-    console.log('http://homapp.postalsaude.com.br:8080/arrecada/redirect?matricula=80830692&source=E3771031E7F9817178B11A67484D474B59F6CDC8A3F1113179A4250A2788C198');
+    //console.log('http://homapp.postalsaude.com.br:8080/arrecada/redirect?matricula=80830692&source=E3771031E7F9817178B11A67484D474B59F6CDC8A3F1113179A4250A2788C198');
   }
 
   VerificarQueryString(): any {
     this.route.queryParams.subscribe(params => {
-      console.log(params.matricula + ' - ' + params.source);
+      //console.log(params.matricula + ' - ' + params.source);
       if (params.matricula == '' || params.source == '') {
         window.location.href='http://www.postalsaude.com.br/';
       }
@@ -51,7 +51,7 @@ export class HomeredirectComponent implements OnInit {
     matriculaTratada = matriculaTratada.trim();
     this.rotinaservice.BuscarInformacoesPorMatricula(matriculaTratada).subscribe((res: any) => {
       this.dados = res.data;
-      console.log(this.dados);
+      //console.log(this.dados);
       if (this.dados.matricula == null && this.dados.nome == null && this.dados.tipoBeneficiario == null) {
         window.location.href='http://www.postalsaude.com.br/';
       } else if (this.dados.tipoBeneficiario == "Aposentado Normal" || this.dados.tipoBeneficiario == "Aposentado por Invalidez") {

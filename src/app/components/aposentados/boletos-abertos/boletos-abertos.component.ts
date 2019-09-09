@@ -32,7 +32,7 @@ export class BoletosAbertosComponent implements OnInit {
     this.carregando = true;
     this.rotinaservice.BuscarBoletosEmAbertoAposentadosPorMatricula(matricula).subscribe((res: any) => {
       this.boletos = res;
-      console.log(this.boletos);
+      //this.boletos);
       this.carregando = false;
     });
   }
