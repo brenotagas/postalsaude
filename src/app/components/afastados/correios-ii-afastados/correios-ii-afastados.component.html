@@ -48,8 +48,8 @@
               <td>{{ ficha.saldoDevedor | number:'1.2-2':'pt' }}</td>
               <td colspan="3">
                 <span>{{ ficha.valorBaixa | number:'1.2-2':'pt' }}</span>
-                <span class="badge badge-pill badge-primary badge-right {{ ficha?.tipoPagamento.descricao}}"
-                  data-toggle="tooltip" data-placement="top" title="Folha">{{ ficha?.tipoPagamento.sigla }}</span>
+                <span class="badge badge-pill badge-primary badge-right {{ ficha?.tipoPagamento.descricao }}"
+                  data-toggle="tooltip" data-placement="top" title="{{ ficha?.tipoPagamento.descricao }}">{{ ficha?.tipoPagamento.sigla }}</span>
                 <span class="badge badge-pill badge-invisivel badge-right"
                   *ngIf="ficha?.tipoPagamento.sigla == ''">&nbsp;</span>
               </td>
