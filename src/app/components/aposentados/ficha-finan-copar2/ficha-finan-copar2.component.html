@@ -32,7 +32,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let registro of ficha?.registros; let i = index">
+          <tr id="{{ficha?.registros[i].competencia.competenciaString}}"
+            *ngFor="let registro of ficha?.registros; let i = index">
             <td>{{ registro.competencia.mes }}/{{ registro.competencia.ano }}</td>
             <td>{{ registro.remuneracaoBruta  | number:'1.2-2':'pt' }}</td>
             <td>{{ registro.teto  | number:'1.2-2':'pt' }}</td>
@@ -79,32 +80,44 @@
         </div>
         <div class="collapse" id="collapseRegra">
           <div class="card card-body">
-            <p><strong>Competência da Coparticipação:</strong> corresponde ao extrato do mês de faturamento das despesas médicas e odontológicas</p>
+            <p><strong>Competência da Coparticipação:</strong> corresponde ao extrato do mês de faturamento das despesas
+              médicas e odontológicas</p>
             <p><strong>Remuneração bruta:</strong></p>
-            <p><strong>a) Empregado Ativo:</strong> são as rubricas que sofrem a incidência de IRPF não sendo consideradas as rubricas relacionadas ao pagamento de férias e 13º salários</p>
-            <p><strong>b) Empregado Aposentado:</strong> são considerados o benefício recebido do INSS, mais o complemento da União, caso tenha, mais a suplementação do Postalis, planos CD e BD</p>
-            <p><strong>c) Empregado Afastado:</strong> é considerado a remuneração atualizada que incide IR, com exceção do 13º salário e férias</p>
-            <p><strong> Teto:</strong> é o valor máximo sobre o qual será calculado o valor da coparticipação nos custos com a utilização da Assistência Médico-Hospitalar ou Odontológica na Rede Credenciada, a ser cobrado do beneficiário
+            <p><strong>a) Empregado Ativo:</strong> são as rubricas que sofrem a incidência de IRPF não sendo
+              consideradas as rubricas relacionadas ao pagamento de férias e 13º salários</p>
+            <p><strong>b) Empregado Aposentado:</strong> são considerados o benefício recebido do INSS, mais o
+              complemento da União, caso tenha, mais a suplementação do Postalis, planos CD e BD</p>
+            <p><strong>c) Empregado Afastado:</strong> é considerado a remuneração atualizada que incide IR, com exceção
+              do 13º salário e férias</p>
+            <p><strong> Teto:</strong> é o valor máximo sobre o qual será calculado o valor da coparticipação nos custos
+              com a utilização da Assistência Médico-Hospitalar ou Odontológica na Rede Credenciada, a ser cobrado do
+              beneficiário
               sobre a remuneração bruta.</p>
             <p><strong>a) Beneficiário Ativo:</strong> duas vezes o salário base.</p>
             <p><strong>b) Beneficiário Aposentado:</strong> três vezes o salário base.</p>
             <p><strong>c) Beneficiário Afastado:</strong> duas vezes o salário base.</p>
             <p><strong>Remuneração Líquida:</strong> remuneração bruta após os descontos</p>
-            <p><strong>Margem:</strong> valor máximo de desconto mensal, que incide sobre a remuneração líquida do empregado.</p>
+            <p><strong>Margem:</strong> valor máximo de desconto mensal, que incide sobre a remuneração líquida do
+              empregado.</p>
             <!-- <p><strong>Rubrica:</strong> número descritivo da identificação do desconto da coparticipação do beneficiário</p> -->
             <p><strong>Descrição:</strong> especificação da rubrica</p>
-            <p><strong>Valor da Despesa:</strong> somatório do valor total de todos os eventos faturados ao prestador por cada guia</p>
+            <p><strong>Valor da Despesa:</strong> somatório do valor total de todos os eventos faturados ao prestador
+              por cada guia</p>
             <p><strong>Valor da Coparticipação:</strong> identifica o valor compartilhado</p>
             <p><strong>Resíduo Anterior:</strong> valores acumulados a serem descontados</p>
-            <p><strong>Saldo Devedor:</strong> valores acumulados (coparticipação da competência + resíduo da competência anterior) ainda não pagos</p>
+            <p><strong>Saldo Devedor:</strong> valores acumulados (coparticipação da competência + resíduo da
+              competência anterior) ainda não pagos</p>
             <p><strong>Forma de Pagamento:</strong> identifica a forma de pagamento</p>
             <p><strong>a) Folha de Pagamento:</strong> beneficiários ativos</p>
             <p><strong>b) Boleto:</strong> Beneficiários aposentados e afastados</p>
-            <p><strong>c) Parcelamento:</strong> É a negociação de boletos de mensalidade e despesas médico-hospitalar e /ou odontológica inadimplentes, respeitando as regras vigentes.</p>
+            <p><strong>c) Parcelamento:</strong> É a negociação de boletos de mensalidade e despesas médico-hospitalar e
+              /ou odontológica inadimplentes, respeitando as regras vigentes.</p>
             <p><strong> Situação:</strong> É o status de pagamento</p>
             <p><strong>a) Quitado:</strong> É a mensalidade e as despesas médico-hopitalares processadas e pagas</p>
-            <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não pagas até a data de vencimento</p>            
-            <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não pagas, passíveis de parcelamento.</p>
+            <p><strong>b) Em aberto:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não pagas
+              até a data de vencimento</p>
+            <p><strong>c) Inadimplente:</strong> É a mensalidade e as despesas médico-hopitalares processadas e não
+              pagas, passíveis de parcelamento.</p>
             <p><strong>d) Devolução:</strong> É o ajuste realizado na ficha financeira</p>
             <p><strong>Resíduo:</strong> Valor residual após a realização do pagamento</p>
           </div>

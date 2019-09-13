@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RotinaAtualizacaoService } from 'src/app/services/rotina-atualizacao.service';
 import { ActivatedRoute } from '@angular/router';
 
+declare var $: any;
+
 @Component({
   selector: 'app-ficha-finan-copar2',
   templateUrl: './ficha-finan-copar2.component.html',
@@ -35,6 +37,12 @@ export class FichaFinanCopar2Component implements OnInit {
       this.ficha = res.data;
       //console.log(this.ficha);
       this.carregando = false;
+      //this.RetiraCompetenciaAtual();
     });
+  }
+
+  RetiraCompetenciaAtual(): any {
+    $(document).getElementById('201909');
+    // console.log(element);
   }
 }
