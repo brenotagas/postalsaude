@@ -20,8 +20,8 @@ export class HomeredirectComponent implements OnInit {
   constructor(private rotinaservice: RotinaAtualizacaoService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    //this.VerificarQueryString();
-    this.DecriptaToken();
+    this.VerificarQueryString();
+    //this.DecriptaToken();
     //console.log('http://homapp.postalsaude.com.br:8080/arrecada/redirect?matricula=80830692&source=E3771031E7F9817178B11A67484D474B59F6CDC8A3F1113179A4250A2788C198');
   }
 
@@ -42,10 +42,10 @@ export class HomeredirectComponent implements OnInit {
 
   DecriptaToken(): any {
     var matricula = '82018383';
-    var cifrado = CryptoJS.AES.encrypt(matricula, 'P0st@l*S@ud3').toString();
+    var cifrado = CryptoJS.AES.encrypt(matricula, 'F1ch@F1n@nc3!r@P0st@l*S2ud3').toString();
     console.log("Encriptado: " + cifrado);
 
-    var bytes = CryptoJS.AES.decrypt(cifrado, 'P0st@l*S@ud3');
+    var bytes = CryptoJS.AES.decrypt(cifrado, 'F1ch@F1n@nc3!r@P0st@l*S2ud3');
     var textoOriginal = bytes.toString(CryptoJS.enc.Utf8);
     console.log("Texto Original: " + textoOriginal)
   }

@@ -16,7 +16,8 @@
       <table class="table table-bordered table-sm text-center cabecalhoDeTabelas" *ngIf="ficha?.registros">
         <thead>
           <tr>
-            <th class="campo-menor" scope="col" rowspan="2">Competência</th>
+            <th class="campo-menor" scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
+            title="Competência da Coparticipação" class="ps-tooltip">Competência da Copar.</th>
             <th class="campo-menor" scope="col" rowspan="2">Remuneração Bruta (R$)</th>
             <th scope="col" rowspan="2">Teto (R$)</th>
             <th class="campo-menor" scope="col" rowspan="2">Remuneração Líquida (R$)</th>
@@ -25,7 +26,7 @@
             <th scope="col" rowspan="2">Valor da Despesa (R$)</th>
             <th scope="col" rowspan="2" data-toggle="tooltip" data-placement="top" title="Valor da Coparticipação (R$)"
               class="ps-tooltip">Valor da Copar. (R$)</th>
-            <th scope="col" rowspan="2">Resíduo Anterior (R$)</th>
+            <th scope="col" rowspan="2">Saldo Devedor (R$)</th>
             <th scope="col" colspan="3">Forma de cobrança</th>
             <th scope="col" rowspan="2">Resíduo (R$)</th>
             <th scope="col" rowspan="2">Situação</th>
@@ -42,7 +43,7 @@
             <td>{{ registro.rubrica.descricao}}</td>
             <td>{{ registro.valorDespesa  | number:'1.2-2':'pt' }}</td>
             <td>{{ registro.valorCoparticipacao  | number:'1.2-2':'pt' }}</td>
-            <td>{{ registro.residuoAnterior  | number:'1.2-2':'pt' }}</td>
+            <td>{{ registro.saldoDevedor  | number:'1.2-2':'pt' }}</td>
             <td colspan="3">
               <span>{{ registro.tipoPagamento.valor  | number:'1.2-2':'pt' }}</span>
               <span class="badge badge-pill badge-primary badge-right {{ registro.tipoPagamento.descricao }}"
@@ -104,7 +105,7 @@
             <p><strong>Valor da Despesa:</strong> somatório do valor total de todos os eventos faturados ao prestador
               por cada guia</p>
             <p><strong>Valor da Coparticipação:</strong> identifica o valor compartilhado</p>
-            <p><strong>Resíduo Anterior:</strong> valores acumulados a serem descontados</p>
+            <!-- <p><strong>Resíduo Anterior:</strong> valores acumulados a serem descontados</p> -->
             <p><strong>Saldo Devedor:</strong> valores acumulados (coparticipação da competência + resíduo da
               competência anterior) ainda não pagos</p>
             <p><strong>Forma de Pagamento:</strong> identifica a forma de pagamento</p>

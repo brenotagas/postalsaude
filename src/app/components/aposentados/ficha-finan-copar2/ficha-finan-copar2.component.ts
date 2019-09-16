@@ -37,12 +37,14 @@ export class FichaFinanCopar2Component implements OnInit {
       this.ficha = res.data;
       //console.log(this.ficha);
       this.carregando = false;
-      //this.RetiraCompetenciaAtual();
+      this.OcultarCompetenciaAtual();
     });
   }
 
-  RetiraCompetenciaAtual(): any {
-    $(document).getElementById('201909');
-    // console.log(element);
+  OcultarCompetenciaAtual(){
+    // $(document).ready(function () {
+      console.log("Foi!!!");
+      $('tr[id^="201908"]').addClass('hide');
+    // }); 
   }
 }

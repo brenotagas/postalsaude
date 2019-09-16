@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RotinaAtualizacaoService } from 'src/app/services/rotina-atualizacao.service';
 import { ActivatedRoute } from '@angular/router';
 
+declare var $: any;
+
 @Component({
   selector: 'app-mensalidade-ativos',
   templateUrl: './mensalidade-ativos.component.html',
@@ -19,7 +21,7 @@ export class MensalidadeAtivosComponent implements OnInit {
   ngOnInit() {
     this.agora = new Date();
     this.VerificarQueryString();
-    this.BuscarMensalidadesAtivosPorMatricula(this.matricula)
+    this.BuscarMensalidadesAtivosPorMatricula(this.matricula);
   }
 
   VerificarQueryString(): any {

@@ -19,7 +19,8 @@
         *ngIf="fichas?.registros.length != 0 && fichas?.registros != null">
         <thead>
           <tr>
-            <th class="campo-menor" scope="col" rowspan="2">Competência</th>
+            <th class="campo-menor" scope="col" rowspan="2" data-toggle="tooltip" data-placement="top"
+            title="Competência da Coparticipação" class="ps-tooltip">Competência da Copar.</th>
             <th class="campo-menor" scope="col" rowspan="2">Remuneração Bruta (R$)</th>
             <th scope="col" rowspan="2">Teto (R$)</th>
             <th class="campo-menor" scope="col" rowspan="2">Remuneração Líquida (R$)</th>
@@ -100,7 +101,7 @@
             <p><strong>Descrição:</strong> especificação da rubrica</p>
             <p><strong>Valor da Despesa:</strong> somatório do valor total de todos os eventos faturados ao prestador por cada guia</p>
             <p><strong>Valor da Coparticipação:</strong> identifica o valor compartilhado</p>
-            <p><strong>Resíduo Anterior:</strong> valores acumulados a serem descontados</p>
+            <!-- <p><strong>Resíduo Anterior:</strong> valores acumulados a serem descontados</p> -->
             <p><strong>Saldo Devedor:</strong> valores acumulados (coparticipação da competência + resíduo da competência anterior) ainda não pagos</p>
             <p><strong>Forma de Pagamento:</strong> identifica a forma de pagamento</p>
             <p><strong>a) Folha de Pagamento:</strong> beneficiários ativos</p>
