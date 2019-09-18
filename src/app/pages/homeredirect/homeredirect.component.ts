@@ -41,11 +41,11 @@ export class HomeredirectComponent implements OnInit {
   }
 
   DecriptaToken(): any {
-    var matricula = '82018383';
-    var cifrado = CryptoJS.AES.encrypt(matricula, 'F1ch@F1n@nc3!r@P0st@l*S2ud3').toString();
+    var matricula = '80097375';
+    var cifrado = CryptoJS.AES.encrypt(matricula, 'P0st@l*S@ud3').toString();
     console.log("Encriptado: " + cifrado);
 
-    var bytes = CryptoJS.AES.decrypt(cifrado, 'F1ch@F1n@nc3!r@P0st@l*S2ud3');
+    var bytes = CryptoJS.AES.decrypt(cifrado, 'P0st@l*S@ud3');
     var textoOriginal = bytes.toString(CryptoJS.enc.Utf8);
     console.log("Texto Original: " + textoOriginal)
   }
