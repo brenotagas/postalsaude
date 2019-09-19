@@ -8,7 +8,7 @@ export class RotinaAtualizacaoService {
 
   urlApiArrecada = 'http://homapp.postalsaude.com.br:8080/api_arrecada/api'
 
-  /* APONTAMENTO PRODUÇÃO AZURE */
+  /* APONTAMENTO PRODUÇÃO AZURE NUVEM */
   //urlApiArrecada = 'https://postalsaude-webapp.azurewebsites.net/api';
 
   constructor(private http: HttpClient) { }
