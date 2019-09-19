@@ -24,7 +24,11 @@ export class FichaFinanCopar2Component implements OnInit {
     this.agora = new Date();
   }
 
-  VerificarQueryString(): any {
+  ngAfterViewChecked(){
+    this.OcultarCompetenciaAtual();
+  }
+
+  VerificarQueryString(): any {                  
     this.route.queryParams.subscribe(params => {
       //console.log(params.matricula)
       this.matricula = params.matricula;
@@ -37,14 +41,10 @@ export class FichaFinanCopar2Component implements OnInit {
       this.ficha = res.data;
       //console.log(this.ficha);
       this.carregando = false;
-      this.OcultarCompetenciaAtual();
     });
   }
 
   OcultarCompetenciaAtual(){
-    // $(document).ready(function () {
-      console.log("Foi!!!");
-      $('tr[id^="201908"]').addClass('hide');
-    // }); 
+      $('tr[id^="201909"]').addClass('hide');
   }
 }

@@ -68,3 +68,7 @@ th.ps-tooltip{
 .valor{
     margin-right: -20px;
 }
+
+.hide{
+    display: none;
+}

@@ -34,6 +34,7 @@ import { NomePipe } from './pipes/nome.pipe';
 import { HomeredirectComponent } from './pages/homeredirect/homeredirect.component';
 import { InadimplenciaAposentadoComponent } from './components/aposentados/inadimplencia-aposentado/inadimplencia-aposentado.component';
 import { BoletosAbertosComponent } from './components/aposentados/boletos-abertos/boletos-abertos.component';
+import { OcultarCompetenciaPipe } from './pipes/ocultar-competencia.pipe';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { BoletosAbertosComponent } from './components/aposentados/boletos-aberto
     NomePipe,
     HomeredirectComponent,
     InadimplenciaAposentadoComponent,
-    BoletosAbertosComponent
+    BoletosAbertosComponent,
+    OcultarCompetenciaPipe
   ],
   imports: [
     BrowserModule,
