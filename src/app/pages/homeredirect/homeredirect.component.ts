@@ -42,12 +42,15 @@ export class HomeredirectComponent implements OnInit {
 
   DecriptaToken(): any {
     var matricula = '80097375';
-    var cifrado = CryptoJS.AES.encrypt(matricula, 'P0st@l*S@ud3').toString();
-    console.log("Encriptado: " + cifrado);
+    //var cifrado = CryptoJS.AES.encrypt(matricula, 'P0st@l*S@ud3').toString();
+    var hash = CryptoJS.SHA256(matricula);
+    var hash2 = hash.toString(CryptoJS.enc.Base64);
+    var hash3 = hash2.toString(CryptoJS.enc.Hex)
+    console.log("Encriptado: " + hash3);
 
-    var bytes = CryptoJS.AES.decrypt(cifrado, 'P0st@l*S@ud3');
-    var textoOriginal = bytes.toString(CryptoJS.enc.Utf8);
-    console.log("Texto Original: " + textoOriginal)
+    // var bytes = CryptoJS.AES.decrypt(cifrado, 'P0st@l*S@ud3');
+    // var textoOriginal = bytes.toString(CryptoJS.enc.Utf8);
+    // console.log("Texto Original: " + textoOriginal)
   }
 
   ValidarToken(token): boolean {
