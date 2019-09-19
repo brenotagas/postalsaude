@@ -92,8 +92,10 @@
         <button routerLink="/parcelamento-afastados" [queryParams]="{matricula: dados?.matricula}" class="btn btn-block btn-lg botao postal">Parcelamento</button>
       </div>
       <div class="col-4">
-        <button class="btn btn-block btn-lg botao postal">Boleto em aberto<br>
-          <p class="sub-titulo">R$ 0,00</p>
+        <button routerLink="/boletos-abertos-afastados" [queryParams]="{matricula: dados?.matricula}" 
+          class="btn btn-block btn-lg botao postal">Boleto em aberto<br>
+          <p class="sub-titulo" *ngIf="boletos?.data.length != 0">R$
+            {{ boletos?.data[0].boletosAbertosSomados | number:'1.2-2':'pt' }}</p>
         </button>
       </div>
       <div class="col-4">

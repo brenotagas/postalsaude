@@ -9,9 +9,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DrillAfastadosComponent implements OnInit {
 
+  carregando = false;
   matricula: string;
   dados: any;
   competencias: any;
+  boletos: any;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
 
@@ -19,6 +21,7 @@ export class DrillAfastadosComponent implements OnInit {
     this.VerificarQueryString();
     this.BuscarInformacoesPorMatricula(this.matricula);
     //this.BuscarCompetenciasComDespesasPorMatricula(this.matricula);
+    this.BuscarBoletosAbertosPorMatricula(this.matricula);
   }
 
   VerificarQueryString(): any {
@@ -39,6 +42,17 @@ export class DrillAfastadosComponent implements OnInit {
     this.rotinaservice.BuscarCompetenciasComDespesasPorMatricula(matricula).subscribe((res: any) => {
       this.competencias = res.data;
       //console.log(this.competencias);
+    });
+  }
+
+  BuscarBoletosAbertosPorMatricula(matricula: any) {
+    this.carregando = true;
+    this.rotinaservice.BuscarBoletosEmAbertoAfastadosPorMatricula(matricula).subscribe((res: any) => {
+      this.boletos = res;
+      //console.log(this.boletos);
+      this.carregando = false;
+    }, (error: any) => {
+      console.log('Erro: ' + error);
     });
   }
 

@@ -4,10 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-boletos-abertos',
-  templateUrl: './boletos-abertos.component.html',
-  styleUrls: ['./boletos-abertos.component.css']
+  templateUrl: './boletos-abertos-aposentados.component.html',
+  styleUrls: ['./boletos-abertos-aposentados.component.css']
 })
-export class BoletosAbertosComponent implements OnInit {
+export class BoletosAbertosAposentadosComponent implements OnInit {
 
   matricula: string;
   boletos: any;

@@ -79,4 +79,8 @@ export class RotinaAtualizacaoService {
     return this.http.get<any[]>(`${this.urlApiArrecada}/Afastados/${matricula}/parcelamentos`)
   }
 
+  BuscarBoletosEmAbertoAfastadosPorMatricula(matricula) {
+    return this.http.get<any[]>(`${this.urlApiArrecada}/Afastados/${matricula}/boletos-em-aberto`)
+  }
+
 }

@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="conteudo">
+    <app-cabecalho titulo="Boletos em Aberto"></app-cabecalho>
+    <br />
+    <div class="card shadow">
+        <div class="card-body align-items-center">
+            <div class="d-flex align-items-center" *ngIf="(!boletos?.data) && carregando">
+                <strong>Carregando dados...</strong>
+                <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+            </div>
+            <div class="alert alert-danger" role="alert"
+                *ngIf="(boletos?.data == null || boletos?.data.length == 0) && !carregando">
+                <h2>Sem dados para exibição!</h2>
+            </div>
+            <!-- Inadimplências -->
+            <table id="" class="table table-bordered table-sm text-center cabecalhoDeTabelas"
+                *ngIf="boletos?.data.length != 0 && boletos?.data != null">
+                <thead class="postal">
+                    <tr>
+                        <th class="campo-menor" scope="col" rowspan="2">Competência</th>
+                        <th scope="col" rowspan="2">Data Vencimento</th>
+                        <th scope="col">Valor (R$)</th>
+                        <th scope="col" rowspan="2">Situação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let boleto of boletos?.data; let i = index">
+                        <tr>
+                            <td>{{ boleto.competencia.mes }}/{{ boleto.competencia.ano }}</td>
+                            <td>{{ boleto.dataVencimento | date: 'dd/MM/yyyy' }}</td>
+                            <td>{{ boleto.valor | number:'1.2-2':'pt' }}
+                                <!-- <span
+                                    class="badge badge-pill badge-primary badge-right {{ inadimplencias.tipoPagamento.descricao }}"
+                                    data-toggle="tooltip" data-placement="top"
+                                    title="{{ inadimplencias?.tipoPagamento.descricao }}">{{ inadimplencias?.tipoPagamento.sigla }}</span>
+                                <span class="badge badge-pill badge-invisivel badge-right"
+                                    *ngIf="inadimplencias?.tipoPagamento.sigla == ''">&nbsp;</span> -->
+                            </td>
+                            <td colspan="3">{{ boleto.situacao | titlecase }}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+            {{ agora | date: 'dd/MM/yyyy - hh:mm:ss ZZZZ' }}
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

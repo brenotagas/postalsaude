@@ -33,7 +33,8 @@ import { CabecalhoComponent } from './components/shared/cabecalho/cabecalho.comp
 import { NomePipe } from './pipes/nome.pipe';
 import { HomeredirectComponent } from './pages/homeredirect/homeredirect.component';
 import { InadimplenciaAposentadoComponent } from './components/aposentados/inadimplencia-aposentado/inadimplencia-aposentado.component';
-import { BoletosAbertosComponent } from './components/aposentados/boletos-abertos/boletos-abertos.component';
+import { BoletosAbertosAposentadosComponent } from './components/aposentados/boletos-abertos-aposentados/boletos-abertos-aposentados.component';
+import { BoletosAbertosAfastadosComponent } from './components/afastados/boletos-abertos-afastados/boletos-abertos-afastados.component';
 import { OcultarCompetenciaPipe } from './pipes/ocultar-competencia.pipe';
 
 @NgModule({
@@ -61,7 +62,8 @@ import { OcultarCompetenciaPipe } from './pipes/ocultar-competencia.pipe';
     NomePipe,
     HomeredirectComponent,
     InadimplenciaAposentadoComponent,
-    BoletosAbertosComponent,
+    BoletosAbertosAposentadosComponent,
+    BoletosAbertosAfastadosComponent,
     OcultarCompetenciaPipe
   ],
   imports: [
