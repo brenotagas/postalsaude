@@ -13,6 +13,7 @@ export class DrillAfastadosComponent implements OnInit {
   matricula: string;
   dados: any;
   competencias: any;
+  inadimplencias: any;
   boletos: any;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private route: ActivatedRoute) { }
@@ -21,6 +22,7 @@ export class DrillAfastadosComponent implements OnInit {
     this.VerificarQueryString();
     this.BuscarInformacoesPorMatricula(this.matricula);
     //this.BuscarCompetenciasComDespesasPorMatricula(this.matricula);
+    this.BuscarInadimplenciasPorMatricula(this.matricula);
     this.BuscarBoletosAbertosPorMatricula(this.matricula);
   }
 
@@ -42,6 +44,17 @@ export class DrillAfastadosComponent implements OnInit {
     this.rotinaservice.BuscarCompetenciasComDespesasPorMatricula(matricula).subscribe((res: any) => {
       this.competencias = res.data;
       //console.log(this.competencias);
+    });
+  }
+
+  BuscarInadimplenciasPorMatricula(matricula: any) {
+    this.carregando = true;
+    this.rotinaservice.BuscarInadimplenciasAfastadosPorMatricula(matricula).subscribe((res: any) => {
+      this.inadimplencias = res;
+      // console.log(this.inadimplencias);
+      this.carregando = false
+    }, (error: any) => {
+      console.log('Erro: ' + error);
     });
   }
 

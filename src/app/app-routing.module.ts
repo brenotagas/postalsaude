@@ -21,6 +21,7 @@ import { HomeredirectComponent } from './pages/homeredirect/homeredirect.compone
 import { InadimplenciaAposentadoComponent } from './components/aposentados/inadimplencia-aposentado/inadimplencia-aposentado.component';
 import { BoletosAbertosAposentadosComponent } from './components/aposentados/boletos-abertos-aposentados/boletos-abertos-aposentados.component';
 import { BoletosAbertosAfastadosComponent } from './components/afastados/boletos-abertos-afastados/boletos-abertos-afastados.component';
+import { InadimplenciaAfastadoComponent } from './components/afastados/inadimplencia-afastado/inadimplencia-afastado.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'parcelamento-aposentados', component: ParcelamentoAposentadosComponent },
   { path: 'parcelamento-afastados', component: ParcelamentoAfastadosComponent },
   { path: 'inadimplencia-aposentados', component: InadimplenciaAposentadoComponent },
+  { path: 'inadimplencia-afastados', component: InadimplenciaAfastadoComponent },
   { path: 'boletos-abertos-aposentados', component: BoletosAbertosAposentadosComponent },
   { path: 'boletos-abertos-afastados', component: BoletosAbertosAfastadosComponent },
   { path: 'regras', component: RegrasComponent },

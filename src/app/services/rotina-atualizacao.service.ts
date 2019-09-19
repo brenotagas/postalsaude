@@ -6,10 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RotinaAtualizacaoService {
 
-  urlApiArrecada = 'http://homapp.postalsaude.com.br:8080/api_arrecada/api'
+  //urlApiArrecada = 'http://homapp.postalsaude.com.br:8080/api_arrecada/api'
 
   /* APONTAMENTO PRODUÇÃO AZURE NUVEM */
-  //urlApiArrecada = 'https://postalsaude-webapp.azurewebsites.net/api';
+  urlApiArrecada = 'https://postalsaude-webapp.azurewebsites.net/api';
 
   constructor(private http: HttpClient) { }
 
@@ -81,6 +81,10 @@ export class RotinaAtualizacaoService {
 
   BuscarBoletosEmAbertoAfastadosPorMatricula(matricula) {
     return this.http.get<any[]>(`${this.urlApiArrecada}/Afastados/${matricula}/boletos-em-aberto`)
+  }
+
+  BuscarInadimplenciasAfastadosPorMatricula(matricula) {
+    return this.http.get<any[]>(`${this.urlApiArrecada}/Afastados/${matricula}/inadimplencias`)
   }
 
 }

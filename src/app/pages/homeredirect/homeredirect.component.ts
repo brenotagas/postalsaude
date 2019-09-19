@@ -71,8 +71,8 @@ export class HomeredirectComponent implements OnInit {
       } else if (this.dados.tipoBeneficiario == "Ativo") {
         this.router.navigate(['drill-ativos'], { queryParams: { matricula: matriculaTratada } })
       } else {
-        //this.router.navigate(['drill-afastados'], { queryParams: { matricula: matriculaTratada } })
-        window.location.href = 'http://www.postalsaude.com.br/'
+        this.router.navigate(['drill-afastados'], { queryParams: { matricula: matriculaTratada } })
+        //window.location.href = 'http://www.postalsaude.com.br/'
       }
     },
       error => {

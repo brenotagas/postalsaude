@@ -99,8 +99,13 @@
         </button>
       </div>
       <div class="col-4">
-        <button class="btn btn-block btn-lg botao btn-danger">Inadimplência<br>
-          <p class="sub-titulo">R$ 0,00</p>
+        <button routerLink="/inadimplencia-afastados" [queryParams]="{matricula: dados?.matricula}" 
+          class="btn btn-block btn-lg botao btn-danger">Inadimplência<br>
+          <p class="sub-titulo" *ngIf="inadimplencias?.data.length != 0">R$
+            {{ inadimplencias?.data[0].inadimplenciasSomadas | number:'1.2-2':'pt' }}</p>
+          <div class="spinner-grow spinner-grow-sm" role="status" *ngIf="carregando">
+            <span class="sr-only">Loading...</span>
+          </div>
         </button>
       </div>
     </div>
