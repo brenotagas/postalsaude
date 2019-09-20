@@ -40,7 +40,8 @@
             <tr>
               <td>{{ ficha.competencia.mes }}/{{ ficha.competencia.ano }}</td>
               <td>{{ ficha.remuneracaoBruta | number:'1.2-2':'pt' }}</td>
-              <td>{{ ficha.teto | number:'1.2-2':'pt' }}</td>
+              <!-- <td>{{ ficha.teto | number:'1.2-2':'pt' }}</td> -->
+              <td>{{ ficha.remuneracaoBruta * 2 | number:'1.2-2':'pt'}}</td>
               <td>{{ ficha.remuneracaoLiquida | number:'1.2-2':'pt' }}</td>
               <td>{{ ficha.margem | number:'1.2-2':'pt' }}</td>
               <td>{{ ficha.rubrica.descricao }}</td>
