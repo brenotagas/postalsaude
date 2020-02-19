@@ -14,7 +14,7 @@
         </tr>
         <tr>
           <td class="negrito">Situação RH:</td>
-          <td colspan="3">Ativo/{{ dados?.tipoBeneficiario }}</td>
+          <td colspan="3" *ngIf="dados">Ativo/{{ dados?.tipoBeneficiario }}</td>
         </tr>
       </table>
     </div>

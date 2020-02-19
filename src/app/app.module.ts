@@ -30,12 +30,12 @@ import { CorreiosIiAfastadosComponent } from './components/afastados/correios-ii
 import { ParcelamentoAfastadosComponent } from './components/afastados/parcelamento-afastados/parcelamento-afastados.component';
 import { ParcelamentoAposentadosComponent } from './components/aposentados/parcelamento-aposentados/parcelamento-aposentados.component';
 import { CabecalhoComponent } from './components/shared/cabecalho/cabecalho.component';
-import { NomePipe } from './pipes/nome.pipe';
+import { NomePipe } from './pipes/nome/nome.pipe';
 import { HomeredirectComponent } from './pages/homeredirect/homeredirect.component';
 import { InadimplenciaAposentadoComponent } from './components/aposentados/inadimplencia-aposentado/inadimplencia-aposentado.component';
 import { BoletosAbertosAposentadosComponent } from './components/aposentados/boletos-abertos-aposentados/boletos-abertos-aposentados.component';
 import { BoletosAbertosAfastadosComponent } from './components/afastados/boletos-abertos-afastados/boletos-abertos-afastados.component';
-import { OcultarCompetenciaPipe } from './pipes/ocultar-competencia.pipe';
+import { OcultarCompetenciaPipe } from './pipes/ocultar competencia/ocultar-competencia.pipe';
 import { InadimplenciaAfastadoComponent } from './components/afastados/inadimplencia-afastado/inadimplencia-afastado.component';
 
 @NgModule({

@@ -16,11 +16,14 @@ export class HomeredirectComponent implements OnInit {
   matricula: string;
   source = 'E3771031E7F9817178B11A67484D474B59F6CDC8A3F1113179A4250A2788C198';
   dados: any;
+  encriptado: string;
 
   constructor(private rotinaservice: RotinaAtualizacaoService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.VerificarQueryString();
+    this.EncriptarMatricula(this.matricula);
+    this.DecriptarMatricula(this.encriptado);
     //this.DecriptaToken();
     //console.log('http://homapp.postalsaude.com.br:8080/arrecada/redirect?matricula=80830692&source=E3771031E7F9817178B11A67484D474B59F6CDC8A3F1113179A4250A2788C198');
   }
@@ -40,21 +43,20 @@ export class HomeredirectComponent implements OnInit {
     });
   }
 
-  DecriptaToken(): any {
-    var matricula = '80097375';
-    //var cifrado = CryptoJS.AES.encrypt(matricula, 'P0st@l*S@ud3').toString();
-    var hash = CryptoJS.SHA256(matricula);
-    var hash2 = hash.toString(CryptoJS.enc.Base64);
-    var hash3 = hash2.toString(CryptoJS.enc.Hex)
-    console.log("Encriptado: " + hash3);
-
-    // var bytes = CryptoJS.AES.decrypt(cifrado, 'P0st@l*S@ud3');
-    // var textoOriginal = bytes.toString(CryptoJS.enc.Utf8);
-    // console.log("Texto Original: " + textoOriginal)
-  }
-
   ValidarToken(token): boolean {
     if (token == this.source) { return true }
+  }
+
+  EncriptarMatricula(matricula: string) {
+    const key = CryptoJS.enc.Hex.parse("000102030405060708090a0b0c0d0e0f");
+    const iv = CryptoJS.enc.Hex.parse("101112131415161718191a1b1c1d1e1f");
+    this.encriptado = CryptoJS.AES.encrypt(matricula, key, { iv: iv });
+    console.log("Encriptado: " + this.encriptado);
+  }
+
+  DecriptarMatricula(encriptado: string) {
+    var decriptado = CryptoJS.AES.decrypt(encriptado, 'P0st@lS@ud32020');
+    console.log("Decriptado: " + decriptado);
   }
 
   BuscarInformacoesPorMatricula(matricula) {
